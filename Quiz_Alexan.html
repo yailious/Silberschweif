@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz zu ALEXAN - Das Geheimnis von Mystiko - Die Legende der Drei Artefakte</title>
+<!-- Verlinkung zur zentralen CSS-Datei für das Layout -->
+<link rel="stylesheet" href="style.css">
+<style>
+    /* Interne Styles zur Anpassung des Quiz-Designs an die allgemeine Ästhetik */
+    /* body und #quiz-container werden durch .container und style.css gestylt */
+
+    /* Container-Elemente und Überschriften an den allgemeinen Stil anpassen */
+    #quiz-container { 
+        padding: 30px; 
+    }
+    h1, h2 { 
+        text-align: center; 
+        color: #004d40; /* Dunkles Teal */
+    }
+    /* H1 verwendet den Stil der Hauptseite */
+    h1 {
+        font-size: 20pt;
+        border-bottom: 3px solid #004d40;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .question { 
+        margin-bottom: 20px; 
+        font-size: 14pt;
+        font-weight: bold;
+    }
+    
+    /* Styling für die Antwort-Optionen */
+    .answers label { 
+        display: block; 
+        margin-bottom: 12px; 
+        cursor: pointer; 
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        transition: background-color 0.2s, border-color 0.2s;
+        font-weight: normal;
+        font-size: 12pt;
+    }
+    .answers label:hover { 
+        background-color: #e0f7fa; /* Heller Türkis-Hintergrund bei Hover */
+        border-color: #004d40;
+    }
+    
+    input[type="radio"] { 
+        margin-right: 12px; 
+        transform: scale(1.2); 
+        vertical-align: middle; 
+    }
+    
+    /* Anpassen des "Weiter"-Buttons, um die blaue .quiz-button Klasse zu verwenden */
+    #next-btn { 
+        display: block; 
+        width: 100%; 
+        margin-top: 25px;
+        /* Die Farbe wird durch die Klasse .quiz-button in style.css auf Blau gesetzt */
+    }
+
+    #result { 
+        margin-top: 30px; 
+        text-align: center; 
+    }
+    
+    /* Styling für die Buttons am Ende des Quiz */
+    .end-screen-buttons { 
+        margin-top: 30px; 
+        display: flex; 
+        justify-content: center; 
+        gap: 20px; 
+        flex-direction: column; /* Buttons auf Mobilgeräten untereinander */
+    }
+    
+    /* Spezielles Styling für den Neustart-Button (Teal als Akzentfarbe) */
+    .restart-button {
+        background-color: #004d40 !important; /* Teal */
+        color: white !important;
+    }
+    
+    /* Allgemeine Anpassung des Quiz-Buttons (aus style.css) */
+    .quiz-button {
+        text-decoration: none; /* Wichtig für den <a>-Tag */
+    }
+
+    /* Auf größeren Bildschirmen die Buttons wieder nebeneinander legen */
+    @media (min-width: 600px) {
+        .end-screen-buttons {
+            flex-direction: row;
+        }
+    }
+
+</style>
+</head>
+<body>
+<!-- 
+    Das <main class="container"> umschließt das Quiz, 
+    um das zentrierte Layout und den weißen Hintergrund 
+    aus der style.css zu übernehmen.
+-->
+<main class="container">
+    <div id="quiz-container">
+        <h1>Quiz zu ALEXAN - Das Geheimnis von Mystiko - Die Legende der Drei Artefakte</h1>
+        <h2>Hallo mutiger Held! Viel Erfolg beim Quiz! 😊</h2>
+        <div id="question-area"></div>
+        <!-- Button verwendet die zentrale Klasse für das blaue Styling -->
+        <button id="next-btn" class="quiz-button" disabled>Weiter</button>
+        <div id="result"></div>
+    </div>
+</main>
+<script>
+// --- FRAGEN AKTUALISIERT ---
+const questions = [
+    // 1. Welche Rolle spielt Meridan NICHT in der Geschichte?
+    { q: "Welche Rolle spielt Meridan NICHT in der Geschichte?", a: ["Ein Schmied", "Der Hüter des Wissens", "Weiser"], correct: 0 },
+    // 2. Was geschieht mit dem Nebel, als Alexan das Kind führt?
+    { q: "Was geschieht mit dem Nebel, als Alexan das Kind führt?", a: ["Der Nebel färbt sich rot.", "Der Nebel wird dichter.", "Der Nebel verwandelt sich in Feuer.", "Der Nebel zieht sich zurück."], correct: 3 },
+    // 3. Welche der folgenden Aussagen über die Vereinigung der drei Artefakte ist NICHT korrekt?
+    { q: "Welche der folgenden Aussagen über die Vereinigung der drei Artefakte ist NICHT korrekt?", a: ["Das Licht kann die Finsternis besiegen.", "Es öffnet sich ein Portal.", "Es verkündet die Ankunft des Auserwählten."], correct: 1 },
+    // 4. Welche Aufgabe hat die Elfin Lyara im Wald von Lunaria?
+    { q: "Welche Aufgabe hat die Elfin Lyara im Wald von Lunaria?", a: ["Anführerin der Elfen", "Hohe Priesterin", "Gärtnerin der Blumen", "Sängerin der Lieder"], correct: 1 },
+    // 5. Welche Kombination aus Eigenschaften hilft Alexan, die Prüfungen im Heiligen Tempel zu meistern?
+    { q: "Welche Kombination aus Eigenschaften hilft Alexan, die Prüfungen im Heiligen Tempel zu meistern?", a: ["Reichtum und Geld", "Schnelligkeit und Vertrauen", "Magie und Klugheit", "Mut und Klugheit"], correct: 3 },
+    // 6. Welches Schwert wählt Alexan bei den Heiligen Prüfungen in Lunaria?
+    { q: "Welches Schwert wählt Alexan bei den Heiligen Prüfungen in Lunaria?", a: ["Das goldene Schwert", "Das dunkle Schwert", "Das zerbrechliche Schwert", "Das kleine Schwert"], correct: 2 },
+    // 7. Als Alexan das sagenumwobene Schwert findet, …
+    { q: "Als Alexan das sagenumwobene Schwert findet, …", a: ["beginnt es zu singen.", "verschwindet es.", "leuchtet es bläulich auf."], correct: 2 },
+    // 8. Wer ist Riven am Anfang für Alexan?
+    { q: "Wer ist Riven am Anfang für Alexan?", a: ["Ein Fremder", "Ein Freund", "Sein Bruder", "Ein Lehrer"], correct: 0 },
+    // 9. Als Alexan das Rätsel der Steintafel lösen musste, hat er …
+    { q: "Als Alexan das Rätsel der Steintafel lösen musste, hat er …", a: ["das sagenumwobene Schwert verwendet.", "den Code durch reines Glück erraten.", "verschiedene Kombinationen ausprobiert."], correct: 0 },
+    // 10. Um die vier Elemente vor dem Steinwächter zu erwecken, …
+    { q: "Um die vier Elemente vor dem Steinwächter zu erwecken, …", a: ["berührte Alexan die Symbole in einer bestimmten Reihenfolge mit seinen Händen.", "füllte Alexan die Elemente mit ihrer wahren Essenz und ließ sie wirken.", "schlug Alexan blindlings auf die Podeste, bis sie aufleuchteten."], correct: 1 },
+    // 11. Um den Drachen von seinem Fluch zu befreien, muss Alexan …
+    { q: "Um den Drachen von seinem Fluch zu befreien, muss Alexan …", a: ["ihn im Kampf besiegen.", "den Bann mit einem Zauberspruch auflösen.", "ihm die Hand reichen und Mitgefühl zeigen."], correct: 2 },
+    // 12. Was ist das besondere am Schild?
+    { q: "Was ist das besondere am Schild?", a: ["Es kann Schatten abwehren.", "Es macht unsichtbar.", "Es heilt Wunden.", "Es verleiht Flügel."], correct: 0 },
+    // 13. Alexan nutzte den Obsidianstein, um …
+    { q: "Alexan nutzte den Obsidianstein, um …", a: ["den Geistern in Xandor Frieden zu schenken.", "sich aufzuwärmen.", "den heiligen Bogen zu finden.", "seine Waffe zu reparieren."], correct: 0 },
+    // 14. Welche Rolle hat Prinzessin Ayana?
+    { q: "Welche Rolle hat Prinzessin Ayana?", a: ["Hüterin des Lichts", "Herrscherin der Schatten", "Königin der Drachen", "Botin des Windes"], correct: 0 },
+    // 15. Was ist Rivens wahres dunkles Ich?
+    { q: "Was ist Rivens wahres dunkles Ich?", a: ["Ein böser Zauberer aus einem anderen Land", "Eine Verkörperung seiner Zweifel", "Ein uralter Drache", "Ein Schattenwesen ohne Gestalt"], correct: 1 },
+    // 16. Womit greift Riven Alexan im Kampf an?
+    { q: "Womit greift Riven Alexan im Kampf an?", a: ["Mit Pfeilen", "Mit dämonischen Kräften", "Mit Feuerbällen", "Mit einem Schwert"], correct: 1 },
+    // 17. Welche der folgenden Aussagen über den Moment, als das goldene Licht den Bannzauber auf das dunkle Buch legt, ist NICHT korrekt?
+    { q: "Welche der folgenden Aussagen über den Moment, als das goldene Licht den Bannzauber auf das dunkle Buch legt, ist NICHT korrekt?", a: ["Ein winziger, kaum sichtbarer Schatten entwich aus dem Buch und verschwand in den Rissen der Steinwand.", "Das Buch löste sich in goldenes Licht auf und verschwand vollständig.", "Das Zauberbuch erstarrte, seine Zeichen erloschen und das Flüstern verstummte."], correct: 1 },
+    // 18. Was erwartet Alexan im Wald von Lunaria?
+    { q: "Was erwartet Alexan im Wald von Lunaria?", a: ["Ein Dorf voller freundlicher Menschen", "Magische Rätsel und Prüfungen", "Ein Brunnen, der Wünsche erfüllt", "Eine Höhle voller Schätze"], correct: 1 },
+    // 19. Wie verhält sich Alexan in Gefahr?
+    { q: "Wie verhält sich Alexan in Gefahr?", a: ["Er rennt weg.", "Er denkt nach und handelt mutig.", "Er versteckt sich.", "Er ruft immer um Hilfe."], correct: 1 },
+    // 20. Was löst Rivens Zorn aus?
+    { q: "Was löst Rivens Zorn aus?", a: ["Angst und Schmerz", "Der Verlust der Artefakte", "Ein altes Versprechen", "Ein Drache"], correct: 0 }
+];
+// --- ENDE DER AKTUALISIERTEN FRAGEN ---
+
+let currentQuestion = 0;
+// Füllen Sie das Array mit null, um den Benutzerfortschritt zu speichern
+const userAnswers = new Array(questions.length).fill(null); 
+const questionArea = document.getElementById("question-area");
+const nextBtn = document.getElementById("next-btn");
+const resultDiv = document.getElementById("result");
+
+function showQuestion(index) {
+    nextBtn.disabled = true;
+    const q = questions[index];
+    let html = `<div class="question"><strong>Frage ${index+1} von ${questions.length}:</strong> ${q.q}</div><div class="answers">`;
+    
+    q.a.forEach((answer, i) => {
+        // IDs und Name für Radio-Buttons verwenden
+        const radioId = `q${index}_a${i}`;
+        html += `<label for="${radioId}"><input type="radio" id="${radioId}" name="answer" value="${i}"> ${answer}</label>`;
+    });
+    
+    html += `</div>`;
+    questionArea.innerHTML = html;
+    
+    const radios = document.querySelectorAll('input[name="answer"]');
+    
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            nextBtn.disabled = false;
+            // Speichern der Antwort als Integer
+            userAnswers[currentQuestion] = parseInt(radio.value);
+        });
+    });
+    
+    // Wiederherstellen der zuvor ausgewählten Antwort
+    if(userAnswers[currentQuestion] !== null) {
+        radios.forEach(radio => {
+            if(parseInt(radio.value) === userAnswers[currentQuestion]) {
+                radio.checked = true;
+                nextBtn.disabled = false;
+            }
+        });
+    }
+}
+
+function showResult() {
+    let correctCount = 0;
+    questions.forEach((q, i) => {
+        if(userAnswers[i] === q.correct) correctCount++;
+    });
+    const percent = Math.round((correctCount / questions.length) * 100);
+
+    let resultHtml = `<h2>Dein Ergebnis:</h2>
+                      <h3 style="color:#004d40;">${correctCount} von ${questions.length} richtig (${percent}%)</h3>`;
+
+    if (percent >= 80) {
+        resultHtml += `<h2 style="color:#008000;">BRAVO Tolle Leistung!</h2>`;
+    } else if (percent >= 60) {
+        resultHtml += `<h2 style="color:#ffa500;">Gute Leistung!</h2>`;
+    } else {
+        resultHtml += `<h2 style="color:#ff0000;">OK du musst es nochmals versuchen.</h2>`;
+    }
+
+    // Buttons für Neustart und Hauptseite hinzufügen
+    resultHtml += `<div class="end-screen-buttons">
+        <button onclick="restartQuiz()" class="quiz-button restart-button">Quiz Neustarten</button>
+        <a href="index.html" class="quiz-button">Zur Hauptseite</a>
+    </div>`;
+
+    questionArea.innerHTML = "";
+    nextBtn.style.display = "none";
+    resultDiv.innerHTML = resultHtml;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    // Setzt alle Antworten auf null zurück
+    userAnswers.fill(null); 
+    nextBtn.style.display = "block";
+    resultDiv.innerHTML = "";
+    // Beginnt das Quiz von vorne
+    showQuestion(currentQuestion);
+}
+
+nextBtn.addEventListener("click", () => {
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        showQuestion(currentQuestion);
+        resultDiv.innerHTML = "";
+    } else {
+        showResult();
+    }
+});
+
+// Startet das Quiz beim Laden der Seite
+showQuestion(currentQuestion);
+</script>
+</body>
+</html>

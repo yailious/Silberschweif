@@ -1,0 +1,343 @@
+/* Allgemeine Stile für die gesamte Website */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 15px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    flex-direction: column; 
+    align-items: center;
+}
+
+/* Container, der die Breite aller Seiten kontrolliert (wie index.html) */
+.container {
+    width: 100%;
+    max-width: 800px; 
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    margin-top: 0; 
+    margin-bottom: 20px;
+    border-radius: 0 0 8px 8px; 
+}
+
+/* Spezifisches Styling für die Landingpage-Überschrift (H1) */
+.buch-ueberschrift {
+    font-family: Verdana, sans-serif;
+    font-size: 26pt; 
+    font-weight: bold;
+    color: #004d40; 
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #004d40;
+    padding-bottom: 10px;
+}
+
+/* Bild-Styling */
+.header-cover {
+    display: block;
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    margin: 20px auto 30px auto; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Absätze im allgemeinen Text (Segoe UI 12pt) */
+.beschreibung p,
+.blog-content p {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12pt;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- VIDEO-STYLES: index.html (iframe) --- */
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Verhältnis 16:9 */
+    position: relative;
+    height: 0;
+    margin: 20px auto; 
+    max-width: 600px; 
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: none;
+    border-radius: 8px;
+}
+audio {
+    width: 100%; /* Setzt die Breite auf 100% des übergeordneten Elements (z.B. Body oder Div) */
+    display: block; /* Stellt sicher, dass das Element als Block-Element behandelt wird, was die Breite besser kontrolliert */
+}
+
+/* --- NEU: STYLING FÜR BLOG-VIDEOS (hoerbuch-video) --- */
+.hoerbuch-video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- NEU: STYLING FÜR BLOG-YOUTUBE-THUMBNAIL (hoerprobe-link) --- */
+.hoerprobe-link {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    position: relative;
+    color: white; /* Textfarbe auf Weiß gesetzt für bessere Lesbarkeit über dem Bild */
+    font-weight: bold;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.hoerprobe-link:hover {
+    transform: scale(1.02);
+}
+
+.hoerprobe-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.hoerprobe-link:hover img {
+    opacity: 0.8;
+}
+
+/* Styling für den Play-Button-Text über dem Bild */
+.hoerprobe-link span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    pointer-events: none; /* Macht den Klick auf das Bild statt auf den Text */
+}
+
+
+/* LINK-BEREICHE (Landing Page) - STYLING ZURÜCKGESETZT */
+.links-bereich a,
+.kauf-links a,
+.blog-links a {
+    display: inline;
+    color: #1e88e5;
+    padding: 0;
+    margin: 0 5px 0 0;
+    border-radius: 0;
+    text-decoration: underline;
+    font-weight: normal;
+    text-align: left;
+    transition: none;
+    background-color: transparent; 
+}
+
+/* Spezielle Regel für Blog-Links auf der Startseite, um sie untereinander zu stapeln */
+.blog-links a {
+    display: block; 
+    margin: 5px 0; 
+    text-decoration: underline; 
+    color: #1e88e5; 
+    font-weight: normal; 
+}
+
+.links-bereich a:hover,
+.kauf-links a:hover,
+.blog-links a:hover {
+    color: #c2185b;
+    background-color: transparent;
+}
+
+.kauf-links p,
+.blog-links p {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 13pt;
+    color: #333; 
+}
+
+/* Quiz Button - KORRIGIERT AUF BLAU UND NEUTRAL */
+.quiz-bereich {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4; 
+    border-radius: 10px;
+    border: none; 
+}
+
+/* NEU: Styling für den Paragraphen im Quiz-Bereich (13pt und fett) */
+.quiz-bereich p {
+    font-size: 13pt; 
+    font-weight: bold;
+    color: #333; 
+}
+
+.quiz-button {
+    display: inline-block;
+    background-color: #1e88e5; 
+    color: white !important; 
+    padding: 15px 30px;
+    margin-top: 15px;
+    border-radius: 5px; 
+    text-decoration: none;
+    font-size: 16pt;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.quiz-button:hover {
+    background-color: #004d40; 
+    transform: translateY(-2px);
+}
+
+/* --- BLOG SPEZIFISCHES STYLING --- */
+
+/* 1. Haupt-Titel des Blog-Beitrags (wird in HTML als H2 mit Klasse verwendet) */
+.blog-titel {
+    font-family: Verdana, sans-serif;
+    font-size: 16pt; 
+    font-weight: bold;
+    color: #333; 
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+/* 2. Allgemeine Überschriften im Blog-Text (H2-Tags) */
+.blog-content h2 {
+    font-family: Verdana, sans-serif;
+    font-size: 13pt; 
+    font-weight: bold;
+    color: #333; 
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+}
+
+/* Blog-Bilder: Basis-Styling */
+.blog-content img {
+    display: block;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image-full {
+    width: 100%;
+    max-width: 800px;
+}
+
+.blog-image-half {
+    width: 100%;
+    max-width: 400px; 
+}
+
+/* Ende-Text im Blog (Danke fürs Lesen) */
+.fuss-ende {
+    text-align: center;
+    font-size: 14pt !important;
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+
+/* Styling für den Link am Ende des Blogs (neu) */
+.back-link-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+}
+
+.back-link-footer a {
+    display: inline-block;
+    color: #004d40; 
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14pt;
+    padding: 5px 10px;
+    border-bottom: 2px solid #004d40;
+    transition: all 0.2s;
+}
+
+.back-link-footer a:hover {
+    color: #1e88e5; 
+    border-bottom: 2px solid #1e88e5;
+}
+
+/* Navigationsleiste für Blog-Seiten */
+.blog-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #004d40;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 8px 8px 0 0;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.blog-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.blog-nav a:hover {
+    color: #b2dfdb;
+}
+
+/* UL/LI Styling im Blog */
+.blog-content ul {
+    list-style-type: none; 
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.blog-content ul li {
+    position: relative;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12pt;
+}
+
+.blog-content ul li::before {
+    content: "📖"; 
+    color: #e91e63;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
