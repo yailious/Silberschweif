@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. D. Silberschweif - Autor & Geschichtenerzähler</title>
+    <style>
+        /* --- FANTASY THEME SETUP --- */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+        :root {
+            --primary-dark: #1a0b2e; /* Dunkles Magie-Lila */
+            --secondary-dark: #2d1b4e;
+            --accent-gold: #d4af37; /* Gold */
+            --text-color: #333;
+            --parchment: #fdf5e6; /* Pergament-Farbe */
+            --link-color: #b8860b;
+            --button-hover: #4b2e83;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--primary-dark);
+            background-image: linear-gradient(to bottom, #0f0518, #1a0b2e);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-dark);
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--link-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- LAYOUT --- */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--parchment);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+            border-left: 1px solid #d4af37;
+            border-right: 1px solid #d4af37;
+            min-height: 100vh;
+        }
+
+        /* --- BANNER --- */
+        .banner-container {
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 4px solid var(--accent-gold);
+            background-color: #000;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 400px; 
+            object-fit: cover; 
+            object-position: center;
+        }
+
+        /* --- CONTENT PADDING --- */
+        .content-wrapper {
+            padding: 40px;
+        }
+
+        /* --- AUTHOR SECTION --- */
+        .author-intro {
+            margin-bottom: 60px;
+        }
+
+        .author-intro h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .author-img {
+            float: right;
+            width: 250px;
+            height: auto;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            border: 3px solid var(--accent-gold);
+            border-radius: 5px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* --- BOOK SECTIONS --- */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            text-shadow: 1px 1px 2px #000;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            background-color: var(--secondary-dark);
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .book-card {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 60px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .book-left {
+            /* Breite angepasst für 50% größeres Cover (Original war ca. 200px -> jetzt 300px + margin) */
+            flex: 0 0 320px; 
+            margin-right: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .book-cover {
+            width: 100%;
+            /* Cover 50% größer (war 200px) */
+            max-width: 300px; 
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px var(--accent-gold);
+        }
+
+        .book-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: var(--secondary-dark);
+        }
+
+        .book-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- BUTTONS & LINKS --- */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-dark);
+            color: var(--accent-gold) !important;
+            padding: 12px 25px;
+            border-radius: 6px;
+            border: 2px solid var(--accent-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 20px;
+            text-align: center;
+            width: fit-content;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            color: #fff !important;
+            border-color: #fff;
+        }
+
+        .cover-link-hint {
+            display: block;
+            font-size: 1.1rem; /* Größer */
+            font-weight: bold; /* Fetter */
+            margin-top: 15px;
+            color: var(--secondary-dark); /* Präsenter */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- AUDIOBOOK / FOOTER --- */
+        .audiobook-section {
+            background-color: #f4ecd8;
+            padding: 30px;
+            border-top: 2px solid var(--accent-gold);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-link {
+            font-weight: bold;
+            text-decoration: underline;
+            color: var(--secondary-dark);
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .author-img {
+                float: none;
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .book-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book-left {
+                flex: 0 0 auto;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .book-cover {
+                max-width: 250px; /* Auf Mobile etwas kleiner als Desktop, aber immer noch gut sichtbar */
+            }
+            
+            .content-wrapper {
+                padding: 20px;
+            }
+            
+            .book-title {
+                text-align: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- HEADER BANNER -->
+        <div class="banner-container">
+            <img src="YouTube-Banner - J. D. Silberschweif.png" alt="J. D. Silberschweif Banner" class="banner-img">
+        </div>
+
+        <div class="content-wrapper">
+            
+            <!-- AUTHOR SECTION -->
+            <section class="author-intro clearfix">
+                <h1>Über J. D. Silberschweif</h1>
+                
+                <!-- Autorenbild (Floating right) -->
+                <img src="Bild Gesicht nah.jpg" alt="J. D. Silberschweif" class="author-img">
+
+                <p>
+                    <strong>J. D. Silberschweif</strong>, geb. am 21. August 1982 in Glarus (Schweiz), ist ein leidenschaftlicher Geschichtenerzähler und Autor mit einer tiefen Liebe zu epischen Fantasy-Welten und klassischen Heldenreisen.
+                </p>
+
+                <h3>Die Liebe zu magischen Abenteuern</h3>
+                <p>
+                    Die Inspiration für seine Bücher findet er direkt bei seiner Nichte und seinem Neffen. Ob magisches Märchen oder episches Fantasy-Abenteuer – er schneidet seine Geschichten auf deren Altersgruppen zu und erschafft Welten voller Magie und Geheimnisse. Seine Werke bieten Spannung und Wunder, vermitteln aber zugleich zeitlose Werte wie Mut, Mitgefühl, Freundschaft und Selbstvertrauen.
+                </p>
+                <p>
+                    Seine Bücher spiegeln sein Ziel wider: Kinder und Jugendliche durch magische, fantasievolle Abenteuer zu fördern, wichtige Werte zu vermitteln und sie nachhaltig zu inspirieren.
+                </p>
+
+                <h3>Wurzeln in Epischen Welten und Humor</h3>
+                <p>
+                    Schon in jungen Jahren verschlang J. D. Silberschweif Helden-Comics sowie Spirou, Marsipulami und Gaston, deren feinsinniger Humor und Heldentaten bis heute seinen Stil prägt. Aufgewachsen mit Star Wars und Die unendliche Geschichte, entdeckte er 1998 die Magie von Zelda (Ocarina of Time). Später fesselten ihn Der Hobbit und Der Herr der Ringe, die seine Sicht zu Heldenreisen und epischen, märchenhaften Welten schärften.
+                </p>
+                <p>
+                    Neben seiner kreativen Seite absolvierte Yalçin Dinç ein Studium in Betriebswirtschaft, was ihm hilft, seine Projekte mit Struktur und Weitblick umzusetzen.
+                </p>
+
+                <h3>Zukünftige Projekte</h3>
+                <p>
+                    Er plant, die Geschichte von Mystiko mit drei weiteren Bänden fortzusetzen. Zusätzlich ist geplant, je nach Anklang der Leser, neue Bücher und Kurzgeschichten über Ayana und ihre Abenteuer zu publizieren.
+                </p>
+
+                <h3>Hörbuchproduktion als Passion</h3>
+                <p>
+                    J. D. Silberschweif ist nicht nur Autor, sondern auch leidenschaftlicher Produzent. Um seine Welten akustisch zum Leben zu erwecken, erstellt er für seine Bücher hochwertige Hörbuchausgaben in zwei Varianten. Neben einer klassischen Fassung mit einem Ensemble aus verschiedenen Sprecherstimmen produziert er stets auch ein cineastisches Hörbuch. Durch den Einsatz von atmosphärischer Musik und immersiven Soundeffekten vertieft er das Hörerlebnis und erschafft so für jede seiner Geschichten einen echten „Kinofilm für die Ohren“.
+                </p>
+            </section>
+
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(212, 175, 55, 0.75), rgba(0, 0, 0, 0)); margin: 40px 0;">
+
+            <!-- BÜCHER SECTION -->
+            <h2 class="section-title">Die Bücher</h2>
+
+            <!-- BUCH 1: Alexan (Jetzt an erster Stelle) -->
+            <div class="book-card">
+                <div class="book-left">
+                    <a href="Alexan1.html" target="_blank">
+                        <img src="Cover Alexan Silberschweif.jpg" alt="Cover ALEXAN Das Geheimnis von Mystiko" class="book-cover">
+                    </a>
+                    <span class="cover-link-hint">Klicke auf das Cover für mehr Infos</span>
+                </div>
+                <div class="book-right">
+                    <h3 class="book-title">ALEXAN - Das Geheimnis von Mystiko</h3>
+                    <span class="book-subtitle">Die Legende der Drei Artefakte - Band 1</span>
+
+                    <p><strong>Ein magisches Abenteuer voller Freundschaft, Mut, Mitgefühl, Hilfsbereitschaft, Akzeptanz, Vergebung und Hoffnung.</strong></p>
+
+                    <p>
+                        In einem weit entfernten Land, umgeben von majestätischen Bergen und mystischen Wäldern, liegt das sagenumwobene Königreich Mystiko. Einst ein Ort voller Magie und Leben, wird es nun von einer dunklen Macht überschattet. Angst und Verzweiflung haben sich ausgebreitet, seit Prinzessin Ayana auf rätselhafte Weise verschwunden ist. Die einst fröhlichen Straßen sind verstummt, und die Menschen flüstern verzweifelte Gebete, hoffend auf einen Helden, der das Licht zurückbringt und das Reich zu alter Pracht erweckt.
+                    </p>
+                    <p>
+                        Alexan wacht ohne Erinnerung auf und findet sich plötzlich in einem mysteriösen Abenteuer wieder. Noch ahnt er nicht, dass ihn ein geheimnisvolles Band mit den bedrohlichen Schatten verbindet. Ein Schicksal, das ihn auf eine gefährliche Reise führen wird, um die drei legendären Artefakte zu finden und Mystiko zu retten.
+                    </p>
+
+                    <a href="https://www.easygoodies.ch/products/fantasy-buch-abenteuer-hoerbuch-zelda-kinder" target="_blank" class="cta-button">
+                        Zum 🎧 ALEXAN - Das Geheimnis von Mystiko (Hörbuch & Buch)
+                    </a>
+                </div>
+            </div>
+
+            <!-- BUCH 2: Ayana (Jetzt an zweiter Stelle) -->
+            <div class="book-card">
+                <div class="book-left">
+                    <a href="https://yailious.github.io/Zauberwald/" target="_blank">
+                        <img src="Cover_Ayana_NEU.jpg" alt="Cover Ayanas Abenteuer im Zauberwald" class="book-cover">
+                    </a>
+                    <span class="cover-link-hint">Klicke auf das Cover für mehr Infos</span>
+                </div>
+                <div class="book-right">
+                    <h3 class="book-title">Ayanas Abenteuer im Zauberwald</h3>
+                    
+                    <p><strong>Ein magisches Abenteuer voller Glitzer und Wunder wartet!</strong></p>
+                    
+                    <p>
+                        Ayana, eine mutige Prinzessin, lebt in einem glänzenden Schloss, bis sie sich im geheimnisvollen Zauberwald verirrt. Dort warten nicht nur leuchtende Pilze und Käfer, sondern auch freundliche Tiere und mystische Fabelwesen. Doch eine eitle Hexe lauert im Dickicht!
+                    </p>
+                    <p>
+                        Wird Prinzessin Ayana mit der Hilfe ihres neuen Freundes Tilly dem Schmetterlingsdrachen ihre Ängste besiegen? Wird sie genug Mut und Selbstvertrauen beweisen und das magische Einhorn entdecken um den Weg nach Hause zu finden?
+                    </p>
+                    <p><em>Komm mit und begleite das Glitzer-Mädchen auf diesem magischen Märchen.</em></p>
+
+                    <a href="https://www.easygoodies.ch/products/maerchen-prinzessin-ayana-buch-hoerbuch-kinder" target="_blank" class="cta-button">
+                        Zum 🎧 Ayanas Abenteuer im Zauberwald (Hörbuch & Buch)
+                    </a>
+                </div>
+            </div>
+
+            <!-- FOOTER / AUDIOBOOKS -->
+            <div class="audiobook-section">
+                <h3>MEHR ZU BÜCHERN UND HÖRBUCHERN</h3>
+                <p>
+                    Alle Hörproben, Blog-Einträge und mehr Informationen zu seinen Büchern und Hörbüchern finden Sie auf 
+                    <a href="https://www.easygoodies.ch/blogs/news" target="_blank" class="footer-link">easygoodies.ch</a> 
+                    sowie auf 
+                    <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="footer-link">YouTube</a>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
