@@ -340,4 +340,22 @@ audio {
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+
+}
+/* Das Design für deinen Kauf-Button */
+.lemonsqueezy-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ffcc00; /* Ein schönes Gold/Gelb passend zu Silberschweif */
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.lemonsqueezy-button:hover {
+    transform: scale(1.05);
+    background-color: #ffdb4d;
 }
