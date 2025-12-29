@@ -61,13 +61,13 @@ body {
 /* --- VIDEO-STYLES: index.html (iframe) --- */
 .video-responsive {
     overflow: hidden;
-    padding-bottom: 56.25%; /* Verhältnis 16:9 */
+    padding-bottom: 56.25%; /* 16:9 Verhältnis */
     position: relative;
     height: 0;
     margin: 20px auto; 
-    max-width: 600px; 
+    max-width: 600px; /* Gleiche Breite wie deine anderen Videos */
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Gleicher Schatten */
 }
 
 .video-responsive iframe {
@@ -77,8 +77,8 @@ body {
     width: 100%;
     position: absolute;
     border: none;
-    border-radius: 8px;
 }
+
 audio {
     width: 100%; /* Setzt die Breite auf 100% des übergeordneten Elements (z.B. Body oder Div) */
     display: block; /* Stellt sicher, dass das Element als Block-Element behandelt wird, was die Breite besser kontrolliert */
@@ -359,3 +359,4 @@ audio {
     transform: scale(1.05);
     background-color: #ffdb4d;
 }
+
