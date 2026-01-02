@@ -1,0 +1,1091 @@
+/* Allgemeine Stile für die gesamte Website */
+        /* --- FANTASY THEME SETUP --- */
+/* --- 1. SCHRIFTEN & VARIABLEN --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-dark: #1a0b2e; /* Dunkles Magie-Lila */
+    --secondary-dark: #2d1b4e;
+    --accent-gold: #d4af37; /* Gold */
+    --text-color: #333;
+    --parchment: #fdf5e6; /* Pergament-Farbe */
+    --link-color: #b8860b;
+    --button-hover: #4b2e83;
+}
+
+/* --- 2. GEMEINSAMER BODY-STIL --- */
+body {
+    font-family: 'Lora', serif; /* Ihre gewünschte Hauptschriftart */
+    background-color: var(--primary-dark);
+    background-image: linear-gradient(to bottom, #0f0518, #1a0b2e);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-dark);
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--link-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- LAYOUT --- */
+        .main-container {
+			width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--parchment);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+            border-left: 1px solid #d4af37;
+            border-right: 1px solid #d4af37;
+            min-height: 100vh;
+			flex: 1; /* Sorgt dafür, dass der Container den Platz füllt */
+        }
+
+        /* --- BANNER --- */
+        .banner-container {
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 4px solid var(--accent-gold);
+            background-color: #000;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 400px; 
+            object-fit: cover; 
+            object-position: center;
+        }
+
+        /* --- CONTENT PADDING --- */
+        .content-wrapper {
+            padding: 40px;
+        }
+
+        /* --- AUTHOR SECTION --- */
+        .author-intro {
+            margin-bottom: 60px;
+        }
+
+        .author-intro h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .author-img {
+            float: right;
+            width: 250px;
+            height: auto;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            border: 3px solid var(--accent-gold);
+            border-radius: 5px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* --- BOOK SECTIONS --- */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            text-shadow: 1px 1px 2px #000;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            background-color: var(--secondary-dark);
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .book-card {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 60px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .book-left {
+            /* Breite angepasst für 50% größeres Cover (Original war ca. 200px -> jetzt 300px + margin) */
+            flex: 0 0 320px; 
+            margin-right: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .book-cover {
+            width: 100%;
+            /* Cover 50% größer (war 200px) */
+            max-width: 300px; 
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px var(--accent-gold);
+        }
+
+        .book-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: var(--secondary-dark);
+        }
+
+        .book-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- BUTTONS & LINKS --- */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-dark);
+            color: var(--accent-gold) !important;
+            padding: 12px 25px;
+            border-radius: 6px;
+            border: 2px solid var(--accent-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 20px;
+            text-align: center;
+            width: fit-content;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            color: #fff !important;
+            border-color: #fff;
+        }
+
+        .cover-link-hint {
+            display: block;
+            font-size: 1.1rem; /* Größer */
+            font-weight: bold; /* Fetter */
+            margin-top: 15px;
+            color: var(--secondary-dark); /* Präsenter */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- AUDIOBOOK / FOOTER --- */
+        .audiobook-section {
+            background-color: #f4ecd8;
+            padding: 30px;
+            border-top: 2px solid var(--accent-gold);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-link {
+            font-weight: bold;
+            text-decoration: underline;
+            color: var(--secondary-dark);
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .author-img {
+                float: none;
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .book-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book-left {
+                flex: 0 0 auto;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .book-cover {
+                max-width: 250px; /* Auf Mobile etwas kleiner als Desktop, aber immer noch gut sichtbar */
+            }
+            
+            .content-wrapper {
+                padding: 20px;
+            }
+            
+            .book-title {
+                text-align: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+		
+
+        .fantasy-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #004d40;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .slogan-left {
+            text-align: left;
+            font-style: italic;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+            font-family: 'Lora', serif;
+        }
+
+        .kauf-optionen {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .preis-card {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+  .betrag { 
+    font-size: 1.4rem; 
+    font-weight: bold; 
+    display: block; 
+    margin: 10px 0; 
+    color: #000; 
+}
+
+
+/* Container, der die Breite aller Seiten kontrolliert (wie index.html) */
+.container {
+    width: 95%;
+    max-width: 800px; 
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+	margin: 0 auto;       /* Zentriert die Seite */
+    margin-top: 0; 
+    margin-bottom: 20px;
+    border-radius: 0 0 8px 8px; 
+	box-sizing: border-box; /* Wichtig, damit das Padding die Breite nicht sprengt */
+}
+
+/* Spezifisches Styling für die Landingpage-Überschrift (H1) */
+.buch-ueberschrift {
+    font-family: 'Lora', serif;
+    font-size: 26pt; 
+    font-weight: bold;
+    color: var(--primary-dark); 
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #004d40;
+    padding-bottom: 10px;
+}
+
+/* Bild-Styling */
+.header-cover {
+    display: block;
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    margin: 20px auto 30px auto; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Absätze im allgemeinen Text */
+.beschreibung p,
+.blog-content p {
+    font-family: 'Lora', serif;
+    font-size: 12pt;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- VIDEO-STYLES: index.html (iframe) --- */
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 Verhältnis */
+    position: relative;
+    height: 0;
+    margin: 20px auto; 
+    max-width: 600px; /* Gleiche Breite wie deine anderen Videos */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Gleicher Schatten */
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-simple-center {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+
+.video-simple-center iframe {
+    width: 100%;
+    max-width: 598px;
+    aspect-ratio: 16 / 9;
+    
+    /* 1. Die Abrundung */
+    border-radius: 12px;
+    
+    /* 2. Der schwarze Rahmen */
+    border: 2px solid #000000; 
+    
+    /* 3. Das ist der wichtigste Teil gegen das Gelb: */
+    /* Er erzwingt, dass das Video innerhalb der Rundung bleibt */
+    overflow: hidden;
+    background: #000000; /* Füllt die Ecken schwarz statt gelb */
+    
+    display: block;
+    box-shadow: none;
+}
+
+audio {
+    width: 100%;
+    max-width: 600px; /* Begrenzt die Breite auf den gleichen Wert wie deine Videos */
+    display: block;
+    margin: 20px auto; /* Die 20px sorgen für Abstand oben/unten, 'auto' zentriert die Leiste */
+}
+
+.audio-label {
+    display: block;          /* Macht aus dem Textblock ein Rechteck wie beim Video/Audio */
+    width: 100%;             /* Nutzt den verfügbaren Platz */
+    max-width: 600px;        /* Exakt die gleiche Breite wie deine Audio-Leiste */
+    margin: 20px auto 5px auto; /* Zentriert (auto) und gibt 5px Abstand nach unten zum Audio */
+    text-align: left;        /* Der Text innerhalb der 600px bleibt linksbündig */
+    font-weight: bold;       /* Macht den Text fett */
+    font-size: 1.1em;        /* Optional: macht den Text ein kleines Stück größer */
+}
+
+.video-label {
+    display: block;          /* Macht aus dem Textblock ein Rechteck wie beim Video/Audio */
+    width: 100%;             /* Nutzt den verfügbaren Platz */
+    max-width: 600px;        /* Exakt die gleiche Breite wie deine Audio-Leiste */
+    margin: 20px auto 5px auto; /* Zentriert (auto) und gibt 5px Abstand nach unten zum Audio */
+    text-align: left;        /* Der Text innerhalb der 600px bleibt linksbündig */
+    font-weight: bold;       /* Macht den Text fett */
+    font-size: 1.1em;        /* Optional: macht den Text ein kleines Stück größer */
+}
+
+/* --- NEU: STYLING FÜR BLOG-VIDEOS (hoerbuch-video) --- */
+.hoerbuch-video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- NEU: STYLING FÜR BLOG-YOUTUBE-THUMBNAIL (hoerprobe-link) --- */
+.hoerprobe-link {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    position: relative;
+    color: white; /* Textfarbe auf Weiß gesetzt für bessere Lesbarkeit über dem Bild */
+    font-weight: bold;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.hoerprobe-link:hover {
+    transform: scale(1.02);
+}
+
+.hoerprobe-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.hoerprobe-link:hover img {
+    opacity: 0.8;
+}
+
+/* Styling für den Play-Button-Text über dem Bild */
+.hoerprobe-link span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    pointer-events: none; /* Macht den Klick auf das Bild statt auf den Text */
+}
+
+
+/* LINK-BEREICHE (Landing Page) - STYLING ZURÜCKGESETZT */
+.links-bereich a,
+.kauf-links a,
+.blog-links a {
+    display: inline;
+    color: #1e88e5;
+    padding: 0;
+    margin: 0 5px 0 0;
+    border-radius: 0;
+    text-decoration: underline;
+    font-weight: normal;
+    text-align: left;
+    transition: none;
+    background-color: transparent; 
+}
+
+/* Spezielle Regel für Blog-Links auf der Startseite, um sie untereinander zu stapeln */
+.blog-links a {
+    display: block; 
+    margin: 5px 0; 
+    text-decoration: underline; 
+    color: #1e88e5; 
+    font-weight: normal; 
+}
+
+.links-bereich a:hover,
+.kauf-links a:hover,
+.blog-links a:hover {
+    color: #c2185b;
+    background-color: transparent;
+}
+
+.kauf-links p,
+.blog-links p {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 13pt;
+    color: #333; 
+}
+
+/* Quiz Button - KORRIGIERT AUF BLAU UND NEUTRAL */
+.quiz-bereich {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4; 
+    border-radius: 10px;
+    border: none; 
+}
+
+/* NEU: Styling für den Paragraphen im Quiz-Bereich (13pt und fett) */
+.quiz-bereich p {
+    font-size: 13pt; 
+    font-weight: bold;
+    color: #333; 
+}
+
+.quiz-button {
+    display: inline-block;
+    background-color: #1e88e5; 
+    color: white !important; 
+    padding: 15px 30px;
+    margin-top: 15px;
+    border-radius: 5px; 
+    text-decoration: none;
+    font-size: 16pt;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.quiz-button:hover {
+    background-color: #004d40; 
+    transform: translateY(-2px);
+}
+
+/* --- BLOG SPEZIFISCHES STYLING --- */
+
+/* 1. Haupt-Titel des Blog-Beitrags (wird in HTML als H2 mit Klasse verwendet) */
+.blog-titel {
+    font-family: Verdana, sans-serif;
+    font-size: 16pt; 
+    font-weight: bold;
+    color: #333; 
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+/* 2. Allgemeine Überschriften im Blog-Text (H2-Tags) */
+.blog-content h2 {
+    font-family: Verdana, sans-serif;
+    font-size: 13pt; 
+    font-weight: bold;
+    color: #333; 
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+}
+
+/* Blog-Bilder: Basis-Styling */
+.blog-content img {
+    display: block;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image-full {
+    width: 100%;
+    max-width: 800px;
+}
+
+.blog-image-half {
+    width: 100%;
+    max-width: 400px; 
+}
+
+/* Ende-Text im Blog (Danke fürs Lesen) */
+.fuss-ende {
+    text-align: center;
+    font-size: 14pt !important;
+    margin-top: 40px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+
+/* Styling für den Link am Ende des Blogs (neu) */
+.back-link-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+}
+
+.back-link-footer a {
+    display: inline-block;
+    color: #004d40; 
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14pt;
+    padding: 5px 10px;
+    border-bottom: 2px solid #004d40;
+    transition: all 0.2s;
+}
+
+.back-link-footer a:hover {
+    color: #1e88e5; 
+    border-bottom: 2px solid #1e88e5;
+}
+
+/* Navigationsleiste für Blog-Seiten */
+.blog-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #004d40;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 8px 8px 0 0;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.blog-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.blog-nav a:hover {
+    color: #b2dfdb;
+}
+
+/* UL/LI Styling im Blog */
+.blog-content ul {
+    list-style-type: none; 
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.blog-content ul li {
+    position: relative;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12pt;
+}
+
+.blog-content ul li::before {
+    content: "📖"; 
+    color: #e91e63;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+	/* Das Design für deinen Kauf-Button */
+.lemonsqueezy-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ffcc00; /* Ein schönes Gold/Gelb passend zu Silberschweif */
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.lemonsqueezy-button:hover {
+    transform: scale(1.05);
+    background-color: #ffdb4d;
+}
+
+/* --- FOOTER STYLING --- */
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-section h4 {
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.footer-section a {
+    color: var(--accent-gold);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+
+/* --- FOOTER TOTAL ZENTRIERT --- */
+.site-footer {
+    background-color: #2d1b4e; /* Dunkles Lila */
+    color: #fdf5e6;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 3px solid #d4af37;
+    width: 100%; /* Nutzt die ganze Bildschirmbreite */
+    display: block;
+    clear: both;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column; /* Stapelt Text und Links übereinander */
+    align-items: center;    /* Zentriert waagerecht */
+    justify-content: center; /* Zentriert senkrecht */
+    text-align: center;
+}
+
+.footer-branding {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin: 0 0 15px 0;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 25px; /* Abstand zwischen den Links */
+    justify-content: center;
+}
+
+.footer-nav a {
+    color: #fdf5e6;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #d4af37;
+    border-bottom: 1px solid #d4af37;
+}
+
+/* Für Handys: Links untereinander stapeln */
+@media (max-width: 500px) {
+    .footer-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.footer-links nav a {
+    color: #fdf5e6;
+    text-decoration: none;
+    margin-left: 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.footer-links nav a:hover {
+    color: #d4af37;
+}
+
+/* Stil für den "Zurück zur Startseite"-Button auf den Unterseiten */
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: #1a0b2e !important;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.back-link:hover {
+    transform: scale(1.05);
+    background-color: #b8860b;
+}
+
+/* Shop-Logos Sektion */
+.shop-section {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.shop-container {
+    display: flex;
+    flex-direction: column; /* Stapelt row-1 und row-2 untereinander */
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.row-1, .row-2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.shop-container img, 
+.youtube-img {
+    height: 70px !important; /* Doppelte Größe */
+    width: auto !important;
+    border-radius: 12px; /* Abgerundete Ecken */
+    transition: all 0.3s ease;
+    /* Normaler Leuchteffekt (Gold/Gelb) */
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+}
+
+.shop-container a:hover img,
+.youtube-link:hover .youtube-img {
+    transform: scale(1.05);
+    /* Farbe wechselt auf Orange, Intensität (10px) bleibt gleich */
+    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.9));
+}
+
+
+.yt-link img { height: 60px; margin-top: 10px; }
+
+.isbn-text {
+    text-align: center;
+    margin-top: 20px;
+    display: block; /* Erzwingt eigene Zeile */
+}
+
+/* Antolin-Box Styling */
+.antolin-box img {
+    max-width: 200px; 
+    margin-top: 10px;
+    height: auto;
+    border-radius: 12px; /* Abgerundete Ecken wie bei den Shop-Logos */
+    transition: all 0.3s ease;
+    /* Standard-Leuchteffekt in Gold */
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+}
+
+/* Hover-Effekt für Antolin: Wechsel auf Orange */
+.antolin-box a:hover img {
+    transform: scale(1.05);
+    /* Gleicher Effekt wie bei den Shops: Orange bei 10px Streuung */
+    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 1)) !important;
+}
+
+/* Quiz-Bereich Text (2 Pkt größer) */
+.quiz-text {
+    font-size: 14pt !important; /* Standard war meist 12pt, daher hier 14pt */
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Quiz Button Style - Neu mit Invertierungs-Effekt */
+.quiz-button-custom {
+    /* Ruhezustand: Hintergrund helleres Violett, Schrift Gold */
+    background-color: var(--secondary-dark) !important; 
+    color: var(--accent-gold) !important;
+    
+    padding: 30px 60px; 
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.8rem; 
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--accent-gold); /* Goldener Rahmen passend zur Schrift */
+}
+
+/* Hover-Zustand: Hintergrund Gold, Schrift helleres Violett */
+.quiz-button-custom:hover { 
+    background-color: var(--accent-gold) !important; 
+    color: var(--secondary-dark) !important;
+    
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: none; /* Textschatten auf hellem Grund entfernen */
+}
+
+.no-bg { background: none !important; box-shadow: none !important; }
+
+.blog-liste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+    }
+        
+.blog-liste a {
+    background: var(--secondary-dark);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    }
+		
+/* Personalisierter Mail-Button im Stil der Kaufbuttons */
+.custom-mail-button {
+    background-color: #ffcc00; /* Ein sattes Gold-Gelb, passend zu deinen Buttons */
+    color: #000000 !important; /* Schwarze Schrift für gute Lesbarkeit */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: inherit;
+}
+
+.custom-mail-button:hover {
+    background-color: #e6b800; /* Etwas dunkler beim Drüberfahren */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Damit Bilder nie über den Handy-Rand hinausragen */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-carousel {
+    position: relative;
+	width: 100%;          /* Nimmt die volle Breite des Containers ein */
+    max-width: 500px; /* Gleiche Breite wie dein Cover bisher */
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.carousel-slides .slide {
+    display: none; /* Versteckt alle Bilder */
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slides .slide.active {
+    display: block; /* Zeigt nur das aktive Bild */
+}
+
+/* Pfeil-Styling */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.prev:hover, .next:hover { background: rgba(0,0,0,0.8); }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* --- QUIZ SPEZIFISCHE STYLES --- */
+/* Gemeinsame Klasse für alle Quiz-Buttons (Weiter, Neustart, Hauptseite) */
+.quiz-next-button {
+    display: block;           /* Macht beide zu einem Block-Element */
+    width: 100%;              /* Volle Breite des verfügbaren Platzes */
+    max-width: 350px;         /* Begrenzung für den PC */
+    margin: 15px auto;        /* Zentriert die Buttons untereinander */
+    padding: 15px 20px;       /* Identisches Innenmaß */
+    box-sizing: border-box;   /* WICHTIG: Padding wird in die Breite eingerechnet */
+    
+    background-color: var(--secondary-dark); 
+    color: var(--accent-gold) !important; 
+    border: 2px solid var(--accent-gold); /* Etwas dickerer Rand für besseren Look */
+    border-radius: 8px;
+    
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;    /* Entfernt Unterstreichung beim Link */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover-Effekt für beide identisch */
+.quiz-next-button:hover:not(:disabled) {
+    background-color: var(--accent-gold) !important;
+    color: var(--secondary-dark) !important;
+    transform: scale(1.02);
+}
+
+.quiz-next-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+}
+
+/* Abbrechen Button bleibt separat in Rot */
+.quiz-cancel-button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto 30px auto;
+    padding: 12px;
+    background-color: #ef9a9a; 
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.quiz-cancel-button:hover {
+    background-color: #ff0000;
+    transform: translateY(-2px);
+}
+
+.quiz-bg-override {
+    background-color: #fdf5e6 !important;
+}
