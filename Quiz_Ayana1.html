@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prinzessinnen-Quiz zu Ayanas Abenteuer im Zauberwald</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ayana-spezifische Überschreibungen */
+        body {
+            background-color: #fdf0f6;
+        }
+        
+        .container.quiz-bg-override {
+            background-color: #fff9fb;
+        }
+        
+        #quiz-container { padding: 10px; }
+        
+        .question { 
+            margin-bottom: 20px; 
+            font-size: 1.2rem; 
+            color: #333; 
+            font-family: 'Lora', serif; 
+        }
+        
+.answers label { 
+    display: block; 
+    margin-bottom: 12px; 
+    cursor: pointer; 
+    padding: 15px;
+    border-radius: 8px; 
+    border: 1px solid #ce93d8; 
+    background-color: rgba(255,255,255,0.6);
+    transition: all 0.2s; 
+    font-family: 'Lora', serif;
+    position: relative;
+    z-index: 1;
+}
+
+.answers input[type="radio"] {
+    position: relative;
+    z-index: 2;
+}
+        
+        .answers label:hover { 
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(206, 147, 216, 0.5); 
+        }
+        
+        input[type="radio"] { 
+            margin-right: 12px; 
+            transform: scale(1.3); 
+            accent-color: #d81b60; 
+        }
+        
+        #result { margin-top: 30px; text-align: center; }
+        
+        h1.ayana-quiz-title {
+            font-size: 1.6rem;
+            font-family: 'Cinzel', serif;
+            color: #8e24aa;
+            border-bottom: 3px solid #ce93d8;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        h2.ayana-quiz-subtitle {
+            font-family: 'Lora', serif;
+            color: #d81b60;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+/* Weiter-Button im Ayana-Stil (Pink-Violett Gradient) */
+#next-btn {
+    background: linear-gradient(45deg, #ec407a, #ab47bc) !important;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.4) !important;
+    color: white !important;
+}
+
+#next-btn:hover {
+    background: linear-gradient(45deg, #d81b60, #8e24aa) !important;
+    color: white !important;
+}
+
+#next-btn:disabled {
+    background: #ccc !important;
+    box-shadow: none !important;
+    color: white !important;
+}
+    </style>
+</head>
+<body>
+
+<main class="container quiz-bg-override">
+    
+    <div style="text-align: center; padding: 15px 0;">
+        <img src="Cover_Ayana_NEU.jpg" alt="Ayanas Abenteuer im Zauberwald Buchcover" style="max-width: 175px; border-radius: 10px; box-shadow: 0 5px 15px rgba(142, 36, 170, 0.4);">
+    </div>
+
+    <div id="quiz-container">
+        <h1 class="ayana-quiz-title">
+            Prinzessinnen-Quiz zu<br>Ayanas Abenteuer im Zauberwald ✨
+        </h1>
+        
+        <h2 class="ayana-quiz-subtitle">
+            Hallo mutige Heldin! Viel Erfolg beim Quiz! 👸
+        </h2>
+        
+        <div id="question-area"></div>
+        
+        <div style="margin-top: 20px; padding: 0 10px;">
+            <button id="next-btn" class="quiz-next-button" disabled>Weiter</button>
+            <a href="kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html" class="quiz-cancel-button">Abbrechen / Zurück zum Buch</a>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+        <nav class="footer-nav">
+            <a href="blog.html">Blog</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+// --- FRAGEN KATALOG ---
+const questions = [
+    { q: "Wo spielt Ayana am liebsten?", a: ["In der Küche", "Im Garten", "Auf dem Turm"], correct: 1 },
+    { q: "Welche Tiere begegneten der Prinzessin zuerst im Wald?", a: ["Ein Reh, ein Fuchs, ein Hase und ein Eichhörnchen", "Ein Wolf, ein Adler und eine Schlange", "Nur Vögel", "Zwei Schmetterlingswesen"], correct: 0 },
+    { q: "Wem gibt Ayana die Nuss?", a: ["Dem Eichhörnchen", "Dem Hasen", "Dem Fuchs"], correct: 0 },
+    { q: "Ayana sieht ein Tier. Es ist bunt. Was ist es?", a: ["Ein Hund", "Ein Schmetterling", "Eine Katze"], correct: 1 },
+    { q: "Wodurch fiel der besondere Schmetterling auf?", a: ["Er war riesig und schwarz", "Er hatte Flügel in Rot, Blau, Violett und Silber mit goldenen Punkten", "Er sprach mit Ayana", "Er flatterte gar nicht"], correct: 1 },
+    { q: "Wer ist Tilly?", a: ["Ein bunter Vogel", "Ein alter Mann", "Ein kleiner Drache"], correct: 2 },
+    { q: "Ayana klettert auf einen Baum. Wem hilft sie?", a: ["Einem kleinen Vogel", "Einer kleinen Katze", "Einem kleinen Affen"], correct: 0 },
+    { q: "Wer steckt im Dornenbusch fest?", a: ["Ein Bär", "Ein Igel", "Ein Wolf"], correct: 1 },
+    { q: "Was tat die Prinzessin, um dem Igel zu helfen?", a: ["Sie sang ein Lied", "Sie zog vorsichtig die Dornen mit einem Stock auseinander", "Sie schnitt den Busch um", "Sie trug den Igel zum Teich"], correct: 1 },
+    { q: "Was leuchtet im Geweih vom Hirsch?", a: ["Sterne", "Kerzen", "Lampen"], correct: 0 },
+    { q: "Was war die besondere Aufgabe des goldenen Löwen?", a: ["Den Wald am Tag zu beschützen", "Regen zu bringen", "Den Wald zu heilen", "Schätze zu bewachen"], correct: 0 },
+    { q: "Was schenkt der Löwe Ayana?", a: ["Einen roten Hut", "Einen blauen Stein", "Eine goldene Kette"], correct: 2 },
+    { q: "Was will die Hexe haben?", a: ["Den Glitzer von Ayana", "Die Schuhe von Ayana", "Das Kleid von Ayana"], correct: 0 },
+    { q: "Nachdenkfrage: Die Hexe ist böse. Warum?", a: ["Sie findet sich nicht schön.", "Sie hat Hunger.", "Sie mag keine Kinder."], correct: 0 },
+    { q: "Wer rettet Ayana vor der Hexe?", a: ["Die Waldtiere", "Der goldene Löwe", "Die Eltern"], correct: 0 },
+    { q: "Was lehrt die Wahl der dritten Pfütze?", a: ["Wahre Schönheit ist wichtiger als Mut", "Wahres Glück kommt vom Herzen und echten Werten", "Man sollte immer das Größte nehmen", "Glitzer ist das Wichtigste"], correct: 1 },
+    { q: "Wer bringt Ayana nach Hause?", a: ["Der Hirsch", "Das Einhorn", "Der Löwe"], correct: 1 },
+    { q: "Nachdenkfrage: Ayana klettert auf den hohen Baum. Hat sie Angst?", a: ["Nein, sie klettert gerne.", "Ja, aber sie ist mutig.", "Ja, sie läuft schnell weg."], correct: 1 },
+    { q: "Was sind die zentralen Werte der Geschichte?", a: ["Mut, Hilfsbereitschaft, Herzvertrauen", "Reichtum, Schönheit, Ruhm", "Zauber, Magie, Macht", "Rennen, Springen, Fliegen"], correct: 0 },
+    { q: "Was symbolisieren der Talisman und die goldene Kette?", a: ["Reichtum und Macht", "Erinnerung daran, dass wahre Kraft im Herzen liegt", "Magie zum Zaubern", "Tiere anlocken"], correct: 1 }
+];
+
+let currentQuestion = 0;
+const userAnswers = new Array(questions.length).fill(null); 
+const questionArea = document.getElementById("question-area");
+const nextBtn = document.getElementById("next-btn");
+const resultDiv = document.getElementById("result");
+const cancelBtn = document.querySelector(".quiz-cancel-button");
+
+function showQuestion(index) {
+    nextBtn.disabled = true;
+    nextBtn.style.display = "block";
+    cancelBtn.style.display = "block";
+    const q = questions[index];
+    let html = `<div class="question"><strong>Frage ${index+1} von ${questions.length}:</strong><br><br>${q.q}</div><div class="answers">`;
+    q.a.forEach((answer, i) => {
+        const radioId = `q${index}_a${i}`;
+        html += `<label for="${radioId}"><input type="radio" id="${radioId}" name="answer" value="${i}"> ${answer}</label>`;
+    });
+    html += `</div>`;
+    questionArea.innerHTML = html;
+    
+    const radios = document.querySelectorAll('input[name="answer"]');
+    radios.forEach(radio => {
+radio.addEventListener('change', () => {
+    nextBtn.disabled = false;
+    userAnswers[currentQuestion] = parseInt(radio.value);
+});
+    });
+}
+
+function showResult() {
+    let correctCount = 0;
+    questions.forEach((q, i) => { if(userAnswers[i] === q.correct) correctCount++; });
+    const percent = Math.round((correctCount / questions.length) * 100);
+
+    let resultHtml = `<h2 style="color: #8e24aa;">Dein Ergebnis:</h2>
+                      <h3 style="color:#000000;">${correctCount} von ${questions.length} richtig (${percent}%)</h3>`;
+
+    if (percent >= 80) resultHtml += `<h2 style="color:#2e7d32;">BRAVO – Tolle Leistung! 🌟</h2>`;
+    else if (percent >= 60) resultHtml += `<h2 style="color:#ef6c00;">Gute Leistung! 👍</h2>`;
+    else resultHtml += `<h2 style="color:#c62828;">Das schaffst du noch besser! Versuch es nochmal. 💪</h2>`;
+
+    resultHtml += `
+        <div class="result-navigation" style="margin-top: 30px; padding: 0 10px;">
+            <button onclick="restartQuiz()" class="quiz-next-button">Quiz Neustarten ✨</button>
+            <a href="kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html" class="quiz-next-button">Zurück zum Buch 👸</a>
+        </div>
+    `;
+
+    questionArea.innerHTML = "";
+    document.getElementById("next-btn").style.display = "none";
+    document.querySelector(".quiz-cancel-button").style.display = "none";
+    resultDiv.innerHTML = resultHtml;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    userAnswers.fill(null); 
+    resultDiv.innerHTML = "";
+    showQuestion(currentQuestion);
+}
+
+nextBtn.addEventListener("click", () => {
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        showQuestion(currentQuestion);
+    } else {
+        showResult();
+    }
+});
+
+showQuestion(currentQuestion);
+</script>
+<script data-goatcounter="https://silberschweif.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
