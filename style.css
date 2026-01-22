@@ -235,7 +235,7 @@ h3 {
         
         .audio-label {
             font-weight: bold;
-            color: #8e24aa;
+            color: #000000;
             margin-bottom: 5px;
             display: block;
         }
@@ -1392,3 +1392,4 @@ img, iframe {
     border-top: 2px solid var(--accent-gold);
     margin: 20px 0;
 }
+
