@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Seite nicht gefunden | J. D. Silberschweif</title>
+    <meta name="description" content="Diese Seite existiert nicht - aber keine Sorge, der Weg zurück ist nicht weit!">
+    <link rel="icon" type="image/png" href="Favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 404-spezifische Styles */
+        .error-container {
+            text-align: center;
+            padding: 60px 40px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error-code {
+            font-family: 'Cinzel', serif;
+            font-size: 8rem;
+            color: var(--accent-gold);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin: 20px 0;
+        }
+
+        .error-message {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 600px;
+            line-height: 1.8;
+            margin: 20px auto;
+        }
+
+        .error-message p {
+            margin: 15px 0;
+        }
+
+        .dragon-emoji {
+            font-size: 4rem;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .home-button {
+            display: inline-block;
+            background-color: var(--secondary-dark);
+            color: var(--accent-gold) !important;
+            padding: 15px 35px;
+            border-radius: 8px;
+            border: 2px solid var(--accent-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: var(--accent-gold);
+            color: var(--secondary-dark) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .sparkles {
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            .error-title {
+                font-size: 1.5rem;
+            }
+            .error-message {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body class="quiz-bg-override">
+
+    <div class="main-container">
+        <div class="banner-container">
+            <a href="index.html">
+                <img src="BannerSilberschweif.png" alt="J. D. Silberschweif - Zurück zur Startseite" class="banner-img">
+            </a>
+        </div>
+
+        <div class="error-container">
+            <div class="error-code">404</div>
+
+            <div class="dragon-emoji">🐉</div>
+
+            <h1 class="error-title">Hoppla! Ein Drache hat diese Seite gefressen!</h1>
+
+            <div class="error-message">
+                <p>
+                    Es tut uns leid, aber die Seite, die du suchst, existiert nicht mehr
+                    – oder sie wurde von einem hungrigen Drachen aus dem Zauberwald verschlungen.
+                </p>
+                <p>
+                    <span class="sparkles">✨</span> Keine Sorge! Selbst Alexan hat sich schon in den
+                    Höhlen von Mystiko verirrt. Der Weg zurück ist zum Glück nicht weit. <span class="sparkles">✨</span>
+                </p>
+                <p>
+                    <em>Vielleicht hat der Drache die Seite ja nur versteckt...
+                    Aber bis wir sie wiederfinden, kehre doch einfach zur Startseite zurück!</em>
+                </p>
+            </div>
+
+            <a href="index.html" class="home-button">
+                Zurück ins Abenteuer
+            </a>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
