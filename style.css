@@ -1393,3 +1393,26 @@ img, iframe {
     margin: 20px 0;
 }
 
+/* BoD Widget - Preis und Währung ausblenden */
+#bodShopWidget_6121988_print .shopWidget-price,
+#bodShopWidget_6121988_print .shopWidget-currency {
+    display: none !important;
+}
+
+/* BoD Widget - Rahmen und Hover-Effekt entfernen */
+#shopWidget-cover_6121988_print {
+    width: auto !important;
+    height: 150px !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+    border: none !important;
+	border-color: #000000!important;
+}
+
+#shopWidget-cover_6121988_print:hover {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+</style>
