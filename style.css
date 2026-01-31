@@ -1044,23 +1044,21 @@ audio {
     gap: 30px;
 }
 
-.shop-container img, 
+.shop-container .row-1 img,
+.shop-container .row-2 img,
 .youtube-img {
-    height: 70px !important; /* Doppelte Größe */
+    height: 70px !important;
     width: auto !important;
-    border-radius: 12px; /* Abgerundete Ecken */
+    border-radius: 12px;
     transition: all 0.3s ease;
-    /* Normaler Leuchteffekt (Gold/Gelb) */
     filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
 }
-
-.shop-container a:hover img,
+.shop-container .row-1 a:hover img,
+.shop-container .row-2 a:hover img,
 .youtube-link:hover .youtube-img {
     transform: scale(1.05);
-    /* Farbe wechselt auf Orange, Intensität (10px) bleibt gleich */
     filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.9));
 }
-
 
 .yt-link img { height: 60px; margin-top: 10px; }
 
@@ -1414,3 +1412,4 @@ img, iframe {
     box-shadow: none !important;
     outline: none !important;
 }
+
