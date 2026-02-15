@@ -1111,14 +1111,15 @@ audio {
     border: 2px solid var(--accent-gold); /* Goldener Rahmen passend zur Schrift */
 }
 
-/* Hover-Zustand: Hintergrund Gold, Schrift helleres Violett */
-.quiz-button-custom:hover { 
-    background-color: var(--accent-gold) !important; 
-    color: var(--secondary-dark) !important;
-    
+/* Hover-Zustand: Pink-Gradient wie beim Quiz-Weiter-Button */
+.quiz-button-custom:hover {
+    background: linear-gradient(45deg, #d81b60, #8e24aa) !important;
+    color: white !important;
+    border-color: #d81b60;
+
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    text-shadow: none; /* Textschatten auf hellem Grund entfernen */
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+    text-shadow: none;
 }
 
 .no-bg { background: none !important; box-shadow: none !important; }
