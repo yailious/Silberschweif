@@ -23,50 +23,68 @@
     <meta name="twitter:image" content="https://silberschweif.ch/Cover_Ayana2.jpg">
     
     <!-- Structured Data für Google -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Book",
-        "name": "Ayanas Abenteuer: Der Schatz der Freundschaft",
-        "author": {
-            "@type": "Person",
-            "name": "J. D. Silberschweif"
-        },
-        "description": "Ein farbig illustriertes Märchenbuch und Kinderbuch über Piraten, eine Meerjungfrau und wahre Freundschaft für Kinder ab 6 Jahren.",
-        "genre": "Kinderbuch",
-        "inLanguage": "de",
-        "audience": {
-            "@type": "PeopleAudience",
-            "suggestedMinAge": 6,
-            "suggestedMaxAge": 9
-        },
-        "isbn": "PLACEHOLDER_ISBN",
-        "numberOfPages": 28,
-        "illustrator": "J. D. Silberschweif",
-        "publisher": {
-            "@type": "Organization",
-            "name": "J. D. Silberschweif"
-        },
-        "offers": [
-            {
-                "@type": "Offer",
-                "price": "10.99",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/PreOrder",
-                "url": "PLACEHOLDER_AMAZON_URL",
-                "itemCondition": "https://schema.org/NewCondition"
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Book",
+            "name": "Ayanas Abenteuer: Der Schatz der Freundschaft",
+            "author": {
+                "@type": "Person",
+                "name": "J. D. Silberschweif"
             },
-            {
+            "description": "Ein farbig illustriertes Märchenbuch und Kinderbuch über Piraten, eine Meerjungfrau und wahre Freundschaft für Kinder ab 6 Jahren.",
+            "genre": "Kinderbuch",
+            "inLanguage": "de",
+            "audience": {
+                "@type": "PeopleAudience",
+                "suggestedMinAge": 5,
+                "suggestedMaxAge": 9
+            },
+            "isbn": "9798248552702",
+            "numberOfPages": 37,
+            "illustrator": "J. D. Silberschweif",
+            "publisher": {
+                "@type": "Organization",
+                "name": "J. D. Silberschweif"
+            },
+            "workExample": [
+                {
+                    "@type": "Book",
+                    "bookFormat": "https://schema.org/Paperback",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "10.99",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/PreOrder",
+                        "url": "https://www.amazon.de/dp/B0GNZFHKQH",
+                        "itemCondition": "https://schema.org/NewCondition"
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "Product",
+            "name": "Ayanas Abenteuer: Der Schatz der Freundschaft (Hörbuch)",
+            "image": "https://silberschweif.ch/Cover_Ayana2.jpg",
+            "description": "Piraten, eine Meerjungfrau und ein magisches Märchen Abenteuer auf dem Meer über Mut und Freundschaft für Kinder ab 6. Jetzt als als Hörbuch für die Toniebox.",
+            "brand": {
+            "@type": "Brand",
+            "name": "J. D. Silberschweif"
+            },
+            "offers": {
                 "@type": "Offer",
-                "price": "4.50",
+                "price": "7.00",
                 "priceCurrency": "EUR",
                 "availability": "https://schema.org/InStock",
                 "url": "https://silberschweif.ch/kinderbuch-hoerbuch-piraten-meerjungfrau-freundschaft.html",
                 "itemCondition": "https://schema.org/NewCondition"
             }
-        ]
-    }
-    </script>
+        }
+    ]
+}
+</script>
     
     <link rel="stylesheet" href="style.css">
 
@@ -437,6 +455,7 @@ function kopiereSterne() {
 </body>
 
 </html>
+
 
 
 
