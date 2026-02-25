@@ -23,50 +23,68 @@
     <meta name="twitter:image" content="https://silberschweif.ch/Cover_Ayana_NEU.jpg">
     
     <!-- Structured Data für Google -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Book",
-        "name": "Ayanas Abenteuer im Zauberwald",
-        "author": {
-            "@type": "Person",
-            "name": "J. D. Silberschweif"
-        },
-        "description": "Ein liebevoll illustriertes Märchenbuch über Mut und Selbstvertrauen für Kinder ab 6 Jahren.",
-        "genre": "Kinderbuch",
-        "inLanguage": "de",
-        "audience": {
-            "@type": "PeopleAudience",
-            "suggestedMinAge": 6,
-            "suggestedMaxAge": 8
-        },
-        "isbn": "978-3695105892",
-        "numberOfPages": 28,
-        "illustrator": "J. D. Silberschweif",
-        "publisher": {
-            "@type": "Organization",
-            "name": "J. D. Silberschweif"
-        },
-        "offers": [
-            {
-                "@type": "Offer",
-                "price": "10.99",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock",
-                "url": "https://www.amazon.de/dp/B0G2J3F32N",
-                "itemCondition": "https://schema.org/NewCondition"
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Book",
+            "name": "Ayanas Abenteuer im Zauberwald",
+            "author": {
+                "@type": "Person",
+                "name": "J. D. Silberschweif"
             },
-            {
+            "description": "Ein liebevoll illustriertes Märchenbuch und Kinderbuch für Mädchen ab 6 Jahren. Mit Prinzessin, Einhorn und Magie. Ideal als Gute Nacht Geschichte.",
+            "genre": "Kinderbuch",
+            "inLanguage": "de",
+            "audience": {
+                "@type": "PeopleAudience",
+                "suggestedMinAge": 6,
+                "suggestedMaxAge": 9
+            },
+            "isbn": "9783695105892",
+            "numberOfPages": 33,
+            "illustrator": "J. D. Silberschweif",
+            "publisher": {
+                "@type": "Organization",
+                "name": "J. D. Silberschweif"
+            },
+            "workExample": [
+                {
+                    "@type": "Book",
+                    "bookFormat": "https://schema.org/Paperback",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "10.95",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.amazon.de/dp/B0G38L3GTG",
+                        "itemCondition": "https://schema.org/NewCondition"
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "Product",
+            "name": "Ayanas Abenteuer im Zauberwald (Hörbuch für die Toniebox)",
+            "image": "https://silberschweif.ch/Cover_Ayana_NEU.jpg",
+            "description": "Jetzt als Hörbuch für die Toniebox: Ein magisches Abenteuer im Zauberwald mit Prinzessin und Einhorn. Die perfekte Gute Nacht Geschichte für Mädchen ab 6 Jahren.",
+            "brand": {
+                "@type": "Brand",
+                "name": "J. D. Silberschweif"
+            },
+            "offers": {
                 "@type": "Offer",
-                "price": "4.50",
+                "price": "7.00",
                 "priceCurrency": "EUR",
                 "availability": "https://schema.org/InStock",
                 "url": "https://silberschweif.ch/kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html",
                 "itemCondition": "https://schema.org/NewCondition"
             }
-        ]
-    }
-    </script>
+        }
+    ]
+}
+</script>
     
     <link rel="stylesheet" href="style.css">
 
@@ -208,7 +226,7 @@ function sendPersonalizedMail() {
    
     <div class="shop-container">
         <div class="row-1">
-            <a href="https://www.amazon.de//dp/B0G2J3F32N" target="_blank"><img src="Amazon.png" alt="Ayanas Abenteuer im Zauberwald bei Amazon kaufen"></a>
+            <a href="https://www.amazon.de/dp/B0G38L3GTG" target="_blank"><img src="Amazon.png" alt="Ayanas Abenteuer im Zauberwald bei Amazon kaufen"></a>
             <a href="https://buchshop.bod.de/ayanas-abenteuer-im-zauberwald-j-d-silberschweif-9783695105892" target="_blank"><img src="BoD.png" alt="Ayanas Abenteuer im Zauberwald bei BoD kaufen"></a>
         </div>
     </div>
@@ -523,5 +541,6 @@ function kopiereSterne() {
 </body>
 
 </html>
+
 
 
