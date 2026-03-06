@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Cookie Consent (DSGVO-konform, 2-Layer) -->
+<script>
+function loadGTM() {
+  if (document.getElementById('gtm-script')) return;
+  var s = document.createElement('script');
+  s.id = 'gtm-script';
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P3X2MJ86';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+}
+
+function setCookieConsent(status) {
+  var d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  document.cookie = 'cookie_consent=' + status + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+}
+
+function getCookieConsent() {
+  var match = document.cookie.match(/cookie_consent=([^;]+)/);
+  return match ? match[1] : null;
+}
+
+function acceptAll() {
+  setCookieConsent('allow');
+  loadGTM();
+  closeBanner();
+  closeModal();
+}
+
+function denyAll() {
+  setCookieConsent('deny');
+  closeBanner();
+  closeModal();
+}
+
+function saveSelection() {
+  var cb = document.getElementById('cc-marketing');
+  if (cb && cb.checked) {
+    acceptAll();
+  } else {
+    denyAll();
+  }
+}
+
+function openSettings() {
+  document.getElementById('cc-settings-modal').style.display = 'flex';
+}
+
+function closeModal() {
+  var m = document.getElementById('cc-settings-modal');
+  if (m) m.style.display = 'none';
+}
+
+function closeBanner() {
+  var b = document.getElementById('cc-banner');
+  if (b) b.style.display = 'none';
+}
+
+window.addEventListener('load', function() {
+  var status = getCookieConsent();
+  if (status === 'allow') { loadGTM(); return; }
+  if (status === 'deny') return;
+  document.getElementById('cc-banner').style.display = 'block';
+});
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz - J. D. Silberschweif</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .buch-ueberschrift, h1, h2, h3 {
+            font-family: 'Lora', serif !important;
+            color: var(--primary-dark) !important;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
+        }
+
+        .header-line {
+            border: 0;
+            border-top: 3px solid var(--accent-gold) !important;
+            margin: 0 0 30px 0;
+            width: 100%;
+            opacity: 1;
+        }
+
+        .section-line {
+            border: 0;
+            border-top: 1px solid var(--accent-gold);
+            margin: 30px 0;
+            width: 100%;
+        }
+        
+        /* Hier von h3 auf h2 geändert für die neue Struktur */
+        .beschreibung h2 {
+            text-align: left;
+            margin-top: 25px;
+            font-size: 1.5em; /* Optionale Anpassung der Größe */
+            color: var(--secondary-dark) !important;
+        }
+        
+        .beschreibung p, .beschreibung ul {
+            text-align: left;
+        }
+        
+        .beschreibung ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .beschreibung li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+<!-- Cookie Banner (Layer 1) -->
+<div id="cc-banner" class="cc-banner" style="display:none;">
+  <div class="cc-banner-inner">
+    <span class="cc-msg">🍪 Diese Website verwendet Cookies, um dein Einkaufserlebnis zu verbessern.</span>
+    <div class="cc-actions">
+      <button class="cc-btn-ok" onclick="acceptAll()">Okey</button>
+      <button class="cc-btn-settings" onclick="openSettings()">Einstellungen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Einstellungen (Layer 2) -->
+<div id="cc-settings-modal" class="cc-modal-overlay" style="display:none;">
+  <div class="cc-modal">
+    <h3 class="cc-modal-title">🍪 Cookie-Einstellungen</h3>
+    <p class="cc-modal-text">Hier kannst du auswählen, welche Cookies du zulassen möchtest.</p>
+
+    <div class="cc-option">
+      <label class="cc-label">
+        <input type="checkbox" checked disabled>
+        <strong>Notwendig</strong>
+      </label>
+      <span class="cc-desc">Für die grundlegende Funktion der Website. Immer aktiv.</span>
+    </div>
+
+    <div class="cc-option">
+      <label class="cc-label">
+        <input type="checkbox" id="cc-marketing" checked>
+        <strong>Marketing & Analyse</strong>
+      </label>
+      <span class="cc-desc">Hilft uns, dein Einkaufserlebnis zu verbessern.</span>
+    </div>
+
+    <div class="cc-modal-actions">
+      <button class="cc-btn-ok" onclick="saveSelection()">Auswahl speichern</button>
+      <button class="cc-btn-deny" onclick="denyAll()">Alle ablehnen</button>
+    </div>
+
+    <a class="cc-privacy-link" href="https://silberschweif.ch/datenschutz.html">Datenschutzerklärung</a>
+  </div>
+</div>
+
+    <div class="main-container">
+        <div class="banner-container">
+            <img src="BannerSilberschweif.png" alt="J. D. Silberschweif Autor für Kinder Fantasy und Märchen" class="banner-img">
+        </div>
+
+        <div class="content-wrapper">
+            <h1 class="buch-ueberschrift">Datenschutzerklärung</h1>
+            <hr class="header-line">
+            
+            <div class="beschreibung">
+                <p>Der Schutz deiner Daten ist uns wichtig. Diese Datenschutzerklärung informiert dich darüber, welche Daten auf dieser Website erhoben werden und wie sie verwendet werden.</p>
+                
+                <h2>Verantwortlicher</h2>
+                <p>J. D. Silberschweif<br>
+                c/o Dinç Management<br>
+                Fenzgasse 25<br>
+                8755 Ennenda<br>
+                Schweiz<br>
+                E-Mail: <a href="mailto:kontakt@silberschweif.ch">kontakt@silberschweif.ch</a></p>
+
+                <h2>Allgemeine Datenerfassung</h2>
+                <p>Bei Kontakt per E-Mail werden deine Daten nur zur Bearbeitung der Anfrage genutzt. Die Verarbeitung erfolgt ausschliesslich zum Zweck der Kommunikation und basiert auf deiner freiwilligen Kontaktaufnahme.</p>
+
+                <h2>Cookies</h2>
+                <p>Diese Website verwendet Cookies. Cookies sind kleine Textdateien, die auf deinem Endgerät gespeichert werden. Wir unterscheiden zwischen folgenden Kategorien:</p>
+                <ul>
+                    <li><strong>Notwendige Cookies:</strong> Diese sind für den Betrieb der Website erforderlich. Dazu gehört das Cookie <em>cookie_consent</em>, das deine Cookie-Einstellung für ein Jahr speichert. Dieses Cookie wird ohne Einwilligung gesetzt, da es technisch notwendig ist.</li>
+                    <li><strong>Marketing- & Analyse-Cookies:</strong> Diese werden erst nach deiner ausdrücklichen Einwilligung über unseren Cookie-Banner gesetzt. Sie dienen der Verbesserung deines Einkaufserlebnisses und der Analyse der Website-Nutzung.</li>
+                </ul>
+                <p>Du kannst deine Cookie-Einstellungen jederzeit über den Cookie-Banner ändern, indem du die Cookies in deinem Browser löschst. Beim nächsten Besuch wirst du erneut nach deiner Einwilligung gefragt.</p>
+
+                <h2>Google Tag Manager</h2>
+                <p>Diese Website nutzt den <strong>Google Tag Manager</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Der Tag Manager ist ein Verwaltungstool, das selbst keine personenbezogenen Daten erhebt. Er dient dazu, andere Dienste (wie Google Analytics) technisch einzubinden und zu steuern. Der Google Tag Manager wird erst nach deiner Einwilligung über den Cookie-Banner geladen.</p>
+                <p>Weitere Informationen findest du in der <a href="https://policies.google.com/privacy" target="_blank">Datenschutzerklärung von Google</a>.</p>
+
+                <h2>Google Analytics</h2>
+                <p>Nach deiner Einwilligung nutzt diese Website <strong>Google Analytics 4</strong>, einen Webanalysedienst von Google Ireland Limited. Google Analytics verwendet Cookies, um die Nutzung der Website auszuwerten. Dabei werden folgende Daten erfasst:</p>
+                <ul>
+                    <li>Besuchte Seiten und Verweildauer</li>
+                    <li>Ungefährer Standort (Stadt/Region, keine genaue Position)</li>
+                    <li>Verwendeter Browser und Betriebssystem</li>
+                    <li>Verweisende Website (Referrer)</li>
+                    <li>Interaktionen mit der Website (z. B. Klicks auf Links)</li>
+                </ul>
+                <p>Die IP-Anonymisierung ist bei Google Analytics 4 standardmässig aktiviert. Deine IP-Adresse wird innerhalb der EU gekürzt, bevor sie an Google-Server übertragen wird. Die Daten werden auf Servern von Google in der EU bzw. den USA verarbeitet. Für die Übermittlung in die USA stützt sich Google auf die EU-US Data Privacy Framework Zertifizierung.</p>
+                <p>Rechtsgrundlage für die Datenverarbeitung ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die du über den Cookie-Banner erteilst. Du kannst deine Einwilligung jederzeit widerrufen, indem du die Cookies in deinem Browser löschst.</p>
+                <p>Weitere Informationen findest du in der <a href="https://policies.google.com/privacy" target="_blank">Datenschutzerklärung von Google</a> sowie den <a href="https://support.google.com/analytics/answer/6004245" target="_blank">Informationen zu Google Analytics und Datenschutz</a>.</p>
+
+                <h2>Webanalyse mit GoatCounter</h2>
+                <p>Zusätzlich nutzt diese Website <strong>GoatCounter</strong>, einen datenschutzfreundlichen Analysedienst. GoatCounter erfasst:</p>
+                <ul>
+                    <li>Anzahl der Seitenaufrufe</li>
+                    <li>Ungefährer Standort (nur Land, keine genaue Position)</li>
+                    <li>Verwendeter Browser und Betriebssystem</li>
+                    <li>Verweisende Website (Referrer)</li>
+                </ul>
+                <p>GoatCounter verwendet <strong>keine Cookies</strong> und speichert <strong>keine IP-Adressen</strong>. Für diesen Dienst ist keine Einwilligung erforderlich. Weitere Informationen findest du in der <a href="https://www.goatcounter.com/help/privacy" target="_blank">Datenschutzerklärung von GoatCounter</a>.</p>
+
+                <h2>Zahlungsabwicklung & Kundenservice</h2>
+                <p>Für den Kauf digitaler Produkte nutzen wir <strong>Lemon Squeezy</strong> als "Merchant of Record". Bei einem Kauf werden Name, E-Mail-Adresse, Rechnungsadresse und Zahlungsinformationen direkt von Lemon Squeezy erhoben.</p>
+                <p>Wir erhalten von Lemon Squeezy deinen Namen und deine E-Mail-Adresse zur Auftragsabwicklung. Wir speichern diese Daten sowie den Kaufbeleg dauerhaft, um dir bei einem späteren Verlust deiner digitalen Produkte (z. B. durch Gerätewechsel oder Datenverlust) den erneuten Zugriff per E-Mail zu ermöglichen.</p>
+                <p>Weitere Informationen findest du in der <a href="https://www.lemonsqueezy.com/privacy" target="_blank">Datenschutzerklärung von Lemon Squeezy</a>.</p>
+
+                <h2>Direktwerbung für Bestandskunden (§ 7 Abs. 3 UWG)</h2>
+                <p>Wenn du bei uns ein digitales Produkt erwirbst, nutzen wir deine E-Mail-Adresse zur Direktwerbung für eigene, ähnliche Produkte (z. B. Folgebände der Buchreihe oder neue Hörbücher). Rechtsgrundlage hierfür ist unser berechtigtes Interesse an Direktwerbung (Art. 6 Abs. 1 lit. f DSGVO bzw. § 7 Abs. 3 UWG).</p>
+                <p><strong>Widerspruchsrecht:</strong> Du kannst dieser Verwendung deiner Daten jederzeit widersprechen, ohne dass hierfür andere als die Übermittlungskosten nach den Basistarifen entstehen. Ein Abmeldelink befindet sich am Ende jeder Info-E-Mail, oder du schreibst uns kurz an <a href="mailto:kontakt@silberschweif.ch">kontakt@silberschweif.ch</a>.</p>
+
+                <h2>Kommentarfunktion (Cusdis)</h2>
+                <p>Auf den Produktseiten bieten wir eine Kommentarfunktion über <strong>Cusdis</strong> an. Bei der Abgabe eines Kommentars wird der von dir eingegebene Name sowie dein Kommentartext gespeichert. Es werden keine E-Mail-Adressen erfasst.</p>
+
+                <h2>Eingebettete Inhalte</h2>
+                <p>Diese Website bindet Inhalte von externen Plattformen ein:</p>
+                <ul>
+                    <li><strong>YouTube:</strong> Für Video-Inhalte. Beim Abspielen können Daten an YouTube übertragen werden.</li>
+                    <li><strong>Vimeo:</strong> Für Hörproben und Videos. Beim Abspielen können Daten an Vimeo übertragen werden.</li>
+                </ul>
+
+                <h2>Server-Logfiles</h2>
+                <p>Der Hosting-Provider dieser Website erhebt technisch notwendige Informationen in Server-Logfiles (z.B. IP-Adresse, Uhrzeit), um die Sicherheit der Website zu gewährleisten.</p>
+
+                <h2>Deine Rechte</h2>
+                <p>Du hast jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch bezüglich deiner gespeicherten Daten. Kontaktiere uns dazu bitte unter <a href="mailto:kontakt@silberschweif.ch">kontakt@silberschweif.ch</a>.</p>
+
+                <h2>Änderungen dieser Datenschutzerklärung</h2>
+                <p>Wir behalten uns vor, diese Erklärung bei Bedarf anzupassen. Es gilt die jeweils aktuelle Version auf dieser Website.</p>
+                
+                <p style="margin-top: 30px;"><strong>Stand:</strong> März 2026</p>
+                
+                <hr class="section-line">
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="index.html" class="back-link">Zurück zur Startseite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+<script data-goatcounter="https://silberschweif.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
