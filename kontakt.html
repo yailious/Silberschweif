@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Cookie Consent (DSGVO-konform, 2-Layer) -->
+<script>
+function loadGTM() {
+  if (document.getElementById('gtm-script')) return;
+  var s = document.createElement('script');
+  s.id = 'gtm-script';
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P3X2MJ86';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+}
+
+function setCookieConsent(status) {
+  var d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  document.cookie = 'cookie_consent=' + status + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+}
+
+function getCookieConsent() {
+  var match = document.cookie.match(/cookie_consent=([^;]+)/);
+  return match ? match[1] : null;
+}
+
+function acceptAll() {
+  setCookieConsent('allow');
+  loadGTM();
+  closeBanner();
+  closeModal();
+}
+
+function denyAll() {
+  setCookieConsent('deny');
+  closeBanner();
+  closeModal();
+}
+
+function saveSelection() {
+  var cb = document.getElementById('cc-marketing');
+  if (cb && cb.checked) {
+    acceptAll();
+  } else {
+    denyAll();
+  }
+}
+
+function openSettings() {
+  document.getElementById('cc-settings-modal').style.display = 'flex';
+}
+
+function closeModal() {
+  var m = document.getElementById('cc-settings-modal');
+  if (m) m.style.display = 'none';
+}
+
+function closeBanner() {
+  var b = document.getElementById('cc-banner');
+  if (b) b.style.display = 'none';
+}
+
+window.addEventListener('load', function() {
+  var status = getCookieConsent();
+  if (status === 'allow') { loadGTM(); return; }
+  if (status === 'deny') return;
+  document.getElementById('cc-banner').style.display = 'block';
+});
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - J. D. Silberschweif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+<!-- Cookie Banner (Layer 1) -->
+<div id="cc-banner" class="cc-banner" style="display:none;">
+  <div class="cc-banner-inner">
+    <span class="cc-msg">🍪 Diese Website verwendet Cookies, um dein Einkaufserlebnis zu verbessern.</span>
+    <div class="cc-actions">
+      <button class="cc-btn-ok" onclick="acceptAll()">Okey</button>
+      <button class="cc-btn-settings" onclick="openSettings()">Einstellungen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Einstellungen (Layer 2) -->
+<div id="cc-settings-modal" class="cc-modal-overlay" style="display:none;">
+  <div class="cc-modal">
+    <h3 class="cc-modal-title">🍪 Cookie-Einstellungen</h3>
+    <p class="cc-modal-text">Hier kannst du auswählen, welche Cookies du zulassen möchtest.</p>
+
+    <div class="cc-option">
+      <label class="cc-label">
+        <input type="checkbox" checked disabled>
+        <strong>Notwendig</strong>
+      </label>
+      <span class="cc-desc">Für die grundlegende Funktion der Website. Immer aktiv.</span>
+    </div>
+
+    <div class="cc-option">
+      <label class="cc-label">
+        <input type="checkbox" id="cc-marketing" checked>
+        <strong>Marketing & Analyse</strong>
+      </label>
+      <span class="cc-desc">Hilft uns, dein Einkaufserlebnis zu verbessern.</span>
+    </div>
+
+    <div class="cc-modal-actions">
+      <button class="cc-btn-ok" onclick="saveSelection()">Auswahl speichern</button>
+      <button class="cc-btn-deny" onclick="denyAll()">Alle ablehnen</button>
+    </div>
+
+    <a class="cc-privacy-link" href="https://silberschweif.ch/datenschutz.html">Datenschutzerklärung</a>
+  </div>
+</div>
+
+<div class="main-container">
+        <div class="banner-container">
+            <img src="BannerSilberschweif.png" alt="J. D. Silberschweif Autor für Kinder Fantasy und Märchen" class="banner-img">
+        </div>
+
+        <div class="content-wrapper">
+            <h1 class="buch-ueberschrift">Kontakt</h1>
+            
+            <div class="beschreibung" style="text-align: center;">
+                <p>Gerne nehme ich jede Anfrage ernst und freue mich auf eure Nachrichten, Anregungen oder Feedback!</p>
+                <p>Egal ob du Fragen zu Mystiko hast, eine Widmung wünscht oder einfach nur Hallo sagen willst. Schreibt mir gerne.</p>
+                <p>Neugierig auf die Fortsetzung? Ich habe bereits Pläne für die Bände 2 bis 4 von Alexan. Wenn du mehr darüber erfahren möchtest, schreib mir. Ich teile gerne meine Ideen und bin offen für Feedback!</p>
+                
+                <div style="margin: 30px auto; background: rgba(0,0,0,0.05); padding: 30px; border-radius: 8px; border: 1px solid var(--accent-gold); max-width: 500px;">
+                    <p><strong>WhatsApp:</strong><br>
+                    <a href="https://wa.me/41787522296" style="font-size: 1.4em; color: #25D366; font-weight: bold;">+41 78 752 22 96</a></p>
+                    
+                    <p style="margin-top: 20px;"><strong>E-Mail:</strong><br>
+                    <a href="mailto:kontakt@silberschweif.ch" style="font-size: 1.4em; font-weight: bold;">kontakt@silberschweif.ch</a></p>
+                </div>
+
+                <a href="index.html" class="back-link">Zurück zur Startseite</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

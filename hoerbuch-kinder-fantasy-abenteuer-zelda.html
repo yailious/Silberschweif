@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Cookie Consent (DSGVO-konform, 2-Layer) -->
+<script>
+function loadGTM() {
+  if (document.getElementById('gtm-script')) return;
+  var s = document.createElement('script');
+  s.id = 'gtm-script';
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P3X2MJ86';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+}
+
+function setCookieConsent(status) {
+  var d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  document.cookie = 'cookie_consent=' + status + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+}
+
+function getCookieConsent() {
+  var match = document.cookie.match(/cookie_consent=([^;]+)/);
+  return match ? match[1] : null;
+}
+
+function acceptAll() {
+  setCookieConsent('allow');
+  loadGTM();
+  closeBanner();
+  closeModal();
+}
+
+function denyAll() {
+  setCookieConsent('deny');
+  closeBanner();
+  closeModal();
+}
+
+function saveSelection() {
+  var cb = document.getElementById('cc-marketing');
+  if (cb && cb.checked) {
+    acceptAll();
+  } else {
+    denyAll();
+  }
+}
+
+function openSettings() {
+  document.getElementById('cc-settings-modal').style.display = 'flex';
+}
+
+function closeModal() {
+  var m = document.getElementById('cc-settings-modal');
+  if (m) m.style.display = 'none';
+}
+
+function closeBanner() {
+  var b = document.getElementById('cc-banner');
+  if (b) b.style.display = 'none';
+}
+
+window.addEventListener('load', function() {
+  var status = getCookieConsent();
+  if (status === 'allow') { loadGTM(); return; }
+  if (status === 'deny') return;
+  document.getElementById('cc-banner').style.display = 'block';
+});
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelda Manga Hörbuch: Wie mein Kinderbuch zum Zelda Film fürs Ohr wurde</title>
+    <meta name="description" content="Erfahre, wie aus einem Kinderbuch wie Zelda ein cineastisches Fantasy Hörbuch für die Toniebox wurde. Mit 400 Sounds & einem Score wie im Zelda Film. Jetzt reinhören!">
+    <link rel="canonical" href="https://silberschweif.ch/hoerbuch-kinder-fantasy-abenteuer-zelda.html">
+    <link rel="icon" type="image/png" href="Favicon.png">
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Zelda Manga Hörbuch: Wie mein Kinderbuch zum Zelda Film fürs Ohr wurde">
+    <meta property="og:description" content="Erfahre, wie aus einem Kinderbuch wie Zelda ein cineastisches Fantasy Hörbuch für die Toniebox wurde. Mit 400 Sounds & einem Score wie im Zelda Film.">
+    <meta property="og:image" content="https://silberschweif.ch/Drache.png">
+    <meta property="og:url" content="https://silberschweif.ch/hoerbuch-kinder-fantasy-abenteuer-zelda.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter/X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zelda Manga Hörbuch: Wie mein Kinderbuch zum Zelda Film fürs Ohr wurde">
+    <meta name="twitter:description" content="Erfahre, wie aus einem Kinderbuch wie Zelda ein cineastisches Fantasy Hörbuch für die Toniebox wurde. Mit 400 Sounds & einem Score wie im Zelda Film.">
+    <meta name="twitter:image" content="https://silberschweif.ch/Drache.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Cookie Banner (Layer 1) -->
+<div id="cc-banner" class="cc-banner" style="display:none;">
+  <div class="cc-banner-inner">
+    <span class="cc-msg">🍪 Diese Website verwendet Cookies, um dein Einkaufserlebnis zu verbessern.</span>
+    <div class="cc-actions">
+      <button class="cc-btn-ok" onclick="acceptAll()">Okey</button>
+      <button class="cc-btn-settings" onclick="openSettings()">Einstellungen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Einstellungen (Layer 2) -->
+<div id="cc-settings-modal" class="cc-modal-overlay" style="display:none;">
+  <div class="cc-modal">
+    <h3 class="cc-modal-title">🍪 Cookie-Einstellungen</h3>
+    <p class="cc-modal-text">Hier kannst du auswählen, welche Cookies du zulassen möchtest.</p>
+
+    <div class="cc-option">
+      <label class="cc-label">
+        <input type="checkbox" checked disabled>
+        <strong>Notwendig</strong>
+      </label>
+      <span class="cc-desc">Für die grundlegende Funktion der Website. Immer aktiv.</span>
+    </div>
+
+    <div class="cc-option">
+      <label class="cc-label">
+        <input type="checkbox" id="cc-marketing" checked>
+        <strong>Marketing & Analyse</strong>
+      </label>
+      <span class="cc-desc">Hilft uns, dein Einkaufserlebnis zu verbessern.</span>
+    </div>
+
+    <div class="cc-modal-actions">
+      <button class="cc-btn-ok" onclick="saveSelection()">Auswahl speichern</button>
+      <button class="cc-btn-deny" onclick="denyAll()">Alle ablehnen</button>
+    </div>
+
+    <a class="cc-privacy-link" href="https://silberschweif.ch/datenschutz.html">Datenschutzerklärung</a>
+  </div>
+</div>
+
+    <div class="main-container">
+        <!-- HEADER BANNER -->
+        <div class="banner-container">
+            <img src="BannerSilberschweif.png" alt="J. D. Silberschweif Banner" class="banner-img">
+        </div>
+
+        <!-- NAVIGATION UNTER DEM BANNER -->
+        <!-- Reihenfolge: 1. entstehung | 2. mit-ki | 3. anime-bilder | 4. hoerbuch (DIESE SEITE) -->
+        <nav class="blog-nav-bar">
+            <a href="anime-bilder-kinder-fantasy-buch-zelda.html" class="nav-left">&laquo; Vorheriger Beitrag</a>
+            <a href="fantasy-abenteuer-buch-hoerbuch-zelda-kinder.html" class="nav-center">Zurück zur Buchseite</a>
+            <a href="entstehung-kinder-fantasy-abenteuer-buch-zelda.html" class="nav-right">Nächster Beitrag &raquo;</a>
+        </nav>
+
+        <div class="content-wrapper">
+            <div class="blog-content">
+					<p style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">⏱️ Lesezeit Blog: 3 Min.</p>
+                <h1 class="blog-titel">🎵 Zelda Manga Hörbuch:<br>Wie mein Fantasy Kinderbuch zum Zelda Film fürs Ohr wurde</h1>
+
+                <section>
+                    <p>
+                        Nachdem ich im vorherigen Blogbeitrag erzählt habe, wie mein Fantasy Kinderbuch im Stil eines Zelda Manga namens „ALEXAN – Das Geheimnis von Mystiko" entstand, möchte ich nun zeigen, wie daraus ein einzigartiges Hörspiel wurde. Was als einfaches Hörbuch begann, entwickelte sich zu einer Vision: ein Zelda Film für die Ohren.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>💡 Die Idee: Ein Abenteuer für die Toniebox</h2>
+                    <p>
+                        Mein neunjähriger Neffe Alexan liebt seine Toniebox und hört gerne spannende Abenteuer. So kam mir die Idee, ihm mein Fantasy Kinderbuch als Hörbuch zu schenken. Das fertige Werk hat eine beachtliche Länge von 2 Std. 26 Min. erreicht. Da das für ein Kind am Stück zu viel ist, empfehle ich, die Dateien kapitelweise auf einen Kreativ-Tonie für die Toniebox zu laden. So kann man jede Nacht ein neues Kapitel auf die Toniebox bringen und die Vorfreude steigern.
+                    </p>
+                    <p>
+                        Zuerst wollte ich die Erzählstimme auswählen und spielte ihm drei verschiedene Stimmen aus ElevenLabs vor, doch er wollte unbedingt, dass ich ihm die Geschichte persönlich erzähle. Also klonte ich meine eigene Stimme mit ElevenLabs und begann, das Buch aufnehmen zu lassen. Nach einigen Kapiteln merkte ich jedoch, dass etwas fehlte. Die Geschichte klang zu einheitlich für ein so lebendiges Kinderbuch wie Zelda.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>📢 Jede Figur bekommt eine eigene Stimme wie im Zelda Manga</h2>
+                    <p>
+                        Da ElevenLabs es ermöglicht, Textabschnitte mit unterschiedlichen Stimmen zu vertonen, beschloss ich, jeder Figur ihre eigene Stimme zu geben. Ich erstellte eine Liste aller Charaktere und überlegte mir genau, wie sie klingen sollten. Dabei half mir auch ChatGPT, Empfehlungen zu finden, die perfekt passten. So entstand für jede Figur ein unverwechselbarer Klang und die Welt von Mystiko begann zu leben. Es fühlte sich fast so an, als würde man einen Zelda Manga zum Sprechen bringen.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🪄 Die Kunst des Erzählens eines Fantasy Kinderbuchs</h2>
+                    <p>
+                        Für jedes Kapitel aus meinem Zelda Manga erstellte ich ein eigenes Dokument. Dabei musste ich entscheiden, welche Passagen tatsächlich gesprochen werden sollten. Im Gegensatz zum Buch kann im Hörbuch manches weggelassen werden, da Ton und Stimme vieles bereits ausdrücken. Dann fügte ich in ElevenLabs Kapitel für Kapitel ein, wählte die passenden Stimmen aus und hörte mir die Ergebnisse direkt an. Mit etwas Feintuning bei Authentizität und Tonhöhe entstanden schließlich überzeugende Dialoge.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🎬 Ein Zelda Film für die Ohren: Vom Hörbuch zum Hörspiel</h2>
+                    <p>
+                        Trotz der tollen Stimmen fehlte mir noch etwas: die Magie eines echten Kinoerlebnisses. Als großer Fantasy- und Zelda-Fan wollte ich, dass das Hörerlebnis Gänsehaut erzeugt. Ich setzte mir das Ziel, ein cineastisches Hörbuch zu erschaffen, das eigentlich schon eher ein Hörspiel ist. Während das klassische Hörbuch oft nur von einem Sprecher lebt, ist dieses Werk ein echter „Zelda Film fürs Ohr".
+                    </p>
+                    <p>
+                        Dazu suchte ich auf freesound.org nach passenden Musikstücken und Soundeffekten. Beim Score habe ich mich stark an Zelda orientiert, um diesen animehaften, magischen Stil einzufangen. Tagelang hörte ich mich durch unzählige Klänge, bis ich für jede Szene die passenden Geräusche und Melodien gefunden hatte. Am Schluss hatte ich einen Fundus von 400 Samples angesammelt. Ich überlegte mir für jeden Klang genau, wo er eingesetzt werden sollte, und legte die Samples pro Kapitel ab.
+                    </p>
+                    
+                    <label class="video-label">🎧 Erlebe selbst, wie sich ein Zelda Film fürs Ohr anfühlt:</label>
+                    <video class="hoerbuch-video" controls poster="Drache.png" preload="metadata">
+                        <source src="Band1Kapitel6.mp4" type="video/mp4">
+                        Dein Browser unterstützt dieses Videoformat nicht.
+                    </video>
+                </section>
+
+                <section>
+                    <h2>🎶 Das Mastering: Feinarbeit in sechs Spuren</h2>
+                    <p>
+                        Anschließend begann der technische Teil: das Mastering mit MixPad Masters von NCH Software. Ich legte jede Stimme, Musik und jeden Soundeffekt in separate Spuren und passte Lautstärke sowie Timing an. Teilweise arbeitete ich mit bis zu sechs Ebenen gleichzeitig.
+                    </p>
+                    <p>
+                        Mein Anspruch an die Dramaturgie war hoch. In der Verwebung zwischen Emotionen und Musik diente mir Herr der Ringe als Messlatte. Dank meiner musikalischen Erfahrung gelang es mir, diese emotionale Tiefe und Spannung perfekt aufeinander abzustimmen, um einen Zelda Film für die Ohren zu erschaffen.
+                    </p>
+                    <p>
+                        Ich erstellte zwei Versionen:
+                    </p>
+                    <ul class="weisheiten-liste">
+                        <li>Eine mit meiner eigenen Stimme als Erzähler, persönlich an meinen Neffen adressiert für seine Toniebox.</li>
+                        <li>Eine zweite mit einer klassischen, tiefen Erzählstimme für ein professionelles, atmosphärisches Hörerlebnis.</li>
+                    </ul>
+					<figure class="blog-figure-full">
+                        <img src="mixpad.jpg" alt="Mastering in Mixpad mit sechs Spuren">
+                        <figcaption>Das Mastering in Mixpad mit bis zu sechs Spuren</figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h2>🎯 Das Ergebnis: Ein echter Zelda Film für die Ohren</h2>
+                    <p>
+                        Mein ehrgeiziges Ziel war erreicht: Aus meinem Kinderbuch wie Zelda war ein cineastisches Fantasy Hörspiel geworden. Es erfüllt mich mit Stolz, was für ein einzigartiges Werk – ein echter Zelda Film für die Ohren – ich hier erschaffen habe. Die Atmosphäre und der Score gehen mir jedes Mal selbst unter die Haut, wenn ich das Hörbuch höre.
+                    </p>
+                    <p>
+                        Mein Neffe war begeistert, auch wenn er nach drei Kapiteln meist schon selig einschlief. 😄 Es ist einfach das perfekte Erlebnis für einen Kreativ-Tonie auf der Toniebox. Überzeugt euch am besten selbst und hört rein!
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🧭 Wie geht es weiter mit meinem Kinderbuch wie Zelda?</h2>
+                    <p>
+                        Die Geschichte von Alexan und Mystiko soll weitergehen. Zwei weitere Fantasy Kinderbücher sind geplant mit neuen Kulturen, magischen Wesen und einem großen Finale im vierten Band. Natürlich wird es auch dazu wieder einen Zelda Film für die Ohren geben, vielleicht mit neuen Klängen oder mit vertrauten Melodien, die man schon aus diesem ersten Abenteuer kennt.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🎧 Ein cineastisches Hörbuch – auch für die Toniebox</h2>
+                    <p>
+                        Das Hörbuch gibt's in zwei Varianten:
+                    </p>
+                    <ul class="weisheiten-liste">
+                        <li>🎧 <strong>Klassisch:</strong> Mit verschiedenen Stimmen.</li>
+                        <li>🎬 <strong>Cineastisch:</strong> Mit atmosphärischer Musik, vielen Soundeffekten und individuellen Stimmen – ein echter Zelda Film für die Ohren.</li>
+                    </ul>
+                    <p>
+                        Beide Versionen sind als MP3 erhältlich und funktionieren auch mit der Toniebox – ideal zum Einschlafen oder für unterwegs.
+                    </p>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p class="quiz-text">🎞️ <strong>Erlebe noch mehr Magie von Mystiko auf YouTube:</strong></p>
+                        <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link">
+                            <img src="YouTube.png" alt="YouTube Kanal" class="youtube-img">
+                        </a>
+                    </div>
+                    
+                    <p style="margin-top: 30px;">
+                        ❤️ Danke fürs Lesen! Ich freue mich über jedes Feedback, Kommentare und Unterstützung!
+                    </p>
+                </section>
+
+                <br>
+                <p><strong>👉 Neugierig geworden? Entdecke hier die Welt von Mystiko, die Hörproben und das Level-Up-Prinzip:</strong></p>
+                <p style="font-size: 1.2rem;">
+                    <a href="fantasy-abenteuer-buch-hoerbuch-zelda-kinder.html" style="color: var(--link-color); font-weight: bold; text-decoration: underline;">
+                        ALEXAN - Das Geheimnis von Mystiko: Die Legende der Drei Artefakte
+                    </a>
+                </p>
+
+                <h2 style="font-family: 'Cinzel', serif; font-size: 1.4rem; text-align: center; margin-bottom: 25px; margin-top: 40px;">Lies auch meine anderen Blog-Einträge:</h2>
+                
+                <div class="blog-footer-nav">
+                    <a href="entstehung-kinder-fantasy-abenteuer-buch-zelda.html" class="blog-footer-link">
+                        🎮 <strong>Entstehung des Buchs:</strong> Vom Controller zum Kinderbuch wie Zelda
+                    </a>
+                    <a href="mit-ki-kinder-fantasy-abenteuer-buch-zelda.html" class="blog-footer-link">
+                        🧙‍♂️ <strong>Hinter den Kulissen:</strong> Mit modernen Werkzeugen zum Fantasy Kinderbuch
+                    </a>
+                    <a href="anime-bilder-kinder-fantasy-buch-zelda.html" class="blog-footer-link">
+                        🎨 <strong>KI-Illustrationen:</strong> Wie magische Bilder auf Knopfdruck entstehen
+                    </a>
+                </div>
+
+                <!-- ===== KOMMENTAR BEREICH ANFANG ===== -->
+                <hr class="trennlinie">
+
+                <section class="rezensionen-section">
+                    <h2 style="font-family: 'Cinzel', serif; font-size: 1.4rem; text-align: center; margin-bottom: 25px; margin-top: 40px;">💬 Kommentare</h2>
+                    
+                    <div class="bewertung-hinweis">
+                        Was denkst du über diesen Beitrag? Ich freue mich über dein Feedback!
+                    </div>
+
+                    <div class="bewertung-hinweis">
+                        📝 Gib deinen <strong>Namen</strong> ein, schreibe deinen <strong>Kommentar</strong> unter Reply und klicke auf <strong>„Comment"</strong> zum Absenden.
+                    </div>
+
+                    <!-- Cusdis Kommentar-Widget -->
+                    <div id="cusdis_thread"
+                        data-host="https://cusdis.com"
+                        data-app-id="d07e3c41-a647-4171-91fd-9b26fc91f13c"
+                        data-page-id="blog-hoerbuch-entstehung"
+                        data-page-url="https://silberschweif.ch/hoerbuch-kinder-fantasy-abenteuer-zelda.html"
+                        data-page-title="Zelda Manga Hörbuch: Wie mein Kinderbuch zum Zelda Film fürs Ohr wurde"
+                    ></div>
+                    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+                </section>
+                <!-- ===== KOMMENTAR BEREICH ENDE ===== -->
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Cookie Consent (DSGVO-konform, 2-Layer) -->
+<script>
+function loadGTM() {
+  if (document.getElementById('gtm-script')) return;
+  var s = document.createElement('script');
+  s.id = 'gtm-script';
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P3X2MJ86';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+}
+
+function setCookieConsent(status) {
+  var d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  document.cookie = 'cookie_consent=' + status + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+}
+
+function getCookieConsent() {
+  var match = document.cookie.match(/cookie_consent=([^;]+)/);
+  return match ? match[1] : null;
+}
+
+function acceptAll() {
+  setCookieConsent('allow');
+  loadGTM();
+  closeBanner();
+  closeModal();
+}
+
+function denyAll() {
+  setCookieConsent('deny');
+  closeBanner();
+  closeModal();
+}
+
+function saveSelection() {
+  var cb = document.getElementById('cc-marketing');
+  if (cb && cb.checked) {
+    acceptAll();
+  } else {
+    denyAll();
+  }
+}
+
+function openSettings() {
+  document.getElementById('cc-settings-modal').style.display = 'flex';
+}
+
+function closeModal() {
+  var m = document.getElementById('cc-settings-modal');
+  if (m) m.style.display = 'none';
+}
+
+function closeBanner() {
+  var b = document.getElementById('cc-banner');
+  if (b) b.style.display = 'none';
+}
+
+window.addEventListener('load', function() {
+  var status = getCookieConsent();
+  if (status === 'allow') { loadGTM(); return; }
+  if (status === 'deny') return;
+  document.getElementById('cc-banner').style.display = 'block';
+});
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Das magische Märchenbuch & Hörbuch für Kinder (ab 6 J.) | Prinzessin & Einhorn</title>
+    <meta name="description" content="Magisches Prinzessin Märchenbuch und Hörbuch für Kinder mit Illustrationen (ab 6 J.). Ein spannendes Abenteuer mit Drachen, Einhörnern & Hexe über Mut und Freundlichkeit.">
+    <link rel="canonical" href="https://silberschweif.ch/kinderbuch-maerchen-abenteuer-prinzessin-einhorn.html">
+    <link rel="icon" type="image/png" href="Favicon.png">
+    
+    <meta property="og:title" content="Das magische Märchenbuch & Hörbuch für Kinder (ab 6 J.) | Prinzessin & Einhorn">
+    <meta property="og:description" content="Magisches Prinzessin Märchenbuch und Hörbuch für Kinder mit Illustrationen (ab 6 J.). Ein spannendes Abenteuer mit Drachen, Einhörnern & Hexe über Mut und Freundlichkeit.">
+    <meta property="og:image" content="https://silberschweif.ch/Cover_Ayana_NEU.jpg">
+    <meta property="og:url" content="https://silberschweif.ch/kinderbuch-maerchen-abenteuer-prinzessin-einhorn.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Das magische Märchenbuch & Hörbuch für Kinder (ab 6 J.) | Prinzessin & Einhorn">
+    <meta name="twitter:description" content="Magisches Prinzessin Märchenbuch und Hörbuch für Kinder mit Illustrationen (ab 6 J.). Ein spannendes Abenteuer mit Drachen, Einhörnern & Hexe über Mut und Freundlichkeit.">
+    <meta name="twitter:image" content="https://silberschweif.ch/Cover_Ayana_NEU.jpg">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Cookie Banner (Layer 1) -->
+<div id="cc-banner" class="cc-banner" style="display:none;">
+  <div class="cc-banner-inner">
+    <span class="cc-msg">🍪 Diese Website verwendet Cookies, um dein Einkaufserlebnis zu verbessern.</span>
+    <div class="cc-actions">
+      <button class="cc-btn-ok" onclick="acceptAll()">Okey</button>
+      <button class="cc-btn-settings" onclick="openSettings()">Einstellungen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Einstellungen (Layer 2) -->
+<div id="cc-settings-modal" class="cc-modal-overlay" style="display:none;">
+  <div class="cc-modal">
+    <h3 class="cc-modal-title">🍪 Cookie-Einstellungen</h3>
+    <p class="cc-modal-text">Hier kannst du auswählen, welche Cookies du zulassen möchtest.</p>
+
+    <div class="cc-option">
+      <label class="cc-label">
+        <input type="checkbox" checked disabled>
+        <strong>Notwendig</strong>
+      </label>
+      <span class="cc-desc">Für die grundlegende Funktion der Website. Immer aktiv.</span>
+    </div>
+
+    <div class="cc-option">
+      <label class="cc-label">
+        <input type="checkbox" id="cc-marketing" checked>
+        <strong>Marketing & Analyse</strong>
+      </label>
+      <span class="cc-desc">Hilft uns, dein Einkaufserlebnis zu verbessern.</span>
+    </div>
+
+    <div class="cc-modal-actions">
+      <button class="cc-btn-ok" onclick="saveSelection()">Auswahl speichern</button>
+      <button class="cc-btn-deny" onclick="denyAll()">Alle ablehnen</button>
+    </div>
+
+    <a class="cc-privacy-link" href="https://silberschweif.ch/datenschutz.html">Datenschutzerklärung</a>
+  </div>
+</div>
+
+    <div class="main-container">
+        <div class="banner-container">
+            <img src="BannerSilberschweif.png" alt="J. D. Silberschweif Banner" class="banner-img">
+        </div>
+
+        <nav class="blog-nav-bar">
+            <a href="entstehung-kinder-fantasy-abenteuer-buch-zelda.html" class="nav-left">&laquo; Vorheriger Beitrag</a>
+            <a href="kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html" class="nav-center">Zurück zur Buchseite</a>
+            <a href="hoerbuch-kinder-maerchen-abenteuer-prinzessin-einhorn.html" class="nav-right">Nächster Beitrag &raquo;</a>
+        </nav>
+
+        <div class="content-wrapper">
+            <div class="blog-content">
+		<p style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">⏱️ Lesezeit Blog: 3 Min.</p>
+                <h1 class="blog-titel">🦄 Mein Herzensprojekt:<br>Das magische Märchen rund um eine mutige Prinzessin und ein Einhorn</h1>
+
+                <div class="blog-key-facts">
+                    <p style="margin: 0;"><strong>Altersempfehlung:</strong> Ab 6 Jahren</p>
+                    <p style="margin: 0;"><strong>Genre:</strong> Märchen / Gute Nacht Geschichte</p>
+                    <p style="margin: 0;"><strong>Themen:</strong> Prinzessin, Einhorn, Drache, Hexe, Mut & Werte</p>
+                    <p style="margin: 0;"><strong>Lesezeit Märchenbuch:</strong> ca. 25–30 Minuten (Vorlesen)</p>
+                </div>
+
+                <section>
+                    <p>
+                        Manchmal beginnt eine neue Geschichte aus einem ganz einfachen Grund: Liebe und Gerechtigkeit. Nachdem ich mein erstes Fantasy Kinderbuch im Zelda-Stil für meinen Neffen Alexan geschrieben hatte, wusste ich, dass ich meine Nichte Ayana nicht vergessen durfte. Gerade bei kleinen Kindern merkt man schnell, dass sie sich benachteiligt fühlen, wenn das Geschwisterchen bevorzugt wird.
+                    </p>
+                    <p>
+                        Deshalb war klar: Ein eigenes, altersgerechtes Märchen für meine Nichte war ein absolutes Muss und entsprach meinen persönlichen Werten. Da Ayana zu der Zeit sieben Jahre alt war und gerade erst mit dem Lesen begonnen hatte, gab ich ihr ein Versprechen: „Wenn du gut lesen gelernt hast, bekommst du deine eigene Geschichte." Dieses Versprechen konnte ich nun einlösen und ein ganz besonderes Abenteuer für sie erschaffen.
+                    </p>
+                </section>
+
+<figure class="blog-figure-full">
+    <img src="Cover_Ayana_NEU.jpg" alt="Buchcover: Ayanas Abenteuer im Zauberwald mit Prinzessin und Einhorn">
+    <figcaption>Das magische Märchen für Mädchen und Kinder ab 6 Jahren</figcaption>
+</figure>
+
+                <section>
+                    <h2>⚔️ Ein märchenhaftes Abenteuer für kleine Entdeckerinnen</h2>
+                    <p>
+                        Da meine Nichte noch ein kleines Mädchen war, brauchte es eine herzliche Erzählung. Anstelle eines epischen Epos wie bei Alexan musste ein liebevolles Buch für Mädchen her, in dem die Themen Prinzessin und Einhorn eine zentrale Rolle spielen.
+                    </p>
+                    <p>
+                        Die Identifikation sollte einfach sein, deshalb dreht sich alles um eine Prinzessin – Ayana selbst trägt den Namen der Heldin. Da meine Nichte Pony-Spielzeuge liebt, durfte die Kombination Prinzessin und Einhorn natürlich nicht fehlen. Auch wenn es klassisch klingt, war es für die Zielgruppe ein absoluter Herzenswunsch. (Mehr dazu, wie die Fabelwesen entstanden, verrate ich im nächsten Beitrag!)
+                    </p>
+                </section>
+
+                <section>
+                    <h2>✨ Mut, Selbstvertrauen und die Lehre der Hexe</h2>
+                    <p>
+                        Mir war es extrem wichtig, Ayana in eine spannende Situation zu führen. Die Prinzessin sollte sich beweisen, Mut zeigen und Selbstvertrauen entwickeln. Diese Werte wollte ich den jungen Lesern mit auf den Weg geben, während sie in dieses Märchen eintauchen.
+                    </p>
+                    <p>
+                        Zusätzlich habe ich eine wichtige Lektion über das Thema Schönheit durch die Rolle der Hexe eingebaut. Gerade im jungen Alter sind Kinder leicht beeinflussbar. Ich wollte die Botschaft vermitteln, dass wahre Schönheit von innen kommt. Auf ihrer Reise begegnet sie zudem einem majestätischen Drachen, der die Geschichte mit Spannung füllt. So entstand eine Erzählung darüber, wie eine Prinzessin auf eine Heldenreise geht, um den Weg nach Hause zu finden.
+                    </p>
+                </section>
+
+<figure class="blog-figure-full">
+    <img src="Tilly.png" alt="Der Schmetterlingsdrache Tilly als Begleiterin der Prinzessin">
+    <figcaption>Der Schmetterlingsdrache Tilly – Ayanas lustige Begleiterin auf ihrem Abenteuer</figcaption>
+</figure>
+
+                <section>
+                    <h2>🌙 Was macht eine perfekte Gute-Nacht-Geschichte für 6-Jährige aus?</h2>
+                    <p>
+                        Dieses Buch ist ideal für junge Leserinnen, die gerade erst mit dem Lesen beginnen, eignet sich aber auch hervorragend als Gute-Nacht-Geschichte zum Vorlesen vor dem Einschlafen.
+                    </p>
+                    <ul class="weisheiten-liste">
+                        <li><strong>Kurz und prägnant:</strong> Die Geschichte wurde auf 35 Seiten ausgeweitet und ist in etwa 15–20 Minuten gelesen – perfekt für das Abendritual.</li>
+                        <li><strong>Lesekomfort:</strong> Die Schriftart ist extra groß gewählt, um den Einstieg in das erste eigene Abenteuer zu erleichtern.</li>
+                        <li><strong>Visueller Anreiz:</strong> Viele Illustrationen regen die Fantasie an und helfen dabei, die Erlebnisse rund um Prinzessin und Einhorn besser zu verarbeiten.</li>
+                    </ul>
+                    <p>
+                        Die Freude in den Augen der Kinder zu sehen, wenn sie diese Gute-Nacht-Geschichte hören, erfüllt mich mit großem Stolz.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🧙‍♂️ Entdecke mein Fantasy Kinderbuch im Zelda-Stil</h2>
+                    <p>
+                        Bevor dieses Märchen Kinderbuch entstand, begann meine Reise mit meinem Fantasy Kinderbuch „ALEXAN – Das Geheimnis von Mystiko". Dieses Werk ist wie Zelda aufgebaut, richtet sich an ältere Kinder ab 10 Jahren und erzählt eine epische Heldenreise in der Welt von Mystiko. Wenn du oder deine Kinder Zelda-Mangas und spannende Rätsel lieben, findest du <a href="fantasy-abenteuer-buch-hoerbuch-zelda-kinder.html" style="color: var(--link-color); font-weight: bold;">hier weitere Details</a>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🌟 Inspiration und Werte: Mehr als nur Text</h2>
+                    <p>
+                        Obwohl die Geschichte kindgerecht ist, vermittelt sie wichtige Werte wie Mut, Hilfsbereitschaft und Freundlichkeit.
+                    </p>
+                    <ul class="weisheiten-liste">
+                        <li><strong>Klassische Inspiration:</strong> Schon früher habe ich Comics wie Spirou und Gaston verschlungen, deren Humor auch hier immer wieder durchblitzt.</li>
+                        <li><strong>Magische Welten:</strong> Ich bin mit Disney, Star Wars und der „Unendlichen Geschichte" aufgewachsen, was meine Sicht für starke Prinzessinnen geschärft hat.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>🎶 Was kommt als Nächstes? (Hörbuch und Fortsetzung)</h2>
+                    <p>
+                        Da mir die Produktion des Hörbuchs für mein erstes Buch sehr viel Freude bereitet hat, wird es auch für dieses Werk ein Hörbuch mit individuellen Stimmen für jede Figur geben. Wenn die Geschichte Anklang findet, könnten bald noch mehr Märchen-Abenteuer folgen.
+                    </p>
+                    
+                    <p style="margin-top: 30px;">
+                        ❤️ Danke fürs Lesen! Ich freue mich über jedes Feedback, Kommentare und Unterstützung!
+                    </p>
+                </section>
+
+                <br>
+                <p><strong>👉 Neugierig geworden? Entdecke hier das magische Märchen:</strong></p>
+                <p style="font-size: 1.2rem;">
+                    <a href="kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html" style="color: var(--link-color); font-weight: bold; text-decoration: underline;">
+                        Ayanas Abenteuer im Zauberwald
+                    </a>
+                </p>
+
+                <h2 style="font-family: 'Cinzel', serif; font-size: 1.4rem; text-align: center; margin-bottom: 25px; margin-top: 40px;">Lies auch meine anderen Blog-Einträge:</h2>
+                
+                <div class="blog-footer-nav">
+                    <a href="hoerbuch-kinder-maerchen-abenteuer-prinzessin-einhorn.html" class="blog-footer-link">
+                        🎵 <strong>Entstehung des Hörbuchs:</strong> Ein Märchen für die Ohren
+                    </a>
+                    <a href="entstehung-kinder-fantasy-abenteuer-buch-zelda.html" class="blog-footer-link">
+                        🎮 <strong>Entstehung des Buchs:</strong> Vom Controller zum Kinderbuch wie Zelda
+                    </a>
+                    <a href="hoerbuch-kinder-fantasy-abenteuer-zelda.html" class="blog-footer-link">
+                        🎵 <strong>Entstehung des Hörbuchs:</strong> Ein Kinofilm für die Ohren (Score & Effekte)
+                    </a>
+                </div>
+
+                <hr class="trennlinie">
+
+                <section class="rezensionen-section">
+                    <h2 style="font-family: 'Cinzel', serif; font-size: 1.4rem; text-align: center; margin-bottom: 25px; margin-top: 40px;">💬 Kommentare</h2>
+                    
+                    <div class="bewertung-hinweis">
+                        Was denkst du über diesen Beitrag? Ich freue mich über dein Feedback!
+                    </div>
+
+                    <div class="bewertung-hinweis">
+                        📝 Gib deinen <strong>Namen</strong> ein, schreibe deinen <strong>Kommentar</strong> unter Reply und klicke auf <strong>„Comment"</strong> zum Absenden.
+                    </div>
+
+                    <div id="cusdis_thread"
+                        data-host="https://cusdis.com"
+                        data-app-id="d07e3c41-a647-4171-91fd-9b26fc91f13c"
+                        data-page-id="blog-ayana-entstehung"
+                        data-page-url="https://silberschweif.ch/kinderbuch-maerchen-abenteuer-prinzessin-einhorn.html"
+                        data-page-title="Das magische Märchenbuch & Hörbuch für Kinder | Prinzessin & Einhorn"
+                    ></div>
+                    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
