@@ -1436,3 +1436,31 @@ img, iframe {
     outline: none !important;
 }
 
+/* --- COOKIE CONSENT BANNER --- */
+.cc-window {
+    font-family: 'Lora', serif !important;
+    border-top: 2px solid #d4af37 !important;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.5) !important;
+}
+.cc-message {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+}
+.cc-btn.cc-dismiss {
+    font-family: 'Cinzel', serif !important;
+    font-weight: 700 !important;
+    border-radius: 5px !important;
+    padding: 8px 20px !important;
+    transition: transform 0.2s, background-color 0.3s !important;
+}
+.cc-btn.cc-dismiss:hover {
+    background-color: #b8860b !important;
+    transform: scale(1.05) !important;
+}
+.cc-link {
+    color: #d4af37 !important;
+    text-decoration: underline !important;
+}
+.cc-link:hover {
+    color: #fdf5e6 !important;
+}
