@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Cookie Consent (DSGVO-konform, 2-Layer) -->
+<script>
+function loadGTM() {
+  if (document.getElementById('gtm-script')) return;
+  var s = document.createElement('script');
+  s.id = 'gtm-script';
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P3X2MJ86';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+}
+function setCookieConsent(status) {
+  var d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  document.cookie = 'cookie_consent=' + status + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+}
+function getCookieConsent() {
+  var match = document.cookie.match(/cookie_consent=([^;]+)/);
+  return match ? match[1] : null;
+}
+function acceptAll() {
+  setCookieConsent('allow');
+  loadGTM();
+  closeBanner();
+  closeModal();
+}
+function denyAll() {
+  setCookieConsent('deny');
+  closeBanner();
+  closeModal();
+}
+function saveSelection() {
+  var cb = document.getElementById('cb-marketing');
+  if (cb && cb.checked) {
+    acceptAll();
+  } else {
+    denyAll();
+  }
+}
+function openSettings() {
+  document.getElementById('consent-settings-modal').style.display = 'flex';
+}
+function closeModal() {
+  var m = document.getElementById('consent-settings-modal');
+  if (m) m.style.display = 'none';
+}
+function closeBanner() {
+  var b = document.getElementById('consent-banner');
+  if (b) b.style.display = 'none';
+}
+window.addEventListener('load', function() {
+  var status = getCookieConsent();
+  if (status === 'allow') { loadGTM(); return; }
+  if (status === 'deny') return;
+  document.getElementById('consent-banner').style.display = 'block';
+});
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGB & Widerrufsbelehrung - J. D. Silberschweif</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .buch-ueberschrift, h1, h2, h3 {
+            font-family: 'Lora', serif !important;
+            color: var(--primary-dark) !important;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
+        }
+        
+        .header-line {
+            border: 0;
+            border-top: 3px solid var(--accent-gold) !important;
+            margin: 0 0 30px 0;
+            width: 100%;
+            opacity: 1;
+        }
+
+        .section-line {
+            border: 0;
+            border-top: 1px solid var(--accent-gold);
+            margin: 30px 0;
+            width: 100%;
+        }
+        
+        .beschreibung h3 {
+            text-align: left;
+            margin-top: 30px;
+            color: var(--secondary-dark) !important;
+        }
+        
+        .beschreibung p, .beschreibung ul {
+            text-align: left;
+        }
+        
+        .beschreibung ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .beschreibung li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+<!-- Cookie Banner (Layer 1) -->
+<div id="consent-banner" class="cb-bar" style="display:none;">
+  <div class="cb-bar-inner">
+    <span class="cb-msg">🍪 Diese Website verwendet Cookies, um dein Einkaufserlebnis zu verbessern.</span>
+    <div class="cb-actions">
+      <button class="cb-btn-ok" onclick="acceptAll()">Okey</button>
+      <button class="cb-btn-settings" onclick="openSettings()">Einstellungen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Einstellungen (Layer 2) -->
+<div id="consent-settings-modal" class="cb-modal-overlay" style="display:none;">
+  <div class="cb-modal">
+    <h3 class="cb-modal-title">🍪 Cookie-Einstellungen</h3>
+    <p class="cb-modal-text">Hier kannst du auswählen, welche Cookies du zulassen möchtest.</p>
+    <div class="cb-option">
+      <label class="cb-label">
+        <input type="checkbox" checked disabled>
+        <strong>Notwendig</strong>
+      </label>
+      <span class="cb-desc">Für die grundlegende Funktion der Website. Immer aktiv.</span>
+    </div>
+    <div class="cb-option">
+      <label class="cb-label">
+        <input type="checkbox" id="cb-marketing" checked>
+        <strong>Marketing & Analyse</strong>
+      </label>
+      <span class="cb-desc">Hilft uns, dein Einkaufserlebnis zu verbessern.</span>
+    </div>
+    <div class="cb-modal-actions">
+      <button class="cb-btn-ok" onclick="saveSelection()">Auswahl speichern</button>
+      <button class="cb-btn-deny" onclick="denyAll()">Alle ablehnen</button>
+    </div>
+    <a class="cb-privacy-link" href="https://silberschweif.ch/datenschutz.html">Datenschutzerklärung</a>
+  </div>
+</div>
+
+    <div class="main-container">
+        <div class="banner-container">
+            <img src="BannerSilberschweif.png" alt="J. D. Silberschweif Autor für Kinder Fantasy und Märchen" class="banner-img">
+        </div>
+
+        <div class="content-wrapper">
+            <h1 class="buch-ueberschrift">Allgemeine Geschäftsbedingungen (AGB)</h1>
+            <hr class="header-line">
+            
+            <div class="beschreibung">
+                <p><strong>Stand:</strong> Dezember 2025</p>
+                <p><strong>Anbieter:</strong><br>
+                J. D. Silberschweif<br>
+                c/o Dinç Management<br>
+                Fenzgasse 25<br>
+                8755 Ennenda<br>
+                Schweiz<br>
+                E-Mail: <a href="mailto:kontakt@silberschweif.ch">kontakt@silberschweif.ch</a></p>
+
+                <hr class="section-line">
+
+                <h2>1. Geltungsbereich</h2>
+                <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Bestellungen und Käufe digitaler Produkte (E-Books, Hörbücher, personalisierte Versionen) über die Website silberschweif.ch. Mit der Bestellung erkennt der Kunde diese AGB an.</p>
+
+                <h2>2. Vertragsgegenstand und Produktbeschreibung</h3>
+                <p>Der Anbieter verkauft digitale Inhalte in Form von:</p>
+                <ul>
+                    <li>E-Books (EPUB- und PDF-Format)</li>
+                    <li>Hörbücher (MP3-Format, Standard- und Cineastische Version)</li>
+                    <li>Personalisierte Buchversionen (gedruckt)</li>
+                </ul>
+                <p>Die genauen Produktbeschreibungen und Preise sind auf den jeweiligen Produktseiten ersichtlich.</p>
+
+                <h2>3. Zahlungsabwicklung</h2>
+                <p>Die Zahlungsabwicklung erfolgt über <strong>Lemon Squeezy</strong>, einen zertifizierten Zahlungspartner. Lemon Squeezy wickelt die Zahlung sicher ab und ist für die Abrechnung und Zahlungsabwicklung verantwortlich.</p>
+                <p>Akzeptierte Zahlungsmethoden werden während des Checkout-Prozesses angezeigt.</p>
+
+                <h2>4. Lieferung und Bereitstellung</h2>
+                <p>Digitale Produkte (E-Books und Hörbücher) werden <strong>unmittelbar nach erfolgreicher Zahlung</strong> per Download-Link bereitgestellt. Der Download-Link wird per E-Mail an die vom Kunden angegebene E-Mail-Adresse gesendet.</p>
+                <p>Personalisierte gedruckte Versionen werden nach individueller Absprache per Post versendet. Die Lieferzeit beträgt in der Regel 7-14 Werktage nach Auftragsbestätigung.</p>
+
+                <h2>5. Nutzungsrechte und Urheberrecht</h2>
+                <p>Mit dem Kauf erwirbt der Kunde ein <strong>einfaches, nicht übertragbares Nutzungsrecht</strong> für den privaten, persönlichen Gebrauch. Es ist ausdrücklich <strong>nicht gestattet</strong>:</p>
+                <ul>
+                    <li>Die Inhalte zu vervielfältigen, zu verbreiten oder öffentlich zugänglich zu machen</li>
+                    <li>Die Inhalte weiterzuverkaufen, zu verleihen oder zu verschenken</li>
+                    <li>Die Inhalte auf File-Sharing-Plattformen, Streaming-Diensten oder anderen öffentlichen Plattformen hochzuladen</li>
+                    <li>Den Kopierschutz oder digitale Wasserzeichen zu entfernen oder zu umgehen</li>
+                </ul>
+                <p>Alle Urheberrechte und sonstigen Schutzrechte verbleiben beim Anbieter. Zuwiderhandlungen können zivil- und strafrechtlich verfolgt werden.</p>
+
+                <h2>6. Widerrufsbelehrung für digitale Inhalte</h2>
+                <p><strong>Wichtiger Hinweis zum Widerrufsrecht bei digitalen Produkten (Weltweit):</strong></p>
+                <p>Sie haben grundsätzlich das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.</p>
+                <p><strong>Vorzeitiges Erlöschen des Widerrufsrechts:</strong></p> 
+				<p>Bei digitalen Inhalten (E-Books, Hörbücher zum Download), die nicht auf einem körperlichen Datenträger geliefert werden, erlischt das Widerrufsrecht vorzeitig, sobald die Ausführung des Vertrages begonnen hat. Dies ist der Fall, wenn:</p>
+                <ul>
+                    <li>Sie ausdrücklich zugestimmt haben, dass der Anbieter mit der Ausführung des Vertrags (Bereitstellung des Downloads/Zugangs) vor Ablauf der Widerrufsfrist beginnt, und</li>
+                    <li>Sie Ihre Kenntnis davon bestätigt haben, dass Sie durch diese Zustimmung Ihr Widerrufsrecht verlieren.</li>
+                </ul>
+                <p>Diese Zustimmung wird während des Checkout-Prozesses bei unserem autorisierten Wiederverkäufer <strong>LemonSqueezy</strong> eingeholt.</p>
+				<p><strong>Internationale Geltung & Personalisierte Waren:</strong></p>
+				<p>Für Kunden außerhalb der EU/Schweiz gelten die jeweiligen lokalen Bestimmungen für digitale Güter, wobei mit dem Download der Leistung die Vertragserfüllung als abgeschlossen gilt. Für personalisierte gedruckte Versionen besteht kein Widerrufsrecht, da diese individuell für Sie angefertigt werden (gemäss internationalem Standard für Sonderanfertigungen sowie spezifisch nach Art. 16 Abs. 2 lit. c OR (CH) und § 312g Abs. 2 Nr. 1 BGB (DE)).</p>
+
+                <h2>7. Gewährleistung und Haftung</h2>
+                <p>Der Anbieter gewährleistet, dass die digitalen Produkte frei von technischen Fehlern sind und in den angegebenen Formaten (EPUB, PDF, MP3) bereitgestellt werden.</p>
+                <p><strong>Haftungsausschluss:</strong></p>
+                <ul>
+                    <li>Der Anbieter haftet nicht für technische Probleme auf Seiten des Kunden (z.B. inkompatible Geräte, fehlende Software, Speicherprobleme)</li>
+                    <li>Der Anbieter haftet nicht für Datenverlust nach erfolgreichem Download</li>
+                    <li>Die Haftung für leichte Fahrlässigkeit ist ausgeschlossen, soweit gesetzlich zulässig</li>
+                </ul>
+                <p><strong>Support-Angebot:</strong> Bei technischen Schwierigkeiten bietet der Anbieter im Rahmen seiner Möglichkeiten gerne Unterstützung an. Bitte kontaktieren Sie uns unter <a href="mailto:kontakt@silberschweif.ch">kontakt@silberschweif.ch</a>.</p>
+
+                <h2>8. Anwendbares Recht und Gerichtsstand</h2>
+                <p>Es gilt Schweizer Recht unter Ausschluss des UN-Kaufrechts. Für Verbraucher mit Wohnsitz in der EU gelten zusätzlich die zwingenden Verbraucherschutzbestimmungen des jeweiligen Wohnsitzlandes.</p>
+                <p>Gerichtsstand ist Glarus, Schweiz, soweit gesetzlich zulässig.</p>
+
+                <h2>9. Salvatorische Klausel</h2>
+                <p>Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Anstelle der unwirksamen Bestimmung gilt eine wirksame Regelung, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt.</p>
+
+                <h2>10. Änderungen der AGB</h2>
+                <p>Der Anbieter behält sich vor, diese AGB jederzeit zu ändern. Es gilt die zum Zeitpunkt der Bestellung gültige Fassung.</p>
+
+                <hr class="section-line">
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="index.html" class="back-link">Zurück zur Startseite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+<script data-goatcounter="https://silberschweif.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
