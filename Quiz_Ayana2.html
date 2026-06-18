@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abenteuer-Quiz zu Ayanas Abenteuer: Der Schatz der Freundschaft</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ayana-spezifische Überschreibungen (dunkelviolettes Farbschema, pinke Akzente) */
+        body {
+            background-color: var(--primary-dark);
+            /* Footer immer am unteren Rand, auch wenn das beendete Quiz kurz ist */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main.container { flex: 1 0 auto; }
+
+        #quiz-container { padding: 10px; }
+        
+        .question { 
+            margin-bottom: 20px; 
+            font-size: 1.2rem; 
+            color: #333; 
+            font-family: 'Montserrat', serif; 
+        }
+        
+.answers label { 
+    display: block; 
+    margin-bottom: 12px; 
+    cursor: pointer; 
+    padding: 15px;
+    border-radius: 8px; 
+    border: 1px solid #ce93d8; 
+    background-color: rgba(255,255,255,0.6);
+    transition: all 0.2s; 
+    font-family: 'Montserrat', serif;
+    position: relative;
+    z-index: 1;
+}
+
+.answers input[type="radio"] {
+    position: relative;
+    z-index: 2;
+}
+        
+        .answers label:hover { 
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(206, 147, 216, 0.5); 
+        }
+        
+        input[type="radio"] { 
+            margin-right: 12px; 
+            transform: scale(1.3); 
+            accent-color: #d81b60; 
+        }
+        
+        #result { margin-top: 30px; text-align: center; }
+        
+        h1.ayana-quiz-title {
+            font-size: 1.6rem;
+            font-family: 'Cinzel', serif;
+            color: #8e24aa;
+            border-bottom: 3px solid #ce93d8;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        h2.ayana-quiz-subtitle {
+            font-family: 'Montserrat', serif;
+            color: #d81b60;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+/* Weiter-Button im Ayana-Stil (Pink-Violett Gradient) */
+#next-btn {
+    background: linear-gradient(45deg, #ec407a, #ab47bc) !important;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.4) !important;
+    color: white !important;
+}
+
+#next-btn:hover {
+    background: linear-gradient(45deg, #d81b60, #8e24aa) !important;
+    color: white !important;
+}
+
+#next-btn:disabled {
+    background: #ccc !important;
+    box-shadow: none !important;
+    color: white !important;
+}
+    </style>
+</head>
+<body>
+
+<main class="container quiz-bg-override">
+    
+    <div style="text-align: center; padding: 15px 0;">
+        <img src="Cover_Ayana2.jpg" alt="Ayanas Abenteuer: Der Schatz der Freundschaft Buchcover" style="max-width: 175px; border-radius: 10px; box-shadow: 0 5px 15px rgba(142, 36, 170, 0.4);">
+    </div>
+
+    <div id="quiz-container">
+        <h1 class="ayana-quiz-title">
+            Abenteuer-Quiz zu<br>Ayanas Abenteuer: Der Schatz der Freundschaft ✨
+        </h1>
+        
+        <h2 class="ayana-quiz-subtitle">
+            Ahoi, mutige Heldin! Viel Erfolg beim Quiz! 🐚
+        </h2>
+        
+        <div id="question-area"></div>
+        
+        <div style="margin-top: 20px; padding: 0 10px;">
+            <button id="next-btn" class="quiz-next-button" disabled>Weiter</button>
+            <a href="kinderbuch-hoerbuch-piraten-meerjungfrau-freundschaft.html" class="quiz-cancel-button">Abbrechen / Zurück zum Buch</a>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+</main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+<script>
+// --- FRAGEN KATALOG (in Buchreihenfolge, Antwortposition gut durchmischt) ---
+const questions = [
+    // 1 – Kap.1: Mamas Spruch über Mut (richtig = c)
+    { q: "Was sagte Mama immer über Mut?", a: ["Mut heißt, keine Angst zu haben", "Mut heißt, stark zu sein", "Mutig ist, wer trotz der Angst das Richtige tut"], correct: 2 },
+    // 2 – Kap.2: Rettung aus dem Meer (richtig = a)
+    { q: "Welche Tiere retteten Ayana zuerst, als sie ins Wasser fiel?", a: ["Delfine und Seehunde", "Haie und Delfine", "Vögel und Seehunde"], correct: 0 },
+    // 3 – Kap.2: Geschenk der Meerjungfrau (richtig = b)
+    { q: "Was gab die Meerjungfrau Ayana?", a: ["Eine Muschel", "Eine Perlenkette", "Ein Haarreif"], correct: 1 },
+    // 4 – Kap.2: Aufgabe vor der Perlenkette (richtig = a)
+    { q: "Was tat Ayana, bevor sie die Perlenkette von der Meerjungfrau bekam?", a: ["Sie befreite einen kleinen Fisch aus einem Netz", "Sie sang ein Lied", "Sie tanzte für die Meerjungfrau"], correct: 0 },
+    // 5 – Kap.3: Geschenk des Seelöwen (richtig = b)
+    { q: "Was gab der Seelöwe Ayana?", a: ["Einen rosa Shrimp", "Eine rosa Muschel", "Eine rote Krabbe"], correct: 1 },
+    // 6 – Kap.3: Sturm auf dem Wal (richtig = c)
+    { q: "Was passierte auf dem Rücken des Wals während des Sturms?", a: ["Ayana fiel ins Wasser", "Der Wal tauchte unter", "Klick-Klack rutschte ab und Ayana rettete ihn"], correct: 2 },
+    // 7 – Kap.4: Krake besiegt Piraten (richtig = a)
+    { q: "Wer hat geholfen, die Piraten zu besiegen?", a: ["Ein Krake", "Ein Hai", "Ein Wal"], correct: 0 },
+    // 8 – Kap.4: Reaktion der Piraten auf den Kraken (richtig = c)
+    { q: "Was machten die Piraten, als der Krake auftauchte?", a: ["Sie kämpften gegen ihn", "Sie versteckten sich", "Sie rannten durcheinander und jeder dachte nur an sich"], correct: 2 },
+    // 9 – Kap.4: Befreiung der Eltern (richtig = b)
+    { q: "Wie befreite Klick-Klack Ayanas Eltern?", a: ["Er biss die Seile durch", "Er schnitt die Seile mit seinen Scheren durch", "Er holte ein Messer"], correct: 1 },
+    // 10 – Kap.4/5: Wohin kam der Schatz (richtig = a)
+    { q: "Wohin haben die Piraten den Schatz geschleppt?", a: ["In eine Höhle", "In eine Festung", "In einen Turm"], correct: 0 },
+    // 11 – Kap.5: Piraten und der Schatz (richtig = b)
+    { q: "Warum konnten die Piraten den Schatz nicht aus der Höhle holen?", a: ["Der Schatz war zu schwer", "Sie stritten und halfen sich nicht gegenseitig", "Die Höhle war verschlossen"], correct: 1 },
+    // 12 – Kap.5: Erste über die Steine (richtig = c)
+    { q: "Wer ging als Erstes über die wackeligen Steine in der Höhle?", a: ["Papa", "Mama", "Ayana"], correct: 2 },
+    // 13 – Kap.5: Papas Angst (richtig = c)
+    { q: "Wovor hatte Ayanas Papa am meisten Angst, als sie in der Höhle über die Steine gingen?", a: ["Vor den Piraten", "Vor der Dunkelheit", "Vor der Tiefe der Schlucht"], correct: 2 },
+    // 14 – Kap.5: Schlüssel zum Schatz (richtig = a)
+    { q: "Was war der Schlüssel, um an den Schatz zu kommen?", a: ["Zusammenhalt", "Ein Zauberstab", "Eine Brücke"], correct: 0 },
+    // 15 – Kap.5: Schildkröte auf der Heimreise (richtig = b)
+    { q: "Welchem Tier half Ayana auf der Heimreise?", a: ["Einem kleinen Fisch", "Einer Schildkröte", "Einem verletzten Delfin"], correct: 1 }
+];
+
+let currentQuestion = 0;
+const userAnswers = new Array(questions.length).fill(null); 
+const questionArea = document.getElementById("question-area");
+const nextBtn = document.getElementById("next-btn");
+const resultDiv = document.getElementById("result");
+const cancelBtn = document.querySelector(".quiz-cancel-button");
+
+function showQuestion(index) {
+    nextBtn.disabled = true;
+    nextBtn.style.display = "block";
+    cancelBtn.style.display = "block";
+    const q = questions[index];
+    let html = `<div class="question"><strong>Frage ${index+1} von ${questions.length}:</strong><br><br>${q.q}</div><div class="answers">`;
+    q.a.forEach((answer, i) => {
+        const radioId = `q${index}_a${i}`;
+        html += `<label for="${radioId}"><input type="radio" id="${radioId}" name="answer" value="${i}"> ${answer}</label>`;
+    });
+    html += `</div>`;
+    questionArea.innerHTML = html;
+    
+    const radios = document.querySelectorAll('input[name="answer"]');
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            nextBtn.disabled = false;
+            userAnswers[currentQuestion] = parseInt(radio.value);
+        });
+    });
+}
+
+function showResult() {
+    let correctCount = 0;
+    questions.forEach((q, i) => { if(userAnswers[i] === q.correct) correctCount++; });
+    const percent = Math.round((correctCount / questions.length) * 100);
+
+    let resultHtml = `<h2 style="color: #8e24aa;">Dein Ergebnis:</h2>
+                      <h3 style="color:#000000;">${correctCount} von ${questions.length} richtig (${percent}%)</h3>`;
+
+    if (percent >= 80) resultHtml += `<h2 style="color:#2e7d32;">BRAVO – Tolle Leistung! 🌟</h2>`;
+    else if (percent >= 60) resultHtml += `<h2 style="color:#ef6c00;">Gute Leistung! 👏</h2>`;
+    else resultHtml += `<h2 style="color:#c62828;">Das schaffst du noch besser! Versuch es nochmal. 💪</h2>`;
+
+    resultHtml += `
+        <div class="result-navigation" style="margin-top: 30px; padding: 0 10px;">
+            <button onclick="restartQuiz()" class="quiz-next-button">Quiz Neustarten ✨</button>
+            <a href="kinderbuch-hoerbuch-piraten-meerjungfrau-freundschaft.html" class="quiz-next-button">Zurück zum Buch 🐚</a>
+        </div>
+    `;
+
+    questionArea.innerHTML = "";
+    document.getElementById("next-btn").style.display = "none";
+    document.querySelector(".quiz-cancel-button").style.display = "none";
+    resultDiv.innerHTML = resultHtml;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    userAnswers.fill(null); 
+    resultDiv.innerHTML = "";
+    showQuestion(currentQuestion);
+}
+
+nextBtn.addEventListener("click", () => {
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        showQuestion(currentQuestion);
+    } else {
+        showResult();
+    }
+});
+
+showQuestion(currentQuestion);
+</script>
+<script data-goatcounter="https://silberschweif.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

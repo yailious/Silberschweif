@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz (Klasse 5+) zu ALEXAN - Das Geheimnis von Mystiko</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Footer immer am unteren Rand, auch wenn das beendete Quiz kurz ist */
+        body { min-height: 100vh; display: flex; flex-direction: column; }
+        main.container { flex: 1 0 auto; }
+
+        #quiz-container { padding: 10px; }
+        .question { margin-bottom: 20px; font-size: 1.2rem; color: #333; font-family: 'Montserrat', serif; }
+        .answers label { 
+            display: block; margin-bottom: 12px; cursor: pointer; padding: 15px;
+            border-radius: 8px; border: 1px solid #d4af37; background-color: rgba(255,255,255,0.6);
+            transition: all 0.2s; font-family: 'Montserrat', serif;
+        }
+        .answers label:hover { background-color: #fff; box-shadow: 0 0 10px rgba(212, 175, 55, 0.4); }
+        input[type="radio"] { margin-right: 12px; transform: scale(1.3); accent-color: #004d40; }
+        #result { margin-top: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<main class="container quiz-bg-override">
+    
+    <div style="text-align: center; padding: 15px 0;">
+        <img src="CoverAlexanneu.jpg" alt="Alexan Buchcover" style="max-width: 175px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.4);">
+    </div>
+
+    <div id="quiz-container">
+        <h1 style="font-size: 1.6rem; border-bottom: 3px solid #004d40; padding-bottom: 15px; text-align: center;">
+            Quiz zu ALEXAN - Das Geheimnis von Mystiko:<br>Die Legende der Drei Artefakte
+        </h1>
+        
+        <h2 style="font-family: 'Montserrat', serif; color: #004d40; font-size: 1.3rem; margin-bottom: 30px; text-align: center;">
+            Hallo mutige/r Held/in! Viel Erfolg beim Profi-Quiz! 😊
+        </h2>
+        
+        <div id="question-area"></div>
+        
+<div style="margin-top: 20px; padding: 0 10px;">
+    <button id="next-btn" class="quiz-next-button" disabled>Weiter</button>
+    <a href="fantasy-abenteuer-buch-hoerbuch-zelda-kinder.html" class="quiz-cancel-button">Abbrechen / Zurück zum Buch</a>
+</div>
+        <div id="result"></div>
+    </div>
+</main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+<script>
+// --- FRAGEN KATALOG ---
+const questions = [
+    // Fragen bleiben identisch wie in deinem Code
+    { q: "Obwohl Alexan in der feuchten, nach Erde riechenden Dunkelheit erwachte und sein Gedächtnis vollkommen leer war, ...", a: ["erkannte er sofort die Inschrift an der Wand als eine Warnung vor Riven, dem Herrscher der Schatten, und wusste, dass er fliehen musste.", "fand er eingemeißelte Symbole an den rauen Steinwänden, die ihm seltsam bekannt vorkamen und ein Frösteln in ihm auslösten.", "erinnerte er sich dunkel an seinen Namen und an das Gesicht eines alten Mannes mit weißem Bart, der ihn hier eingesperrt hatte."], correct: 1 },
+    { q: "Meridan, der Hüter des Wissens, erklärte Alexan, dass eine alte Prophezeiung ihn angekündigt habe, denn ...", a: ["Riven, der Herrscher der Schatten, habe die Prinzessin Ayana entführt, und mit ihr sei das Licht von Mystiko verschwunden.", "das große Fest der aufgehenden Sonne bevorstehe und nur Alexan das Gebet der goldenen Dämmerung sprechen könne, um die Tage länger werden zu lassen.", "die drei legendären Artefakte – Schwert, Schild und Bogen – hätten begonnen, ihre Macht zu verlieren und riefen nach einem neuen Träger."], correct: 0 },
+    { q: "Die schmerzhafte Vision, die Alexan nach dem Gespräch mit Meridan und erneut beim Erhalt des Schwertes sah, zeigte einen entscheidenden Moment, in dem ...", a: ["er selbst ein dunkles Buch mit silbernen Runen öffnete, woraufhin ein schwarzer Blitz zuckte und seine Erinnerungen löschte.", "ein neugieriger Gefährte ein verbotenes Buch auf einem Podest aufschlug, obwohl Alexan ihn warnen wollte, woraufhin alles dunkel wurde.", "Meridan ihm ein Buch mit silbernen Runen überreichte, das Alexan jedoch ablehnte, weil er spürte, dass es böse war."], correct: 1 },
+    { q: "Als Alexan im dichten Wald auf einen unheimlichen Nebel traf und dem verängstigten Jungen half, den Weg zurückzufinden, ...", a: ["zog sich der seltsame Nebel sofort zurück, als würde er sie freilassen, und der Junge gab ihm einen blau-violett glänzenden Obsidianstein als Dank.", "warnte der Junge ihn vor den Waldelfen von Lunaria und gab ihm einen Obsidianstein, der ihn vor deren Magie schützen sollte.", "offenbarte sich der Junge als Waldgeist, der seine Hilfsbereitschaft prüfte, und der Nebel lichtete sich erst, als Alexan den Stein annahm."], correct: 0 },
+    { q: "Der Obsidianstein des Jungen löste in Alexan eine plötzliche Erinnerung an seine Vergangenheit aus, in der er ...", a: ["sah, wie sein Gefährte Riven, der Herrscher der Schatten, wurde, nachdem er das dunkle Buch der Magie geöffnet hatte.", "gemeinsam mit einem Kameraden gegen magisch verstärkte Übungspuppen trainierte und sein Freund Eifersucht andeutete, weil er im Schatten stand.", "von Meridan in der Schwertkunst unterrichtet wurde, wobei sein Meister ihm sagte, er sei der Auserwählte vom Licht."], correct: 1 },
+    { q: "Lyara, die hohe Priesterin von Lunaria, offenbarte Alexan, dass sie Prinzessin Ayana persönlich kannte, denn ...", a: ["die Prinzessin war ihre Schülerin in der Magie der Waldelfen gewesen, bevor Riven sie entführte, um ihre Kräfte zu stehlen.", "sie war ihre engste Vertraute, mit der sie oft unter den Bäumen saß, über das Leben sprach und die sie nun durch ein Elfengedicht zu rufen versuchte.", "Ayana hatte ihr einst das Schwert von Lunaria anvertraut, damit sie es im Tempel der Erleuchtung vor Riven versteckt."], correct: 1 },
+    { q: "In der Prüfung des Herzens, bei der ein Schattenwesen ein verletztes Rehkitz mit weißem Fell bedrohte, ...", a: ["wählte Alexan das goldene Schwert, dessen Helligkeit Reinheit versprach, und vertrieb die Kreatur mit dessen heiligem Licht.", "entschied er sich für die zerbrechlich wirkende, durchsichtige Klinge, die daraufhin in tausend Splitter zerbarst und einen schützenden Schild formte.", "griff er zum schwarzen Schwert, dessen mächtige Aura ihn anzog, und zerstörte das Schattenwesen mit dessen dunkler Energie."], correct: 1 },
+    { q: "Was war die entscheidende Erkenntnis, die Alexan in der Prüfung des Verstandes hatte, um den richtigen Weg zu finden?", a: ["Er erkannte, dass die unsichtbare Tür, die sich vor den Augen der Unachtsamen verbarg, die richtige Wahl sein musste, da die Inschrift sie zuerst nannte.", "Er begriff, dass die drei sichtbaren Türen – die verborgene, die magische und die mächtige – eine Täuschung waren und der wahre Weg ein geheimer Durchgang in der Wand war.", "Er wusste, dass die magische Tür mit den Edelsteinen eine Illusion war, und entschied sich für die massive Stahltür, die Macht symbolisierte."], correct: 1 },
+    { q: "Als Alexan in der Bewährungsprobe des Mutes den Flammenwänden gegenüberstand, die ihm seine Zweifel und Ängste zuflüsterten, ...", a: ["erinnerte er sich an Meridans Rat, dass wahrer Mut darin besteht, trotz der Angst weiterzugehen, und rannte entschlossen durch das Feuer.", "nutzte er den Obsidianstein des Jungen, der die Flammen absorbierte und ihm einen kühlen, sicheren Pfad durch das Inferno bahnte.", "sang er das Elfengedicht, das Lyara ihm beigebracht hatte, woraufhin die Flammen ihre zerstörerische Kraft verloren und sich vor ihm teilten."], correct: 0 },
+    { q: "Welches Geheimnis über den Ursprung des sagenumwobenen Schwertes teilte Lyara Alexan mit, nachdem er es dem Altar entnommen hatte?", a: ["Es wurde von dem Helden Yail geschmiedet, dem Einzigen, der vor Jahrtausenden das Böse besiegte, und wartet seitdem auf seine Rückkehr.", "Es wurde von Elyndor, einem Lichtwesen aus dem ersten Sonnenstrahl, mit Sternenstaub und dem Kern eines gefallenen Sterns geschmiedet.", "Es enthält die Seelen aller Waldelfen-Priesterinnen von Lunaria und kann daher nur von jemandem geführt werden, den die Elfen als würdig erachten."], correct: 1 },
+    { q: "Weshalb fand Alexan die einst blühende Handelsstadt Lirien völlig verlassen, in dichten Nebel gehüllt und von einem gruseligen Flüstern erfüllt vor?", a: ["Die furchterregenden Kreaturen der Verderbnis waren aus der Schlucht von Durn gekommen und hatten den Handelssiegelstein geraubt, der die Handelswege schützte und das Leben in die Stadt brachte.", "Tante Finelda war so wütend über den Diebstahl ihres Schaukelstuhls, dass sie einen Nebelfluch aussprach, der alle Händler und Reisenden aus der Stadt vertrieb.", "Der Dorfälteste hatte die Stadt absichtlich evakuieren lassen, um die Schattenwesen in eine Falle zu locken, sobald der Träger des Schwertes eintraf."], correct: 0 },
+    { q: "Nachdem Alexan an der Steintafel in der Schlucht von Durn zunächst gescheitert war, weil sich die Glyphen ständig chaotisch änderten, ...", a: ["spürte er die Vibration seines Schwertes und erkannte, dass die Klinge ihm die wahren Symbole zeigte, als er sie über die Tafel hielt.", "erinnerte er sich an Meridans Worte über Geduld und probierte Tausende von Kombinationen aus, bis er die richtige durch reines Glück fand.", "nutzte er den Obsidianstein, den er vom kleinen Jungen bekommen hatte, der die falschen Glyphen absorbierte und nur die vier richtigen übrig ließ."], correct: 0 },
+    { q: "Wie gelang es Alexan, die Banditen zu besiegen, die den Händler überfallen hatten, und was erhielt er als Belohnung für seine Tat?", a: ["Er griff die Banditen frontal mit seinem leuchtenden Schwert an, schlug sie alle in die Flucht und erhielt vom Händler einen magischen Beutel Gold.", "Er schlich sich an, durchtrennte die Seile eines Beutewagens, um Chaos zu stiften, überwältigte die Diebe und erhielt eine geheime Bergkarte sowie einen magischen Feuerstein.", "Er wartete, bis die Banditen eingeschlafen waren, stahl die Beute zurück und bekam vom Händler nur die Bergkarte, da der Feuerstein gestohlen worden war."], correct: 1 },
+    { q: "Der uralte Steintorwächter in Eldor verlangte die Erweckung der Elemente. Wie löste Alexan dieses Rätsel, nachdem er die Inschrift \"Erwecke die Welt, auf dass sie spricht\" verstanden hatte?", a: ["Er erkannte, dass er die Podeste nicht nur berühren, sondern mit der wahren Essenz der Elemente füllen musste, indem er Erde, Wasser, einen Funken und seinen eigenen Atem benutzte.", "Er musste die Symbole in der exakten Reihenfolge der Inschrift berühren (Erde, Luft, Wasser, Feuer), um die Tür zu öffnen.", "Er legte den Obsidianstein auf das Erdsymbol, den Feuerstein auf das Feuersymbol, spuckte auf das Wassersymbol und rief Lyaras Namen in den Wind, um Luft zu aktivieren."], correct: 0 },
+    { q: "Alexan erkannte, dass er den riesigen Feuerdrachen nicht mit roher Kraft besiegen konnte, da sein Schwert die harten Schuppen nicht durchdrang. Welche List wandte er stattdessen an?", a: ["Er lockte den Drachen in die Mitte des Raumes und nutzte sein Schwert, um die Drachenmagie zu absorbieren, wodurch das Feuer des Drachen erlosch.", "Er entdeckte ein Bodensymbol und ein verbundenes Wandzeichen, aktivierte die Wandrune mit seiner Hand und löste so eine magische Falle aus, die den Drachen fesselte.", "Er warf den magischen Feuerstein des Händlers ins Maul des Drachen, was eine Explosion auslöste und das Biest bewusstlos zu Boden stürzen ließ."], correct: 1 },
+    { q: "Was enthüllte die schmerzhafte Vision, die Alexan beim Ergreifen des magischen Schildes überkam, und welchen Namen verband er plötzlich mit seinem ehemaligen Gefährten?", a: ["Er sah, wie er seinen Freund im Kampf um das dunkle Buch versehentlich stieß, dieser darauf fiel und ein schwarzer Blitz ihn in die Kreatur Riven verwandelte.", "Er sah, wie Meridan ihm den Schild überreichte und ihn warnte, dass sein Freund, Riven, versuchen würde, ihn zu stehlen.", "Er sah, wie Ayana das dunkle Buch öffnete und seinen Freund, Riven, verbannte, bevor dieser Alexans Gedächtnis löschen konnte."], correct: 0 },
+    { q: "Um die rastlosen Seelen der alten Priester in den Ruinen von Xandor zu erlösen, ...", a: ["hielt Alexan den Obsidianstein, das Geschenk des Knaben, in die Höhe und vertrieb die Geister mit seinem Licht.", "setzte Alexan den Obsidianstein in seinen magischen Schild ein und löste damit eine blau-violette Energiewelle aus, die den Seelen Erlösung brachte.", "benutzte Alexan das sagenumwobene Schwert, um den Geistern ihre vergangenen Fehler zu zeigen und sie so zum Lächeln zu bringen."], correct: 1 },
+    { q: "Welche entscheidende Erkenntnis hatte Alexan vor dem magischen Spiegel, die ihn die Prüfung des Selbsterkennens bestehen und den Spiegel zerspringen ließ?", a: ["Er sah in einer Vision, dass Riven, sein einst treuester Gefährte, durch Selbstzweifel und Verzweiflung zum Herrscher der Schatten geworden war.", "Er durchschaute die Illusion des Spiegels und erkannte, dass sein finsteres Spiegelbild nur eine Täuschung der Geister war, um ihn aufzuhalten.", "Er verstand, dass es nicht darum ging, seine verlorene Vergangenheit zu finden, sondern seine gegenwärtige Bestimmung als Auserwählter und Beschützer von Mystiko anzunehmen."], correct: 2 },
+    { q: "Wie gelang es Alexan, die massive Steintüre zu den Katakomben zu öffnen, um den Kristall zu holen, der das Feuer des Vulkans bändigen konnte?", a: ["Er trank den Krafttrank des Magiers, der ihm zehnfache Stärke verlieh, und stieß die massive Steintüre mit roher Gewalt auf, während er wie eine Kuh muhte.", "Er erinnerte sich an die Worte der Seherin, akzeptierte sich selbst mit all seinen Zweifeln und Stärken, fand so sein inneres Gleichgewicht und die Tür erkannte ihn als würdig an.", "Er benutzte den heiligen Bogen und schoss einen Lichtpfeil auf die Runen der Tür, wodurch die magische Versiegelung durchbrochen wurde und der Weg freigab."], correct: 1 },
+    { q: "In der Vision, die Alexan durch den Kristall erhielt, sah er Prinzessin Ayana in einem hohen Turm, wo sie ein zweites, hell leuchtendes Buch benutzte, ...", a: ["um mit einem Lichtschild Riven zu blocken und zu beweisen, dass sie die neue Herrscherin von Mystiko ist.", "das die Essenz der Hoffnung enthielt und sie als Hüterin des Lichts gegen Riven nutzte, bis er sie mit Finsternis überwältigte.", "um damit Alexan eine Nachricht über ihre Gefangenschaft zu schicken und ihn so zur Eile zu mahnen."], correct: 1 },
+    { q: "Als die Steinbrücke zur Burg Barandur unter Alexan zusammenbrach und er hilflos an einem Felsvorsprung über dem Abgrund hing, ...", a: ["erinnerte er sich im letzten Moment an das Fläschchen des Magiers, trank es und konnte sich dank der zehnfachen Kraft über die Kante ziehen, woraufhin er laut „Muh!“ rief.", "nutzte er den heiligen Bogen, um einen Lichtpfeil als Enterhaken in die gegenüberliegende Felswand zu schießen und sich so über die tiefe Schlucht zu schwingen.", "hielt er seinen magischen Schild unter sich, stieß sich kraftvoll vom Felsen ab und ließ sich von der magischen Energie des Schildes auf die sichere Seite katapultieren."], correct: 0 },
+    { q: "Welche entscheidende Erkenntnis erlangte Alexan im Thronsaal von Barandur, die seinen vollen Willen zum Kampf gegen Riven entfesselte?", a: ["Er erinnerte sich, dass er der Hauptmann der königlichen Garde war, Riven sein \"Bruder\" und dass dieser nicht aus Bosheit, sondern durch den Fluch des Buches zum Bösen geworden war.", "Er erkannte, dass Riven schon immer eifersüchtig auf ihn war und die Entführung Ayanas von langer Hand geplant hatte, um selbst der Held von Mystiko zu werden.", "Er sah, dass Riven bereits von den Schattenwesen vollständig verzehrt worden war und nur noch eine leere Hülle auf dem Thron saß, die vernichtet werden musste."], correct: 0 },
+    { q: "Nachdem Alexan die magischen Ketten, die Prinzessin Ayana fesselten, mit seinem Schwert zerschlagen hatte, ...", a: ["erklärte Ayana, dass sie das Nekronom nur bannen könne, weil es zu alt und stark sei und mit Wissen und Macht verführe, da es die verlorenen Seelen aller enthielt, die ihm erlagen.", "gab Ayana ihm den Kristall des Gleichgewichts, den sie die ganze Zeit vor Riven versteckt gehalten hatte, um damit das dunkle Buch endgültig zu vernichten.", "erlangte Riven durch die Befreiung Ayanas ebenfalls seine vollen Erinnerungen zurück und half Alexan, das Nekronom mit einem gemeinsamen Schwertstreich zu zerstören."], correct: 0 },
+    { q: "Was geschah in dem entscheidenden Moment, als Prinzessin Ayana das dunkle Nekronom mit ihrem goldenen Bannzauber erfolgreich versiegelte?", a: ["Das Buch explodierte in einer Welle aus goldenem Licht, die Riven reinigte, aber Alexans magische Artefakte dauerhaft versiegelte.", "Ein winziger, kaum sichtbarer Schatten schoss aus den Seiten des Buches hervor, streifte Alexan mit eisiger Kälte und verschwand lautlos in den Rissen der Steinwand.", "Das Buch zerfiel zu Staub, und alle Schattenwesen in der Burg lösten sich augenblicklich auf, während Ayana vor Erschöpfung das Bewusstsein verlor."], correct: 1 },
+    { q: "Welche wichtige Weisheit über das Vergeben gab Alexan seinem Freund Riven mit auf den Weg, als dieser von Schuldgefühlen geplagt am Rande der Feierlichkeiten stand?", a: ["Er erklärte ihm, dass das Volk ihm nie vergeben würde und er das Land verlassen müsse, um woanders ein neues Leben zu beginnen und seine Taten durch gute Werke auszugleichen.", "Er riet ihm, Prinzessin Ayana um Vergebung zu bitten, da nur sie als Hüterin des Lichts die Macht habe, seine Seele von der Schuld der Vergangenheit reinzuwaschen.", "Er machte ihm Mut und sagte, dass es ohne Vergebung keine Heilung gäbe und der erste und wichtigste Schritt darin bestehe, sich selbst zu vergeben, um nach vorn blicken zu können."], correct: 2 },
+    { q: "Der Autor streut am Ende fast jedes Kapitels kurze, blitzartige Erinnerungen ein, die Alexan Puzzleteile seiner Vergangenheit zeigen. Welche erzählerische Wirkung wird durch diese spezielle Technik am stärksten erreicht?", a: ["Sie sollen den Leser beruhigen, indem sie am Ende eines spannenden Kapitels bereits auflösen, was als Nächstes passieren wird, und ihm so die Angst vor dem Unbekannten nehmen.", "Sie steigern die Spannung extrem, indem sie als Cliffhanger fungieren, die das zentrale Rätsel um Alexans Identität, Riven und Ayana langsam vertiefen und den Leser zwingen, weiterzulesen, um die Zusammenhänge zu verstehen.", "Sie dienen als reine Zusammenfassung und beweisen, dass die Artefakte funktionieren, da Alexan sich immer nur dann erinnert, wenn er gerade ein magisches Relikt wie das Schwert oder den Schild errungen hat."], correct: 1 },
+    { q: "Obwohl die Rettung von Prinzessin Ayana und das Sammeln der drei Artefakte die Hauptziele der Reise sind, dreht sich die Geschichte im Kern um einen viel tieferen Konflikt. Welcher ist das?", a: ["Es geht hauptsächlich um den Konflikt zwischen Magie (Ayana, Meridan) und roher Gewalt (Riven, Drachen), wobei Alexan lernen muss, dass Magie immer der stärkere Weg ist.", "Es geht im Kern um die tragische Freundschaft zwischen Alexan und Riven und die innere Reise von Alexan, der sich selbst (seine Identität und Bestimmung) finden muss, um die Fehler der Vergangenheit zu heilen.", "Es geht im Grunde nur darum zu zeigen, wie wichtig es ist, den Anweisungen von weisen Lehrern (wie Meridan oder der Seherin) zu folgen, da Alexan ohne deren Hilfe jede Prüfung verloren hätte."], correct: 1 },
+    { q: "Worin liegt der größte Unterschied zwischen Alexan und Riven, der letztendlich dazu führt, dass Riven der Dunkelheit verfällt, während Alexan zum Helden wird?", a: ["Alexan ist von Anfang an stärker, mutiger und im Kampf überlegen, während Riven schon immer schwach war und deshalb neidisch auf Alexans Fähigkeiten wurde.", "Alexan erhält auf seiner Reise mächtigere Artefakte (wie den Kristall) und mehr Hilfe von Magiern, während Riven mit dem dunklen Buch allein zurechtkommen musste.", "Riven ist von dem Zwang besessen, \"besonders\" sein zu müssen und Anerkennung zu suchen, während Alexan lernt, seine Bestimmung und sich selbst (mit allen Zweifeln) anzunehmen, um anderen zu helfen."], correct: 2 }
+];
+
+
+let currentQuestion = 0;
+const userAnswers = new Array(questions.length).fill(null); 
+const questionArea = document.getElementById("question-area");
+const nextBtn = document.getElementById("next-btn");
+const resultDiv = document.getElementById("result");
+const cancelBtn = document.querySelector(".quiz-cancel-button");
+
+function showQuestion(index) {
+    nextBtn.disabled = true;
+    nextBtn.style.display = "block";
+    cancelBtn.style.display = "block";
+    const q = questions[index];
+    let html = `<div class="question"><strong>Frage ${index+1} von ${questions.length}:</strong><br><br>${q.q}</div><div class="answers">`;
+    q.a.forEach((answer, i) => {
+        const radioId = `q${index}_a${i}`;
+        html += `<label for="${radioId}"><input type="radio" id="${radioId}" name="answer" value="${i}"> ${answer}</label>`;
+    });
+    html += `</div>`;
+    questionArea.innerHTML = html;
+    
+    const radios = document.querySelectorAll('input[name="answer"]');
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            nextBtn.disabled = false;
+            userAnswers[currentQuestion] = parseInt(radio.value);
+        });
+    });
+}
+
+function showResult() {
+    let correctCount = 0;
+    questions.forEach((q, i) => { if(userAnswers[i] === q.correct) correctCount++; });
+    const percent = Math.round((correctCount / questions.length) * 100);
+
+    let resultHtml = `<h2>Dein Ergebnis:</h2>
+                      <h3 style="color:#004d40;">${correctCount} von ${questions.length} richtig (${percent}%)</h3>`;
+
+    if (percent >= 80) resultHtml += `<h2 style="color:#008000;">BRAVO Tolle Leistung!</h2>`;
+    else if (percent >= 60) resultHtml += `<h2 style="color:#ffa500;">Gute Leistung!</h2>`;
+    else resultHtml += `<h2 style="color:#ff0000;">OK du musst es nochmals versuchen.</h2>`;
+
+    // Diese Struktur sorgt für perfekte Gleichheit auf dem Handy
+resultHtml += `
+        <div class="result-navigation" style="margin-top: 30px; padding: 0 10px;">
+            <button onclick="restartQuiz()" class="quiz-next-button">Quiz Neustarten</button>
+            <a href="https://silberschweif.ch/fantasy-abenteuer-buch-hoerbuch-zelda-kinder.html" class="quiz-next-button">Zurück zur Hauptseite</a>
+        </div>
+    `;
+
+questionArea.innerHTML = "";
+    document.getElementById("next-btn").style.display = "none";
+    document.querySelector(".quiz-cancel-button").style.display = "none";
+    resultDiv.innerHTML = resultHtml;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    userAnswers.fill(null); 
+    resultDiv.innerHTML = "";
+    showQuestion(currentQuestion);
+}
+
+nextBtn.addEventListener("click", () => {
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        showQuestion(currentQuestion);
+    } else {
+        showResult();
+    }
+});
+
+showQuestion(currentQuestion);
+</script>
+</body>
+</html>
