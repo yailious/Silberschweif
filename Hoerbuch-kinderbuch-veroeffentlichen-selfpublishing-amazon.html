@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Cookie Consent (DSGVO-konform, 2-Layer) -->
+<script>
+function loadGTM() {
+  if (document.getElementById('gtm-script')) return;
+  var s = document.createElement('script');
+  s.id = 'gtm-script';
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P3X2MJ86';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+}
+function setCookieConsent(status) {
+  var d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  document.cookie = 'cookie_consent=' + status + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+}
+function getCookieConsent() {
+  var match = document.cookie.match(/cookie_consent=([^;]+)/);
+  return match ? match[1] : null;
+}
+function acceptAll() {
+  setCookieConsent('allow');
+  loadGTM();
+  closeBanner();
+  closeModal();
+}
+function denyAll() {
+  setCookieConsent('deny');
+  closeBanner();
+  closeModal();
+}
+function saveSelection() {
+  var cb = document.getElementById('cb-marketing');
+  if (cb && cb.checked) { acceptAll(); } else { denyAll(); }
+}
+function openSettings() {
+  document.getElementById('consent-settings-modal').style.display = 'flex';
+}
+function closeModal() {
+  var m = document.getElementById('consent-settings-modal');
+  if (m) m.style.display = 'none';
+}
+function closeBanner() {
+  var b = document.getElementById('consent-banner');
+  if (b) b.style.display = 'none';
+}
+window.addEventListener('load', function() {
+  var status = getCookieConsent();
+  if (status === 'allow') { loadGTM(); return; }
+  if (status === 'deny') return;
+  document.getElementById('consent-banner').style.display = 'block';
+});
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinderbuch veröffentlichen: Selfpublishing-Erfahrungsbericht zu Amazon, BoD und Hörbuch-Vertrieb</title>
+    <meta name="description" content="Kinderbuch veröffentlichen ohne Verlag: Ehrliche Erfahrungen zu Books on Demand, Amazon Self Publishing, Amazon Werbung für Bücher und Hörbuch veröffentlichen über Spotify.">
+    <link rel="canonical" href="https://silberschweif.ch/Hoerbuch-kinderbuch-veroeffentlichen-selfpublishing-amazon.html">
+    <link rel="icon" type="image/png" href="Favicon.png">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Kinderbuch veröffentlichen: Selfpublishing-Erfahrungsbericht zu Amazon, BoD und Hörbuch-Vertrieb">
+    <meta property="og:description" content="Kinderbuch veröffentlichen ohne Verlag: Ehrliche Erfahrungen zu Books on Demand, Amazon Self Publishing, Amazon Werbung für Bücher und Hörbuch veröffentlichen über Spotify.">
+    <meta property="og:url" content="https://silberschweif.ch/Hoerbuch-kinderbuch-veroeffentlichen-selfpublishing-amazon.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter/X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kinderbuch veröffentlichen: Selfpublishing-Erfahrungsbericht zu Amazon, BoD und Hörbuch-Vertrieb">
+    <meta name="twitter:description" content="Kinderbuch veröffentlichen ohne Verlag: Ehrliche Erfahrungen zu Books on Demand, Amazon Self Publishing, Amazon Werbung für Bücher und Hörbuch veröffentlichen über Spotify.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Cookie Banner (Layer 1) -->
+<div id="consent-banner" class="cb-bar" style="display:none;">
+  <div class="cb-bar-inner">
+    <span class="cb-msg">🍪 Diese Website verwendet Cookies, um dein Einkaufserlebnis zu verbessern.</span>
+    <div class="cb-actions">
+      <button class="cb-btn-ok" onclick="acceptAll()">Okey</button>
+      <button class="cb-btn-settings" onclick="openSettings()">Einstellungen</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Einstellungen (Layer 2) -->
+<div id="consent-settings-modal" class="cb-modal-overlay" style="display:none;">
+  <div class="cb-modal">
+    <h3 class="cb-modal-title">🍪 Cookie-Einstellungen</h3>
+    <p class="cb-modal-text">Hier kannst du auswählen, welche Cookies du zulassen möchtest.</p>
+    <div class="cb-option">
+      <label class="cb-label">
+        <input type="checkbox" checked disabled>
+        <strong>Notwendig</strong>
+      </label>
+      <span class="cb-desc">Für die grundlegende Funktion der Website. Immer aktiv.</span>
+    </div>
+    <div class="cb-option">
+      <label class="cb-label">
+        <input type="checkbox" id="cb-marketing" checked>
+        <strong>Marketing & Analyse</strong>
+      </label>
+      <span class="cb-desc">Hilft uns, dein Einkaufserlebnis zu verbessern.</span>
+    </div>
+    <div class="cb-modal-actions">
+      <button class="cb-btn-ok" onclick="saveSelection()">Auswahl speichern</button>
+      <button class="cb-btn-deny" onclick="denyAll()">Alle ablehnen</button>
+    </div>
+    <a class="cb-privacy-link" href="https://silberschweif.ch/datenschutz.html">Datenschutzerklärung</a>
+  </div>
+</div>
+
+    <div class="main-container">
+        <!-- HEADER BANNER -->
+        <div class="banner-container">
+            <img src="BannerSilberschweif.png" alt="J. D. Silberschweif Banner" class="banner-img">
+        </div>
+
+        <!-- NAVIGATION UNTER DEM BANNER -->
+        <nav class="blog-nav-bar">
+            <a href="hoerbuch-kinder-piraten-meerjungfrau-freundschaft.html" class="nav-left">&laquo; Vorheriger Beitrag</a>
+            <a href="blog.html" class="nav-center">Zurück zum Blog</a>
+            <a href="blog.html" class="nav-right">Nächster Beitrag &raquo;</a>
+        </nav>
+
+        <div class="content-wrapper">
+            <div class="blog-content">
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">⏱️ Lesezeit Blog: 8 Min.</p>
+                <h1 class="blog-titel">📄 Kinderbuch veröffentlichen im Selbstverlag:<br>Mein Selfpublishing-Weg von Layout bis Hörbuch-Vertrieb</h1>
+
+                <section>
+                    <p>
+                        In diesem Beitrag fasse ich die wichtigsten Lektionen aus meiner Selfpublishing-Reise zusammen: vom professionellen Buchlayout über die Wahl der richtigen Vertriebsplattform bis hin zu Amazon Werbung für Bücher und dem Vertrieb meiner Hörbücher. Vieles davon habe ich mir selbst erarbeitet, oft nach dem Prinzip Try and error, und ich hoffe, dass andere Selfpublisher, die ihr Kinderbuch veröffentlichen möchten, davon profitieren können.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🖋️ Professionelles Buchlayout in Word: Schriftart, Schriftgröße und Zeilenabstand</h2>
+                    <p>
+                        Als erfahrener Anwender von MS Office war es für mich kein Problem, das Layout meines Manuskripts vom Fantasy-Kinderbuch <a href="fantasy-abenteuer-buch-hoerbuch-zelda-kinder.html">ALEXAN – Das Geheimnis von Mystiko</a> selbst professionell zu gestalten: Inhaltsverzeichnis auf Knopfdruck, Seitenzahlen erst ab der Seite mit der eigentlichen Geschichte und Abstände zwischen den Absätzen für eine bessere Lesbarkeit. Bei der Schriftart habe ich mich für Verdana entschieden, nach Rücksprache mit ein paar Kindern, denen ich verschiedene Skripte mit unterschiedlichen Schriftarten vorgelegt habe. Die Schriftgröße beträgt 12 Pt. für Kinder ab 10 Jahren und 14 Pt. für Kinder ab 6 Jahren wie <a href="https://silberschweif.ch/kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html">Ayanas Abenteuer im Zauberwald</a>. Bei den Abständen habe ich innerhalb eines Absatzes 0 Pt. gewählt und nach einem Absatzwechsel 8 Pt. eingestellt. Ich habe von Anfang an direkt auf Selfpublishing gesetzt, da es sowieso viel zu schwierig ist, einen Verlag zu finden.
+                    </p>
+                    <p>
+                        Für das Lektorat und Korrektorat habe ich gezielt KI eingesetzt, da ich dafür schlicht null Budget gehabt habe. Lektorat mit KI ist deutlich günstiger als ein professionelles Lektorat und für Selfpublisher ohne Budget eine echte Option. Die Sprachmodelle sind sehr hilfreich, um die Geschichte zu analysieren, wie etwa Charaktertiefe, Worldbuilding, Struktur und auch Grammatik. Dafür sind mehrere Durchläufe bei verschiedenen Anbietern nötig, um möglichst viele Fehler zu finden, wobei trotzdem nicht alle entdeckt werden. Bei einzelnen Sätzen oder Absätzen ist es kein Problem, aber wenn alles auf einmal kontrolliert werden muss, dann übersieht es auch Kleinigkeiten wie ein Mensch. Am Ende bleibt daher die eigene, aufmerksame Kontrolle unerlässlich. Keines der bekannten Sprachmodelle kann das geschulte Auge bislang vollständig ersetzen. Die eigentliche Herausforderung liegt aber woanders: Wer ein Manuskript zwanzig Mal gelesen hat, kennt ganze Passagen bereits auswendig, wodurch das Gehirn kleine Fehler automatisch überliest. Nur wer bewusst langsam liest, als würde man den Text zum ersten Mal sehen, findet auch die letzten Ungenauigkeiten.
+                    </p>
+                    <p>
+                        Claude war zum Beispiel der Einzige, der mich nach einer Überprüfung auf wiederkehrende Wörter über das ganze Buch hinweg darauf aufmerksam gemacht hat. Ein Punkt, der den anderen Sprachmodellen nicht aufgefallen ist. Deshalb sollte man gezielt danach fragen, um diese durch Synonyme zu ersetzen. Bei mir kamen zum Beispiel Wörter wie Licht, Dunkel, Schatten, plötzlich oder groß besonders oft vor, und an den passenden Stellen ließen sie sich gut austauschen, immer mit Blick darauf, dass das Synonym den Kindern auch bekannt und nicht zu schwierig ist. Roter Faden und Struktur können die Sprachmodelle gut beurteilen, kleine Logikfehler dagegen nicht. Diese muss man entweder selbst durch ständiges kritisches Hinterfragen aufspüren oder von Testleserinnen und Testlesern aufdecken lassen.
+                    </p>
+                    <p>
+                        Außerdem ist mir bei der Erstellung des Hörbuchs aufgefallen, dass sich noch einige Verbesserungen am Buchtext ergeben haben. Denn beim lauten Anhören der Geschichte fallen Wortwiederholungen und ähnliche Unstimmigkeiten viel stärker auf, als wenn man sie nur liest.
+                    </p>
+
+                    <figure class="blog-figure-full">
+                        <img src="Leseprobe.jpg" alt="Das Buchlayout mit Absatzabständen, Seitenzahlen und korrekten Seitenrändern innen und aussen.">
+                        <figcaption>Das Buchlayout mit Absatzabständen, Seitenzahlen und korrekten Seitenrändern innen und aussen</figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h2>📖 Publikation über BoD (Books on Demand): Präsenz im stationären Buchhandel</h2>
+                    <p>
+                        Wer sein Kinderbuch veröffentlichen möchte und dabei auch im stationären Buchhandel präsent sein will, kommt an BoD kaum vorbei. Der große Vorteil ist die flächendeckende Verfügbarkeit in Buchhandlungen. Auch wenn die Publikation einmalig 39 Euro beziehungsweise 49 Franken kostet, war es mir das wert. Zudem ist der Kundenservice von BoD nach meiner Erfahrung sehr gut und zuvorkommend. Zu beachten ist allerdings der Unterschied zu Amazon: Jede Änderung am Manuskript bedeutet bei BoD eine Neuauflage, wodurch die Publikationsgebühr erneut anfällt. Man sollte sich also absolut sicher sein, bevor man den finalen Knopf drückt.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🛒 Publikation über Amazon Self Publishing: Reichweite, Sichtbarkeit und wichtige Stolpersteine</h2>
+                    <p>
+                        Amazon Self Publishing war für mich ein Muss. Die enorme Reichweite und die Möglichkeit, mit Werbung direkt die Sichtbarkeit für mein Kinderbuch auf Amazon zu erhöhen, helfen dabei, die Verkäufe aktiv zu pushen. Der Kundenservice ist hier zudem sehr schnell und effizient. Ein riesiger Vorteil für Selfpublisher: Änderungen am Manuskript können jederzeit unkompliziert und völlig kostenlos vorgenommen werden, egal wie viele Anpassungen man nachträglich noch macht.
+                    </p>
+                    <p>
+                        Wichtig ist, schon im Titel beziehungsweise Untertitel Begriffe zu verwenden, nach denen tatsächlich gesucht wird, etwa Abenteuer, Fantasy, Gute-Nacht-Geschichte, Kinder, Märchen oder Prinzessin. Achtung: Es gibt eine maximal erlaubte Zeichenanzahl, und beim Taschenbuch lässt sich der Titel beziehungsweise Untertitel danach nicht mehr ändern, außer man geht über den Support, wenn dieser einwilligt. Idealerweise stimmt der Untertitel zudem mit demjenigen auf BoD überein, denn Amazon erkennt das Buch auch dort und verknüpft es automatisch mit der eigenen Produktseite, wo es dann als weitere Edition erscheint. Wichtig dabei: Amazon zeigt standardmäßig immer die günstigere Version zuerst an. Ist die BoD-Variante billiger als die Amazon-Variante, wird also die BoD-Ausgabe zuerst angezeigt. Prüft also eure Margen und setzt die Preise so, dass jeweils die Version mit der höheren Marge zuerst angezeigt wird.
+                    </p>
+                    <p class="ps-hinweis">
+                        <strong>P.S.:</strong> Eines der wichtigsten Learnings für mich war, sich von Anfang an für ein festes Pseudonym zu entscheiden, falls man keinen gewohnten oder passenden Namen verwenden möchte. Eine Änderung im Nachhinein ist zwar möglich, aber mit sehr viel Aufwand verbunden.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>📈 Amazon Werbung für Bücher: Wie ich BSR-Ranking und Verkäufe gepusht habe</h2>
+                    <p>
+                        Bei BoD erzielt man ab und zu noch einen Verkauf über die Buchhändler, wenn auch eher begrenzt. Bei Amazon läuft es ohne Amazon Werbung für Bücher dagegen praktisch gar nicht: Das Buch bleibt sonst unsichtbar, weil Amazon ein Ranking vergibt, je nachdem wie viele Verkäufe ein Buch bereits erzielt hat. Je mehr Verkäufe, desto besser der Rang (der sogenannte BSR), und erst dann gibt es organische Verkäufe, also solche über die normalen Suchergebnisse, weil das Buch höher rankt und auf den vorderen Seiten erscheint. Verkäufe über Ads verbessern also den BSR, wodurch das Buch bei normalen Suchanfragen besser gelistet wird und ihr so mit der Zeit auch Verkäufe ohne Ads erzielt. Schaltet man die Ads jedoch ab, gibt es weniger Verkäufe, das Ranking sinkt, und damit gehen auch die organischen Verkäufe zurück. Ziel ist es deshalb, ein sich selbst tragendes Ads-Budget aufzubauen: Anfangs gibt man meist mehr für Ads aus, als man an Tantiemen verdient, um überhaupt erst Sichtbarkeit zu erlangen. Wichtig ist, die Amazon Werbung laufend zu optimieren, bis man insgesamt weniger ausgibt, als man an Tantiemen einnimmt.
+                    </p>
+                    
+                    <figure style="text-align: center; margin: 24px 0;">
+                        <img src="BSR.png" alt="Der BSR-Rang bei Amazon in den Produktinformationen" style="display: inline-block;">
+                        <figcaption style="font-size: 0.85rem; font-style: italic; color: #666; text-align: center; margin-top: 6px;">Der BSR-Rang bei Amazon in den Produktinformationen</figcaption>
+                    </figure>
+                    <p>
+                        Dafür richtet man Kampagnen mit sogenannten Targets ein, also Stichwörtern beziehungsweise Keywords oder bestimmten Büchern, bei denen die Ads ausgespielt werden sollen. Ich habe drei Kampagnen eingerichtet: Keywords, verwandte beziehungsweise ähnliche Bücher und Zelda-Artikel, also andere Bücher, Spielzeuge und Games. Die Keyword-Kampagne ist ziemlich einfach einzurichten: Man legt Keywords wie „Kinderbuch Fantasy" oder „Buch für Jungs" fest, und bei diesen oder ähnlichen Suchanfragen werden dann Ads geschaltet, sodass euer Buch prominent eingeblendet wird. Die anderen Kampagnen brauchen viel mehr Detailarbeit: Man muss Bücher finden, die ähnlich sind oder dieselbe Zielgruppe bedienen, und deren ASIN-Nummer in der Kampagne hinterlegen. Euer Buch wird dann genau bei diesen Büchern eingeblendet, wenn jemand sie sich ansieht. Mit einem ansprechenden Cover und Titel könnt ihr euch als echte Alternative positionieren oder die Leser sogar zu einem Zusatzkauf bewegen.
+                    </p>
+                    <p>
+                        Für diese hinterlegten Targets muss man jeweils ein Gebot festlegen. Amazon macht dazu oft Vorschläge, aber nicht immer, und orientiert sich dabei an den Geboten, die andere bereits bezahlt haben. Einige Vorschläge sind brauchbar, andere wiederum deutlich zu hoch. Gebote über 0.50 sind definitiv zu hoch und sollten das Maximum für erfolgreiche Targets darstellen. Nehmt immer den Mittelwert der Amazon-Vorschläge oder das Minimum. Sind keine Vorschläge vorhanden, stellt ein tieferes Gebot ein, etwa 0.20 bis 0.30. Euer Gebot kommt zum Zug, wenn ihr die Höchstbietenden seid. Verrechnet wird der Betrag aber nicht schon bei der Einblendung (Impression), sondern erst, wenn jemand auf euer Buch beziehungsweise die Werbung klickt. Wichtig: Diese Gebote werden mit der Kennzahl CPC gemessen, also wie viel ein Klick im Durchschnitt kostet. Dieser sollte bei Büchern idealerweise zwischen 0.30 und 0.35 liegen. Setzt ihr eure Gebote aber zu niedrig an, wird euer Buch viel seltener eingeblendet, und im Umkehrschluss erzielt ihr dadurch auch deutlich weniger Verkäufe. Es gilt also, einen Mittelweg zu finden: Targets, die gut konvertieren, pusht man, und solche, die nach etlichen Klicks noch keine Verkäufe gebracht haben, senkt oder deaktiviert man.
+                    </p>
+                    <p>
+                        Die wichtigsten Kennzahlen, um Amazon Ads zu optimieren, sind CTR, CPC, ACoS und Konversionsrate. Da Amazon diese Zahlen aber nur auf Basis der Ads-Verkäufe darstellt, ohne die organischen Verkäufe einzurechnen, sind sie etwas verzerrt und nicht ganz aussagekräftig, außer bei CTR und CPC. Diese beiden sind korrekt, weil sie sich ausschließlich auf die Werbeanzeigen (Impressionen und Klicks) beziehen. Wichtig ist deshalb, sich ein Gesamtbild zu machen. Dazu habe ich Claude gebeten, mir ein Excel-Sheet mit allen Kennzahlen samt Berechnungen zu erstellen, was hervorragend, fehlerfrei und mit einer ansprechenden Darstellung gelungen ist. Ich musste lediglich vorher alle nötigen Daten liefern, also die Verkaufspreise, die Tantiemen pro Buch beziehungsweise Edition und welche Kennzahlen berechnet werden sollen. Jetzt muss ich nur noch von Zeit zu Zeit die Impressionen, Klicks, Verkäufe und Werbeausgaben eintragen und sehe sofort alle wichtigen Kennzahlen, inklusive Halo-Effekt (organische Verkäufe dank den Ads-Verkäufen) und den erzielten Gewinn pro Monat. Dank diesen Kennzahlen konnte ich meine Ads laufend optimieren, um in die Gewinnzone zu kommen. Auch die detaillierten Amazon-Verkaufsauswertungen, die als CSV-Datei bereitgestellt werden, hat mir Claude übersichtlich aufbereitet, sodass ich sehe, welche Targets zu teuer sind oder gut beziehungsweise schlecht laufen, und so die Gebote und Kampagnen aktiv steuern kann.
+                    </p>
+                    <p class="ps-hinweis">
+                        <strong>P.S.:</strong> Ein Wechsel des Covers während laufender Werbekampagnen ist nicht zu empfehlen, da das den Amazon-Algorithmus stört und Impressionen sowie Klicks stark einbrechen lässt. Muss das Cover doch einmal ausgewechselt werden, sollte das eine einmalige, endgültige Entscheidung sein.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>🎧 Hörbuch veröffentlichen als Selfpublisher: Spotify und Voices by Inaudio</h2>
+                    <p>
+                        Wer als Selfpublisher ein Hörbuch veröffentlichen möchte, hat heute mehr Möglichkeiten als je zuvor. Meine Erfahrungen mit Spotify waren dabei durchwegs positiv und der Prozess unkompliziert, genau wie schon beim ersten Hörbuch <a href="https://silberschweif.ch/kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html">Ayanas Abenteuer im Zauberwald</a>. Deshalb entschied ich mich, auch für das zweite Hörbuch „<a href="kinderbuch-hoerbuch-piraten-meerjungfrau-freundschaft.html">Ayanas Abenteuer: Der Schatz der Freundschaft</a>" dort zu veröffentlichen, allerdings vor allem für die Sichtbarkeit. Viel verdienen lässt sich über Spotify nämlich kaum, da die Geschichte im Abo gehört und nicht einzeln gekauft wird, auch wenn man formal einen Preis hinterlegen muss. Die Tantiemen daraus sind entsprechend gering. Wer Hörbücher veröffentlichen über Spotify möchte, sollte das also primär als Reichweiten-Kanal betrachten, nicht als Einnahmequelle.
+                    </p>
+                    
+                    <figure class="blog-figure-full">
+                        <img src="SpotifyAuthors.jpg" alt="Übersicht von Spotify Panel für Hörbücher.">
+                        <figcaption>Übersicht von Spotify Panel für Hörbücher</figcaption>
+                    </figure>
+                    <p>
+                        Zusätzlich habe ich das Hörbuch bei Google Play Books aufgeschaltet, wobei die Prüfung und Freischaltung dort einige Zeit in Anspruch nimmt, auch wenn der Prozess eigentlich einfach gestaltet ist. Dabei ist mir aufgefallen, dass mein Konto gesperrt war, eine entsprechende E-Mail dazu hatte ich leider übersehen. Der Grund: Beim Hochladen des E-Books zum ersten Buch <a href="https://silberschweif.ch/kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html">Ayanas Abenteuer im Zauberwald</a> hatte ich die reguläre ISBN-Nummer des Taschenbuchs verwendet, was offenbar als Urheberrechtskonflikt gewertet wurde. Wichtig zu wissen ist nämlich, dass eine ISBN-Nummer nur für die Edition gültig ist, für die sie ausgestellt wurde. E-Books und Hörbücher haben normalerweise gar keine eigene ISBN, schon gar nicht dieselbe wie das Taschenbuch. Die meisten Anbieter vergeben dafür stattdessen eine interne Nummer. Bei Google kommt zusätzlich dazu, dass ein Hörbuch nur veröffentlicht werden kann, wenn auch das passende E-Book bei Google publiziert ist.
+                    </p>
+                    <p>
+                        Ich habe alles bereinigt und den Support angeschrieben, damit das Konto wieder entsperrt wird. Aus anderen Erfahrungen weiß ich allerdings, dass der Google-Support nur eingeschränkt gut funktioniert: Die Prüfungen laufen größtenteils automatisiert, nur sehr selten wird tatsächlich ein Mensch einbezogen, der den Fall genau ansieht. Ich warte jetzt einfach ab, ob meine Beschwerde wirklich von einem Menschen geprüft und freigegeben wird, mache mir aber nicht allzu große Hoffnungen. Falls nicht, werde ich es über einen anderen Google-Account erneut versuchen. Zum Glück war der erste Account nur ein vorübergehendes, wenig genutztes Konto für meine Autorentätigkeit. Mittlerweile habe ich eine eigene Domain und eine eigene E-Mail-Adresse, die ich für solche Tätigkeiten eigentlich verwende.
+                    </p>
+                    <p>
+                        Um möglichst viele Hörerinnen und Hörer zu erreichen, hatte ich mich zudem für eine Veröffentlichung über den Distributor Voices by Inaudio entschieden. Meine Inaudio Erfahrungen waren dabei leider ernüchternd. Beim Hochladen bin ich auf eine hartnäckige Schwierigkeit gestoßen: Die Datei ließ sich zwar hochladen, doch danach ging es nicht weiter. Bei jeder Aktualisierung erschien ein Fehler, obwohl ich das LPF-Format mehrfach an die Vorgaben angepasst hatte, etwa bei Intro, Outro und den Pausen. Auch nach einer ganzen Nacht Wartezeit hat sich daran nichts geändert, woran es genau lag, lässt sich leider nicht nachvollziehen.
+                    </p>
+                    <p>
+                        Bei der Spurensuche ist mir aber etwas Wichtiges aufgefallen: Bei klassisch eingesprochenen Hörbüchern lassen sich alle möglichen Anbieter wie Apple, Audible und weitere auswählen. Gibt man jedoch an, dass es sich um digitale Stimmen handelt, wofür ja die LPF-Datei nötig ist, stehen genau diese wichtigen Anbieter wie Apple, Audible, Google und Storytel gar nicht als Verkaufskanal zur Verfügung. Zusammen mit Spotify machen sie aber mindestens 90 Prozent des deutschen Markts aus. Übrig bleiben nur ein paar wenige, unbekannte Anbieter, die für den DACH-Raum kaum eine Rolle spielen, sowie Spotify, wo ich das Hörbuch ohnehin schon direkt und unkompliziert aufgeschaltet hatte. Google Play sollte ebenfalls direkt funktionieren, nur eben nicht über Inaudio, dazu kann ich aber noch kein abschließendes Urteil fällen.
+                    </p>
+                    <p>
+                        Deshalb habe ich mich vorerst gegen Inaudio entschieden: Einerseits funktioniert es nicht auf Anhieb wie es sollte, andererseits erreicht man darüber fast niemanden. Ich werde ein bis zwei Jahre abwarten und beobachten, ob dann mehr Anbieter digitale Stimmen über Inaudio akzeptieren. Aktuell sind die wichtigsten Anbieter bei digitalen Stimmen noch sehr restriktiv, das wird sich mit der Zeit aber sicher ändern, denn das ist meiner Meinung nach die Zukunft, zumal selbst Netflix bei der Synchronisation von Filmen und Serien inzwischen auf KI setzt.
+                    </p>
+                    <p class="ps-hinweis">
+                        <strong>P.S.:</strong> Durch die Spotify-Auswertung habe ich erfahren, dass mein Hörbuch nicht nur im DACH-Raum, sondern auch in Luxemburg gehört wird. Bei meiner Recherche dazu habe ich herausgefunden, dass in Luxemburg schon ab der ersten Klasse Deutsch gelernt und ab der dritten Klasse teilweise sogar auf Deutsch unterrichtet wird. In der Schweiz ist das je nach Kanton sehr unterschiedlich geregelt, deutschsprachige Bücher werden aber meist nur in der Deutschschweiz gelesen und kaum in den anderen Sprachregionen.
+                    </p>
+                    <p>
+                        Da ich neben den normalen Hörbüchern auch eine cineastische Version mit Hörspiel-Musik und Soundeffekten anbiete, werden diese erst recht von keinem Distributor akzeptiert, weil das Audiofile bearbeitet wurde. Deshalb hatte ich mich schon früh entschieden, diese Version selbst über meine eigens erstellte Homepage zu vertreiben, das war meines Wissens ohnehin die einzige Möglichkeit dafür. Das hat zwei große Vorteile: Erstens gibt es keine Vorgaben, die man einhalten muss, und zweitens behält man den Großteil der Einnahmen selbst. Wie ich ganz ohne große Vorkenntnisse eine eigene, vollumfängliche Homepage eingerichtet habe, lest ihr im nächsten Blog-Beitrag.
+                    </p>
+                </section>
+
+                <br>
+                <p style="text-align: center;">
+                    ❤️ Danke fürs Lesen! Ich freue mich über jedes Feedback und jeden Kommentar!
+                </p>
+
+                <br>
+                <p style="text-align: center;"><strong>👉 Neugierig auf meine Bücher und Hörbücher?</strong></p>
+                <p style="font-size: 1.1rem; text-align: center; line-height: 2;">
+                    <a href="fantasy-abenteuer-buch-hoerbuch-zelda-kinder.html" style="color: var(--link-color); font-weight: bold; text-decoration: underline;">ALEXAN – Das Geheimnis von Mystiko: Die Legende der Drei Artefakte</a><br>
+                    <a href="https://silberschweif.ch/kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html" style="color: var(--link-color); font-weight: bold; text-decoration: underline;">Ayanas Abenteuer im Zauberwald</a><br>
+                    <a href="kinderbuch-hoerbuch-piraten-meerjungfrau-freundschaft.html" style="color: var(--link-color); font-weight: bold; text-decoration: underline;">Ayanas Abenteuer: Der Schatz der Freundschaft</a>
+                </p>
+
+                <h2 style="font-family: 'Cinzel', serif; font-size: 1.4rem; text-align: center; margin-bottom: 25px; margin-top: 40px;">Lies auch meine anderen Blog-Einträge:</h2>
+
+                <div class="blog-footer-nav">
+                    <a href="entstehung-kinder-fantasy-abenteuer-buch-zelda.html" class="blog-footer-link">
+                        🎮 <strong>Entstehung des Buchs:</strong> Vom Controller zum Kinderbuch wie Zelda
+                    </a>
+                    <a href="hoerbuch-kinder-fantasy-abenteuer-zelda.html" class="blog-footer-link">
+                        🎵 <strong>Entstehung des Hörbuchs:</strong> Ein Kinofilm für die Ohren (Score & Effekte)
+                    </a>
+                    <a href="kinderbuch-maerchen-abenteuer-prinzessin-einhorn.html" class="blog-footer-link">
+                        🦄 <strong>Entstehung des Buchs:</strong> Das magische Märchen für mutige Mädchen
+                    </a>
+                </div>
+
+                <!-- ===== KOMMENTAR BEREICH ANFANG ===== -->
+                <hr class="trennlinie">
+
+                <section class="rezensionen-section">
+                    <h2 class="fantasy-title">💬 Kommentare</h2>
+
+                    <div class="bewertung-hinweis">
+                        Was denkst du über diesen Beitrag? Ich freue mich über dein Feedback!
+                    </div>
+
+                    <div class="bewertung-hinweis">
+                        📝 Gib deinen <strong>Namen</strong> ein, schreibe deinen <strong>Kommentar</strong> unter Reply und klicke auf <strong>„Comment"</strong> zum Absenden.
+                    </div>
+
+                    <!-- Cusdis Kommentar-Widget -->
+                    <div id="cusdis_thread"
+                        data-host="https://cusdis.com"
+                        data-app-id="d07e3c41-a647-4171-91fd-9b26fc91f13c"
+                        data-page-id="blog-selfpublishing-kinderbuch-veroeffentlichen"
+                        data-page-url="https://silberschweif.ch/Hoerbuch-kinderbuch-veroeffentlichen-selfpublishing-amazon.html"
+                        data-page-title="Kinderbuch veröffentlichen: Selfpublishing-Erfahrungsbericht zu Amazon, BoD und Hörbuch-Vertrieb"
+                    ></div>
+                    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+                </section>
+                <!-- ===== KOMMENTAR BEREICH ENDE ===== -->
+
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 14px 0 30px 0;">
+            <a href="blog.html" class="back-link">Zurück zur Blog-Übersicht</a>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-branding">© 2025 J. D. Silberschweif</p>
+            <nav class="footer-nav">
+                <a href="blog.html">Blog</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
