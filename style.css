@@ -1,7 +1,6 @@
 /* Allgemeine Stile für die gesamte Website */
         /* --- FANTASY THEME SETUP --- */
 /* --- 1. SCHRIFTEN & VARIABLEN --- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
 
 :root {
     --primary-dark: #1a0b2e; /* Dunkles Magie-Lila */
