@@ -8,9 +8,6 @@
     <meta name="description" content="Erfahre, wie aus einem Kinderbuch wie Zelda ein cineastisches Fantasy Hörbuch für die Toniebox wurde. Mit 400 Sounds & einem Score wie im Zelda Film. Jetzt reinhören!">
     <link rel="canonical" href="https://silberschweif.ch/hoerbuch-kinder-fantasy-abenteuer-zelda.html">
 <link rel="preload" href="BannerSilberschweif.jpg" as="image" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <!-- Favicons für alle Browser und Auflösungen -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -24,7 +21,7 @@
     <!-- OpenGraph -->
     <meta property="og:title" content="Zelda Manga Hörbuch: Wie mein Kinderbuch zum Zelda Film fürs Ohr wurde">
     <meta property="og:description" content="Erfahre, wie aus einem Kinderbuch wie Zelda ein cineastisches Fantasy Hörbuch für die Toniebox wurde. Mit 400 Sounds & einem Score wie im Zelda Film.">
-    <meta property="og:image" content="https://silberschweif.ch/Drache.png">
+    <meta property="og:image" content="https://silberschweif.ch/Drache.jpg">
     <meta property="og:url" content="https://silberschweif.ch/hoerbuch-kinder-fantasy-abenteuer-zelda.html">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="de_DE">
@@ -33,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Zelda Manga Hörbuch: Wie mein Kinderbuch zum Zelda Film fürs Ohr wurde">
     <meta name="twitter:description" content="Erfahre, wie aus einem Kinderbuch wie Zelda ein cineastisches Fantasy Hörbuch für die Toniebox wurde. Mit 400 Sounds & einem Score wie im Zelda Film.">
-    <meta name="twitter:image" content="https://silberschweif.ch/Drache.png">
+    <meta name="twitter:image" content="https://silberschweif.ch/Drache.jpg">
 
 
 <!-- Cookie Consent (DSGVO-konform, 2-Layer) -->
@@ -97,6 +94,7 @@ window.addEventListener('load', function() {
 
 </head>
 <body>
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
 <!-- Cookie Banner (Layer 1) -->
 <div id="consent-banner" class="cb-bar" style="display:none;">
   <div class="cb-bar-inner">
@@ -138,11 +136,10 @@ window.addEventListener('load', function() {
     <div class="main-container">
         <!-- HEADER BANNER -->
 <div class="banner-container">
-    <img src="BannerSilberschweif.jpg"
+    <img fetchpriority="high" width="2048" height="1152" src="BannerSilberschweif.jpg"
          alt="Fantasy Kinderbuch Abenteuer und Märchenbuch von J. D. Silberschweif"
          class="banner-img"
-         fetchpriority="high"
-         decoding="sync">
+         decoding="async">
   </div>
 
         <!-- NAVIGATION UNTER DEM BANNER -->
@@ -153,7 +150,7 @@ window.addEventListener('load', function() {
             <a href="entstehung-kinder-fantasy-abenteuer-buch-zelda.html" class="nav-right">Nächster Beitrag &raquo;</a>
         </nav>
 
-        <div class="content-wrapper">
+        <div id="main" role="main" class="content-wrapper">
             <div class="blog-content">
 					<p style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">⏱️ Lesezeit Blog: 3 Min.</p>
                 <h1 class="blog-titel">🎵 Zelda Manga Hörbuch:<br>Wie mein Fantasy Kinderbuch zum Zelda Film fürs Ohr wurde</h1>
@@ -198,7 +195,7 @@ window.addEventListener('load', function() {
                     </p>
                     
                     <label class="video-label">🎧 Erlebe selbst, wie sich ein Zelda Film fürs Ohr anfühlt:</label>
-                    <video class="hoerbuch-video" controls poster="Drache.png" preload="metadata">
+                    <video class="hoerbuch-video" controls poster="Drache.jpg" preload="metadata">
                         <source src="Band1Kapitel6.mp4" type="video/mp4">
                         Dein Browser unterstützt dieses Videoformat nicht.
                     </video>
@@ -220,7 +217,7 @@ window.addEventListener('load', function() {
                         <li>Eine zweite mit einer klassischen, tiefen Erzählstimme für ein professionelles, atmosphärisches Hörerlebnis.</li>
                     </ul>
 					<figure class="blog-figure-full">
-                        <img src="mixpad.jpg" alt="Mastering in Mixpad mit sechs Spuren">
+                        <img width="1732" height="1076" loading="lazy" src="mixpad.jpg" alt="Mastering in Mixpad mit sechs Spuren">
                         <figcaption>Das Mastering in Mixpad mit bis zu sechs Spuren</figcaption>
                     </figure>
                 </section>
@@ -257,8 +254,8 @@ window.addEventListener('load', function() {
                     
                     <div style="text-align: center; margin-top: 30px;">
                         <p class="quiz-text">🎞️ <strong>Erlebe noch mehr Magie von Mystiko auf YouTube:</strong></p>
-                        <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link">
-                            <img src="YouTube.png" alt="YouTube Kanal" class="youtube-img">
+                        <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link" rel="noopener noreferrer">
+                            <img width="1705" height="573" loading="lazy" src="YouTube.png" alt="YouTube Kanal" class="youtube-img">
                         </a>
                     </div>
                     

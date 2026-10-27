@@ -8,9 +8,6 @@
     <meta name="description" content="Ein magisches Fantasy Kinderbuch wie Zelda für Kinder und Jugendliche ab 10 Jahren. Voller Freundschaft, Mut, Vergebung und Hoffnung. Auch als cineastisches Hörbuch für die Toniebox.">
     <link rel="canonical" href="https://silberschweif.ch/fantasy-abenteuer-buch-hoerbuch-zelda-kinder.html">
 <link rel="preload" href="KarteAplus.jpg" as="image" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <!-- Favicons für alle Browser und Auflösungen -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -203,6 +200,7 @@ window.addEventListener('load', function() {
     
 </head>
 <body>
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
 <!-- Cookie Banner (Layer 1) -->
 <div id="consent-banner" class="cb-bar" style="display:none;">
   <div class="cb-bar-inner">
@@ -247,7 +245,7 @@ window.addEventListener('load', function() {
     <a href="index.html" class="back-link">Zurück zur Startseite</a>
 </div>
 
-<main class="container produkt-flaeche">
+<main id="main" class="container produkt-flaeche">
 
 <!-- ===== STICKY ANKER-NAVIGATION ===== -->
 <style>
@@ -279,11 +277,10 @@ window.addEventListener('load', function() {
 
 <section class="flow-section flow-a intro-text">
 
-		<img src="KarteAplus.jpg" 
+		<img fetchpriority="high" width="970" height="600" src="KarteAplus.jpg" 
 		alt="Karte von Mystiko – Fantasy Kinderbuch wie Zelda" 
 		style="width:100%; border-radius: 10px; margin-bottom: 20px;"
-		fetchpriority="high"
-        decoding="sync">
+        decoding="async">
 		
 		<h1>Magisches Fantasy-Abenteuer-Buch für<br>Kinder und Jugendliche im Zelda-Stil</h1>
 <h2 class="fantasy-title">ALEXAN – Das Geheimnis von Mystiko:<br>Die Legende der drei Artefakte</h2>
@@ -319,8 +316,8 @@ window.addEventListener('load', function() {
       <h3>🎓 Antolin- & Lepion-Punkte sammeln</h3>
         <p>Alexan - Das Geheimnis von Mystiko ist offiziell auf Antolin & Lepion verfügbar und bietet damit einen klaren <strong>pädagogischen Mehrwert</strong>. Die Geschichte <strong>fördert gezielt Lesekompetenz</strong> und sprachliches Verständnis durch klare, <strong>bildhafte Sprache</strong> und vermittelt zugleich Werte wie <strong>Mut, Freundschaft, Empathie</strong> und <strong>Verantwortung</strong>. Auf Lepion findest du das Buch am schnellsten, wenn du nach „Mystiko" suchst. Unten kannst du dich auf das Antolin- & Lepion-Quiz vorbereiten.</p>
         <div class="antolin-box" style="text-align: center;">
-            <a href="https://antolin.westermann.de/all/bookdetail.jsp?book_id=277418" target="_blank">
-                <img src="Antolin.png" alt="Antolin Logo – Leseförderung für Fantasy Kinderbuch">
+            <a href="https://antolin.westermann.de/all/bookdetail.jsp?book_id=277418" target="_blank" rel="noopener noreferrer">
+                <img width="160" height="80" loading="lazy" src="Antolin.png" alt="Antolin Logo – Leseförderung für Fantasy Kinderbuch">
             </a>
         </div>
 
@@ -363,7 +360,7 @@ window.addEventListener('load', function() {
 </div>
 
 <label class="video-label">Kapitel 2 Cineastisch:</label>
-<video class="hoerbuch-video" controls poster="Mystiko.png" preload="metadata">
+<video class="hoerbuch-video" controls poster="Mystiko.jpg" preload="metadata">
     <source src="Band1Kapitel2cine.mp4" type="video/mp4">
     Dein Browser unterstützt dieses Videoformat nicht.
 </video>
@@ -375,13 +372,13 @@ window.addEventListener('load', function() {
             </audio>
 
 <label class="video-label">Kapitel 6 Cineastisch:</label>
-<video class="hoerbuch-video" controls poster="Drache.png" preload="metadata">
+<video class="hoerbuch-video" controls poster="Drache.jpg" preload="metadata">
     <source src="Band1Kapitel6.mp4" type="video/mp4">
     Dein Browser unterstützt dieses Videoformat nicht.
 </video>
 
         <label class="video-label">Beliebig aus dem Hörbuch Cineastisch:</label>
-		<video class="hoerbuch-video" controls poster="Vulkan.png" preload="metadata">
+		<video class="hoerbuch-video" controls poster="Vulkan.jpg" preload="metadata">
             <source src="Band1Kapitel8.mp4" type="video/mp4">
 			Dein Browser unterstützt dieses Videoformat nicht.
         </video>
@@ -552,21 +549,21 @@ function sendPersonalizedMail() {
         <div class="row-1">
             <!-- BoD.de: Badge unter Logo -->
             <div style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;">
-                <a href="https://buchshop.bod.de/alexan-das-geheimnis-von-mystiko-j-d-silberschweif-9783819261473" target="_blank" style="border:none;box-shadow:none;"><img src="BoDde.png" alt="ALEXAN Fantasy Kinderbuch bei BoD.de kaufen"></a>
+                <a href="https://buchshop.bod.de/alexan-das-geheimnis-von-mystiko-j-d-silberschweif-9783819261473" target="_blank" style="border:none;box-shadow:none;" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="BoDde.png" alt="ALEXAN Fantasy Kinderbuch bei BoD.de kaufen"></a>
                 <span style="background:var(--accent-gold);color:var(--primary-dark);font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:bold;padding:3px 10px;border-radius:20px;white-space:nowrap;">✅ Direkt vom Verlag</span>
             </div>
-            <a href="https://www.amazon.de/dp/B0G39ZDDVQ" target="_blank"><img src="Amazon.png" alt="ALEXAN Fantasy Kinderbuch wie Zelda bei Amazon kaufen"></a>
-            <a href="https://www.thalia.de/shop/home/artikeldetails/A1078112947" target="_blank"><img src="Thalia.png" alt="ALEXAN bei Thalia kaufen"></a>
+            <a href="https://www.amazon.de/dp/B0G39ZDDVQ" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="Amazon.png" alt="ALEXAN Fantasy Kinderbuch wie Zelda bei Amazon kaufen"></a>
+            <a href="https://www.thalia.de/shop/home/artikeldetails/A1078112947" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="Thalia.png" alt="ALEXAN bei Thalia kaufen"></a>
         </div>
         
         <div class="row-2">
             <!-- BoD.ch: Badge unter Logo -->
             <div style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;">
-                <a href="https://buchshop.bod.ch/alexan-das-geheimnis-von-mystiko-j-d-silberschweif-9783819261473" target="_blank" style="border:none;box-shadow:none;"><img src="BoDch.png" alt="ALEXAN Fantasy Kinderbuch bei BoD.ch kaufen"></a>
+                <a href="https://buchshop.bod.ch/alexan-das-geheimnis-von-mystiko-j-d-silberschweif-9783819261473" target="_blank" style="border:none;box-shadow:none;" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="BoDch.png" alt="ALEXAN Fantasy Kinderbuch bei BoD.ch kaufen"></a>
                 <span style="background:var(--accent-gold);color:var(--primary-dark);font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:bold;padding:3px 10px;border-radius:20px;white-space:nowrap;">✅ Direkt vom Verlag</span>
             </div>
-            <a href="https://www.orellfuessli.ch/shop/home/artikeldetails/A1078112947" target="_blank"><img src="Orellfuessli.png" alt="ALEXAN bei Orell Füssli kaufen"></a>
-            <a href="https://www.exlibris.ch/de/buecher-buch/deutschsprachige-buecher/j-d-silberschweif/alexan-das-geheimnis-von-mystiko/id/9783819261473" target="_blank"><img src="ExLibris.png" alt="ALEXAN bei Ex Libris kaufen"></a>
+            <a href="https://www.orellfuessli.ch/shop/home/artikeldetails/A1078112947" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="Orellfuessli.png" alt="ALEXAN bei Orell Füssli kaufen"></a>
+            <a href="https://www.exlibris.ch/de/buecher-buch/deutschsprachige-buecher/j-d-silberschweif/alexan-das-geheimnis-von-mystiko/id/9783819261473" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="ExLibris.png" alt="ALEXAN bei Ex Libris kaufen"></a>
         </div>
     </div>
     </div>
@@ -641,8 +638,8 @@ function sendPersonalizedMail() {
 
 <div style="text-align: center; margin-top: 24px;">
     <p class="quiz-text">🎞️ <strong>Besuche auch unseren<br>YouTube-Kanal</strong></p>
-    <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link">
-        <img src="YouTube.png" alt="J. D. Silberschweif YouTube Kanal" class="youtube-img">
+    <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link" rel="noopener noreferrer">
+        <img width="1705" height="573" loading="lazy" src="YouTube.png" alt="J. D. Silberschweif YouTube Kanal" class="youtube-img">
     </a>
 </div>
 
@@ -654,12 +651,12 @@ function sendPersonalizedMail() {
 <!-- ===== 6. BILDERGALERIE ===== -->
 <div class="product-carousel">
     <div class="carousel-slides">
-		<img src="CoverAlexanneu.jpg" class="slide active" alt="Buchcover ALEXAN - Das Geheimnis von Mystiko. Ein Kinderbuch wie Zelda sowie Hörbuch über Freundschaft, Mut, Mitgefühl, Akzeptanz und Vergebung.">
-		<img src="Sterne.png" class="slide" alt="Die Aussicht von Eldor dem höchsten Punkt von Mystiko">
-		<img src="Wald.png" class="slide" alt="Die verwunschenen Wälder von Lunaria">
-        <img src="Meridan.png" class="slide" alt="Begegnung mit Meridan, dem Hüter des Wissens">
-		<img src="Waechter.png" class="slide" alt="Element Prüfung vor dem Steinwächter">
-        <img src="Alchemist.png" class="slide" alt="Begegnung mit dem Alchemisten von Uluria">
+		<img width="2480" height="3508" loading="lazy" src="CoverAlexanneu.jpg" class="slide active" alt="Buchcover ALEXAN - Das Geheimnis von Mystiko. Ein Kinderbuch wie Zelda sowie Hörbuch über Freundschaft, Mut, Mitgefühl, Akzeptanz und Vergebung.">
+		<img width="1024" height="1024" loading="lazy" src="Sterne.jpg" class="slide" alt="Die Aussicht von Eldor dem höchsten Punkt von Mystiko">
+		<img width="1024" height="1024" loading="lazy" src="Wald.png" class="slide" alt="Die verwunschenen Wälder von Lunaria">
+        <img width="1024" height="1024" loading="lazy" src="Meridan.jpg" class="slide" alt="Begegnung mit Meridan, dem Hüter des Wissens">
+		<img width="1024" height="1024" loading="lazy" src="Waechter.jpg" class="slide" alt="Element Prüfung vor dem Steinwächter">
+        <img width="1024" height="1024" loading="lazy" src="Alchemist.jpg" class="slide" alt="Begegnung mit dem Alchemisten von Uluria">
     </div>
 
     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -710,7 +707,7 @@ function sendPersonalizedMail() {
     
 	<div class="bewertung-hinweis">
         <strong>Gesamtbewertung:</strong> ⭐ 4.7 von 5 Sternen 
-        <span style="color: #555; margin-left: 10px;">(basierend auf 23 Rezensionen auf <a href="https://www.amazon.de/dp/B0G39ZDDVQ" target="_blank" style="color: #0066c0; text-decoration: underline;">Amazon</a>)</span>
+        <span style="color: #555; margin-left: 10px;">(basierend auf 23 Rezensionen auf <a href="https://www.amazon.de/dp/B0G39ZDDVQ" target="_blank" style="color: #0066c0; text-decoration: underline;" rel="noopener noreferrer">Amazon</a>)</span>
     </div>
 	
     <!-- ===== AMAZON-REZENSIONEN SLIDER ===== -->
@@ -1000,7 +997,7 @@ function cusdisUebersetzen() {
         if (nickname) nickname.placeholder = 'Name';
         
         const reply = doc.querySelector('textarea[placeholder*="Reply"]');
-        if (reply) reply.placeholder = 'Dein Kommentar...';
+        if (reply) reply.placeholder = 'Dein Kommentar…';
         
         // Button Text ändern
         const button = doc.querySelector('button[type="submit"]');

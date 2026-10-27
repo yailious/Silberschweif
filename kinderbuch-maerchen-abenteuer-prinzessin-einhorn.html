@@ -8,9 +8,6 @@
     <meta name="description" content="Magisches Prinzessin Märchenbuch und Hörbuch für Kinder mit Illustrationen (ab 6 J.). Ein spannendes Abenteuer mit Drachen, Einhörnern & Hexe über Mut und Freundlichkeit.">
     <link rel="canonical" href="https://silberschweif.ch/kinderbuch-maerchen-abenteuer-prinzessin-einhorn.html">
 <link rel="preload" href="BannerSilberschweif.jpg" as="image" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <!-- Favicons für alle Browser und Auflösungen -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -95,6 +92,7 @@ window.addEventListener('load', function() {
 
 </head>
 <body>
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
 <!-- Cookie Banner (Layer 1) -->
 <div id="consent-banner" class="cb-bar" style="display:none;">
   <div class="cb-bar-inner">
@@ -135,11 +133,10 @@ window.addEventListener('load', function() {
 
     <div class="main-container">
 <div class="banner-container">
-    <img src="BannerSilberschweif.jpg"
+    <img fetchpriority="high" width="2048" height="1152" src="BannerSilberschweif.jpg"
          alt="Fantasy Kinderbuch Abenteuer und Märchenbuch von J. D. Silberschweif"
          class="banner-img"
-         fetchpriority="high"
-         decoding="sync">
+         decoding="async">
   </div>
 
         <nav class="blog-nav-bar">
@@ -148,7 +145,7 @@ window.addEventListener('load', function() {
             <a href="hoerbuch-kinder-maerchen-abenteuer-prinzessin-einhorn.html" class="nav-right">Nächster Beitrag &raquo;</a>
         </nav>
 
-        <div class="content-wrapper">
+        <div id="main" role="main" class="content-wrapper">
             <div class="blog-content">
 		<p style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">⏱️ Lesezeit Blog: 3 Min.</p>
                 <h1 class="blog-titel">🦄 Mein Herzensprojekt:<br>Das magische Märchen rund um eine mutige Prinzessin und ein Einhorn</h1>
@@ -170,7 +167,7 @@ window.addEventListener('load', function() {
                 </section>
 
 <figure class="blog-figure-full">
-    <img src="Cover_Ayana_NEU.jpg" alt="Buchcover: Ayanas Abenteuer im Zauberwald mit Prinzessin und Einhorn">
+    <img width="2480" height="3508" loading="lazy" src="Cover_Ayana_NEU.jpg" alt="Buchcover: Ayanas Abenteuer im Zauberwald mit Prinzessin und Einhorn">
     <figcaption>Das magische Märchen für Mädchen und Kinder ab 6 Jahren</figcaption>
 </figure>
 
@@ -195,7 +192,7 @@ window.addEventListener('load', function() {
                 </section>
 
 <figure class="blog-figure-full">
-    <img src="Tilly.png" alt="Der Schmetterlingsdrache Tilly als Begleiterin der Prinzessin">
+    <img width="1024" height="1024" loading="lazy" src="Tilly.jpg" alt="Der Schmetterlingsdrache Tilly als Begleiterin der Prinzessin">
     <figcaption>Der Schmetterlingsdrache Tilly – Ayanas lustige Begleiterin auf ihrem Abenteuer</figcaption>
 </figure>
 

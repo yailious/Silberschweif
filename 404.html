@@ -6,9 +6,6 @@
     <title>404 - Seite nicht gefunden | J. D. Silberschweif</title>
     <meta name="description" content="Diese Seite existiert nicht - aber keine Sorge, der Weg zurück ist nicht weit!">
 <link rel="preload" href="BannerSilberschweif.jpg" as="image" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <meta name="robots" content="noindex, follow">
 <!-- Favicons für alle Browser und Auflösungen -->
@@ -154,6 +151,7 @@ window.addEventListener('load', function() {
     </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
 <!-- Cookie Banner (Layer 1) -->
 <div id="consent-banner" class="cb-bar" style="display:none;">
   <div class="cb-bar-inner">
@@ -192,13 +190,12 @@ window.addEventListener('load', function() {
   </div>
 </div>
 
-    <div class="main-container">
+    <div id="main" role="main" class="main-container">
 <div class="banner-container">
-    <img src="BannerSilberschweif.jpg"
+    <img fetchpriority="high" width="2048" height="1152" src="BannerSilberschweif.jpg"
          alt="Fantasy Kinderbuch Abenteuer und Märchenbuch von J. D. Silberschweif"
          class="banner-img"
-         fetchpriority="high"
-         decoding="sync">
+         decoding="async">
   </div>
 
         <div class="error-container">
@@ -219,7 +216,7 @@ window.addEventListener('load', function() {
                 </p>
 				<br>
                 <p>
-                    <em>Vielleicht hat der Drache die Seite ja nur versteckt...
+                    <em>Vielleicht hat der Drache die Seite ja nur versteckt…
                     Aber bis wir sie wiederfinden, kehre doch einfach zur Startseite zurück!</em>
                 </p>
             </div>

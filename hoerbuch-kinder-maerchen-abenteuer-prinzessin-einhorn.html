@@ -9,9 +9,6 @@
     <link rel="canonical" href="https://silberschweif.ch/hoerbuch-kinder-maerchen-abenteuer-prinzessin-einhorn.html">
 
 <link rel="preload" href="BannerSilberschweif.jpg" as="image" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <!-- Favicons für alle Browser und Auflösungen -->
@@ -100,6 +97,7 @@ window.addEventListener('load', function() {
 
 </head>
 <body>
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
 <!-- Cookie Banner (Layer 1) -->
 <div id="consent-banner" class="cb-bar" style="display:none;">
   <div class="cb-bar-inner">
@@ -141,11 +139,10 @@ window.addEventListener('load', function() {
     <div class="main-container">
         <!-- HEADER BANNER -->
 <div class="banner-container">
-    <img src="BannerSilberschweif.jpg"
+    <img fetchpriority="high" width="2048" height="1152" src="BannerSilberschweif.jpg"
          alt="Fantasy Kinderbuch Abenteuer und Märchenbuch von J. D. Silberschweif"
          class="banner-img"
-         fetchpriority="high"
-         decoding="sync">
+         decoding="async">
   </div>
 
         <!-- NAVIGATION UNTER DEM BANNER -->
@@ -155,7 +152,7 @@ window.addEventListener('load', function() {
             <a href="Hoerbuch-kinderbuch-veroeffentlichen-selfpublishing-amazon.html" class="nav-right">Nächster Beitrag &raquo;</a>
         </nav>
 
-        <div class="content-wrapper">
+        <div id="main" role="main" class="content-wrapper">
             <div class="blog-content">
 					<p style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">⏱️ Lesezeit Blog: 3 Min.</p>
                 <h1 class="blog-titel">🧙‍♂️ Magische Gute Nacht Geschichte:<br>So entstand das Märchen Hörbuch für die Toniebox</h1>
@@ -185,7 +182,7 @@ window.addEventListener('load', function() {
                     </p>
                     
                     <figure class="blog-figure-full">
-                        <img src="Tiere.png" alt="Ayana trifft freundliche Tiere im Zauberwald">
+                        <img width="1024" height="1024" loading="lazy" src="Tiere.jpg" alt="Ayana trifft freundliche Tiere im Zauberwald">
                         <figcaption>Ayana trifft freundliche Tiere im Zauberwald</figcaption>
                     </figure>
                 </section>
@@ -210,7 +207,7 @@ window.addEventListener('load', function() {
                     </p>
                     
                     <figure class="blog-figure-full">
-                        <img src="Hirsch.jpeg" alt="Der majestätische Sternen-Hirsch wacht über den Zauberwald">
+                        <img width="1024" height="1024" loading="lazy" src="Hirsch.jpeg" alt="Der majestätische Sternen-Hirsch wacht über den Zauberwald">
                         <figcaption>Der Wächter der Nacht: Der majestätische Sternen-Hirsch wacht über den Zauberwald</figcaption>
                     </figure>
                 </section>
@@ -240,8 +237,8 @@ window.addEventListener('load', function() {
                     
                     <div style="text-align: center; margin-top: 30px;">
                         <p class="quiz-text">🎬 Erlebe noch mehr Magie auf YouTube:</p>
-                        <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link">
-                            <img src="YouTube.png" alt="YouTube Kanal" class="youtube-img">
+                        <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link" rel="noopener noreferrer">
+                            <img width="1705" height="573" loading="lazy" src="YouTube.png" alt="YouTube Kanal" class="youtube-img">
                         </a>
                     </div>
                     

@@ -7,9 +7,6 @@
     <meta name="description" content="Ein liebevoll illustriertes Kinderbuch und Märchenbuch über Mut und Selbstvertrauen für Kinder ab 6 Jahren. Mit Prinzessin, Einhorn, Drache und Hexe. Auch als Hörbuch und Gute Nacht Geschichte für die Toniebox.">
     <link rel="canonical" href="https://silberschweif.ch/kinderbuch-hoerbuch-maerchen-abenteuer-einhorn.html">
 <link rel="preload" href="Wald_breit.jpg" as="image" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <!-- Favicons für alle Browser und Auflösungen -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -198,6 +195,7 @@ window.addEventListener('load', function() {
 
 </head>
 <body>
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
 <!-- Cookie Banner (Layer 1) -->
 <div id="consent-banner" class="cb-bar" style="display:none;">
   <div class="cb-bar-inner">
@@ -240,7 +238,7 @@ window.addEventListener('load', function() {
     <a href="index.html" class="back-link">Zurück zur Startseite</a>
 </div>
 
-<main class="container produkt-flaeche">
+<main id="main" class="container produkt-flaeche">
 
 <!-- ===== STICKY ANKER-NAVIGATION ===== -->
 <style>
@@ -273,11 +271,10 @@ window.addEventListener('load', function() {
     <!-- Optional: A+ Content Header-Bild mit USP-Kreisen hier einfügen -->
 <section class="flow-section flow-a intro-text">
 
-<img src="Wald_breit.jpg" 
+<img fetchpriority="high" width="970" height="600" src="Wald_breit.jpg" 
          alt="Ayanas Abenteuer im Zauberwald – Mut und Stärke, Antolin Klasse 1, ab 6 Jahren, 15 Illustrationen" 
          style="width:100%; border-radius: 10px; margin-bottom: 20px;"
-         fetchpriority="high"
-         decoding="sync">
+         decoding="async">
 
 
     <h1>Magisches Märchenbuch & Gute Nacht Geschichte<br>für Mädchen und Kinder ab 6 Jahren</h1>
@@ -297,8 +294,8 @@ window.addEventListener('load', function() {
     <h3>🎓 Antolin-Punkte sammeln</h3>
     <p>Das Buch ist offiziell auf <strong>Antolin</strong> (Klasse 1) verfügbar. Die bildhafte Sprache fördert Lesekompetenz und sprachliches Verständnis. Unten kannst du dich auf das Antolin-Quiz vorbereiten.</p>
     <div class="antolin-box" style="text-align: center;">
-        <a href="https://antolin.westermann.de/all/bookdetail.jsp?book_id=273660" target="_blank">
-            <img src="Antolin.png" alt="Antolin Logo – Leseförderung Klasse 1">
+        <a href="https://antolin.westermann.de/all/bookdetail.jsp?book_id=273660" target="_blank" rel="noopener noreferrer">
+            <img width="160" height="80" loading="lazy" src="Antolin.png" alt="Antolin Logo – Leseförderung Klasse 1">
         </a>
     </div>
 
@@ -323,7 +320,7 @@ window.addEventListener('load', function() {
         </audio>
 		
 	<label class="video-label">✨ Hörprobe Kapitel 3 Cineastisch:</label>
-		<video class="hoerbuch-video" controls poster="Baumstamm.png" preload="metadata">
+		<video class="hoerbuch-video" controls poster="Baumstamm.jpg" preload="metadata">
 		<source src="Ayana1Cine3.mp4" type="video/mp4">
 		Dein Browser unterstützt dieses Videoformat nicht.
 		</video>
@@ -443,14 +440,14 @@ function sendPersonalizedMail() {
 
     <div class="shop-container">
         <div class="row-1">
-            <a href="https://www.amazon.de/dp/B0G38L3GTG" target="_blank"><img src="Amazon.png" alt="Ayanas Abenteuer im Zauberwald bei Amazon kaufen"></a>
-            <a href="https://buchshop.bod.de/ayanas-abenteuer-im-zauberwald-j-d-silberschweif-9783695105892" target="_blank"><img src="BoD.png" alt="Ayanas Abenteuer im Zauberwald bei BoD kaufen"></a>
+            <a href="https://www.amazon.de/dp/B0G38L3GTG" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="Amazon.png" alt="Ayanas Abenteuer im Zauberwald bei Amazon kaufen"></a>
+            <a href="https://buchshop.bod.de/ayanas-abenteuer-im-zauberwald-j-d-silberschweif-9783695105892" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="BoD.png" alt="Ayanas Abenteuer im Zauberwald bei BoD kaufen"></a>
         </div>
     </div>
 
     <p>🎧 Das <strong>Standard-Hörbuch</strong> ist auch auf <strong>Spotify</strong> verfügbar:</p>
     <div class="antolin-box" style="text-align: center;">
-        <a href="https://open.spotify.com/show/1pFNFQMjDlHReCOKmC0Lnz" target="_blank"><img src="Spotify.png" alt="Ayanas Abenteuer im Zauberwald auf Spotify hören"></a>
+        <a href="https://open.spotify.com/show/1pFNFQMjDlHReCOKmC0Lnz" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="Spotify.png" alt="Ayanas Abenteuer im Zauberwald auf Spotify hören"></a>
     </div>
 
 </div>
@@ -536,13 +533,13 @@ function sendPersonalizedMail() {
 
 <div class="product-carousel">
     <div class="carousel-slides">
-        <img src="Cover_Ayana_NEU.jpg" class="slide active" alt="Ayanas Abenteuer im Zauberwald: Cover des Kinderbuchs und Kinderhörbuchs ab 6 Jahren über Mut, Mitgefühl und Selbstvertrauen. Prinzessin Ayana verirrt sich im Zauberwald und sucht mit dem lustigen Schmetterlingsdrachen Tilly ein magisches Einhorn. Dabei trifft sie auf zauberhafte Fabelwesen und eine eitle Hexe und lernt, dass wahre Schönheit von innen kommt.">
-        <img src="Schmetterling.png" class="slide" alt="Ayana rennt einem magischen Schmetterling hinterher">
-        <img src="Zauberwald.png" class="slide" alt="Ayana im Zauberwald mit leuchtenden Käfern und bunten Pilzen">
-        <img src="Tiere.png" class="slide" alt="Ayana trifft im Zauberwald freundliche Tiere – Reh, Fuchs und Hase">
-        <img src="Tilly.png" class="slide" alt="Tilly der Schmetterlingsdrache im Zauberwald">
-        <img src="Nest.png" class="slide" alt="Ayana klettert mutig auf einen Baum um ein Küken zu retten">
-        <img src="Hirsch.jpeg" class="slide" alt="Der Sternen-Hirsch – Wächter der Nacht im Zauberwald">
+        <img width="2480" height="3508" loading="lazy" src="Cover_Ayana_NEU.jpg" class="slide active" alt="Ayanas Abenteuer im Zauberwald: Cover des Kinderbuchs und Kinderhörbuchs ab 6 Jahren über Mut, Mitgefühl und Selbstvertrauen. Prinzessin Ayana verirrt sich im Zauberwald und sucht mit dem lustigen Schmetterlingsdrachen Tilly ein magisches Einhorn. Dabei trifft sie auf zauberhafte Fabelwesen und eine eitle Hexe und lernt, dass wahre Schönheit von innen kommt.">
+        <img width="1024" height="1024" loading="lazy" src="Schmetterling.jpg" class="slide" alt="Ayana rennt einem magischen Schmetterling hinterher">
+        <img width="1024" height="1024" loading="lazy" src="Zauberwald.jpg" class="slide" alt="Ayana im Zauberwald mit leuchtenden Käfern und bunten Pilzen">
+        <img width="1024" height="1024" loading="lazy" src="Tiere.jpg" class="slide" alt="Ayana trifft im Zauberwald freundliche Tiere – Reh, Fuchs und Hase">
+        <img width="1024" height="1024" loading="lazy" src="Tilly.jpg" class="slide" alt="Tilly der Schmetterlingsdrache im Zauberwald">
+        <img width="1024" height="1024" loading="lazy" src="Nest.jpg" class="slide" alt="Ayana klettert mutig auf einen Baum um ein Küken zu retten">
+        <img width="1024" height="1024" loading="lazy" src="Hirsch.jpeg" class="slide" alt="Der Sternen-Hirsch – Wächter der Nacht im Zauberwald">
     </div>
 
     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -593,8 +590,8 @@ function sendPersonalizedMail() {
 <!-- ===== 10. YOUTUBE ===== -->
 <div style="text-align: center; margin-top: 0px;">
     <p class="quiz-text">🎞️ <strong>Besuche auch unseren<br>YouTube-Kanal</strong></p>
-    <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link">
-        <img src="YouTube.png" alt="J. D. Silberschweif YouTube Kanal" class="youtube-img">
+    <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link" rel="noopener noreferrer">
+        <img width="1705" height="573" loading="lazy" src="YouTube.png" alt="J. D. Silberschweif YouTube Kanal" class="youtube-img">
     </a>
 </div>
 </div>
@@ -614,7 +611,7 @@ function sendPersonalizedMail() {
 	
 		<div class="bewertung-hinweis" 
         <strong>Gesamtbewertung:</strong> ⭐ 5 von 5 Sternen 
-        <span style="color: #555; margin-left: 10px;">(basierend auf 5 Rezensionen auf <a href="https://www.amazon.de/dp/B0G38L3GTG" target="_blank" style="color: #0066c0; text-decoration: underline;">Amazon</a>)</span>
+        <span style="color: #555; margin-left: 10px;">(basierend auf 5 Rezensionen auf <a href="https://www.amazon.de/dp/B0G38L3GTG" target="_blank" style="color: #0066c0; text-decoration: underline;" rel="noopener noreferrer">Amazon</a>)</span>
     </div>
     
 	    <!-- ===== AMAZON-REZENSIONEN SLIDER ===== -->
@@ -831,7 +828,7 @@ function cusdisUebersetzen() {
         if (nickname) nickname.placeholder = 'Name';
         
         const reply = doc.querySelector('textarea[placeholder*="Reply"]');
-        if (reply) reply.placeholder = 'Dein Kommentar...';
+        if (reply) reply.placeholder = 'Dein Kommentar…';
         
         // Button Text ändern
         const button = doc.querySelector('button[type="submit"]');

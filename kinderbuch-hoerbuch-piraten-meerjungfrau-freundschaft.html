@@ -8,9 +8,6 @@
     <meta name="description" content="Piraten, eine Meerjungfrau und ein magisches Ozean-Abenteuer! Farbig illustriertes Märchenbuch über Mut und Freundschaft für Kinder ab 6. Auch als Hörbuch für die Toniebox.">
     <link rel="preload" href="OzeanAplus.jpg" as="image" fetchpriority="high">
 	<link rel="canonical" href="https://silberschweif.ch/kinderbuch-hoerbuch-piraten-meerjungfrau-freundschaft.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <!-- Favicons für alle Browser und Auflösungen -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -197,6 +194,7 @@ window.addEventListener('load', function() {
 
 </head>
 <body>
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
 <!-- Cookie Banner (Layer 1) -->
 <div id="consent-banner" class="cb-bar" style="display:none;">
   <div class="cb-bar-inner">
@@ -239,7 +237,7 @@ window.addEventListener('load', function() {
     <a href="index.html" class="back-link">Zurück zur Startseite</a>
 </div>
 
-<main class="container produkt-flaeche">
+<main id="main" class="container produkt-flaeche">
 
 <!-- ===== STICKY ANKER-NAVIGATION ===== -->
 <style>
@@ -271,13 +269,12 @@ window.addEventListener('load', function() {
 <!-- ===== 2. EMOTIONALER HOOK + INHALT ===== -->
 <section class="flow-section flow-a intro-text">
 
-    <img src="OzeanAplus.jpg" 
+    <img fetchpriority="high" width="970" height="600" src="OzeanAplus.jpg" 
          alt="Ayanas Abenteuer: Der Schatz der Freundschaft – Piraten, Meerjungfrau, Antolin Klasse 1, ab 6 Jahren, farbige Illustrationen" 
          style="width:100%; border-radius: 10px; margin-bottom: 20px;"
-         fetchpriority="high"
-         decoding="sync">
+         decoding="async">
 
-    <h1>Kinder-/ Märchenbuch Piraten und Meerjungfrau<br>und Abenteuer am Meer für Kinder ab 6 Jahren</h1>
+    <h1>Kinder-/Märchenbuch Piraten und Meerjungfrau<br>und Abenteuer am Meer für Kinder ab 6 Jahren</h1>
     <h2 class="fantasy-title">Ayanas Abenteuer: Der Schatz der Freundschaft</h2>
 
     <h3>🌊 Piraten, eine weise Meerjungfrau und ein magisches Unterwasser-Abenteuer voller Mut, Humor und Herzenswärme!</h3>
@@ -294,8 +291,8 @@ window.addEventListener('load', function() {
      <h3>🎓 Antolin-Punkte sammeln</h3>
     <p>Das Buch ist offiziell auf <strong>Antolin</strong> (Klasse 1) verfügbar. Die bildhafte Sprache und die spannende Handlung fördern Lesekompetenz und sprachliches Verständnis. Unten kannst du dich auf das Antolin-Quiz vorbereiten.</p>
     <div class="antolin-box" style="text-align: center;">
-        <a href="https://antolin.westermann.de/all/bookdetail.jsp?book_id=277826" target="_blank">
-            <img src="Antolin.png" alt="Antolin Logo – Leseförderung Klasse 1">
+        <a href="https://antolin.westermann.de/all/bookdetail.jsp?book_id=277826" target="_blank" rel="noopener noreferrer">
+            <img width="160" height="80" loading="lazy" src="Antolin.png" alt="Antolin Logo – Leseförderung Klasse 1">
         </a>
     </div>
 
@@ -320,7 +317,7 @@ window.addEventListener('load', function() {
         </audio>
 
 	<label class="video-label">✨ Hörprobe Cineastisch Kapitel 4:</label>
-		<video class="hoerbuch-video" controls poster="Krake.png" preload="metadata">
+		<video class="hoerbuch-video" controls poster="Krake.jpg" preload="metadata">
 		<source src="Ayana2Cine4.mp4" type="video/mp4">
 		Dein Browser unterstützt dieses Videoformat nicht.
 		</video>
@@ -430,13 +427,13 @@ function sendPersonalizedMail() {
 
     <div class="shop-container">
         <div class="row-1">
-            <a href="https://www.amazon.de/dp/B0GNZFHKQH" target="_blank"><img src="Amazon.png" alt="Ayanas Abenteuer: Der Schatz der Freundschaft bei Amazon kaufen"></a>
+            <a href="https://www.amazon.de/dp/B0GNZFHKQH" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="Amazon.png" alt="Ayanas Abenteuer: Der Schatz der Freundschaft bei Amazon kaufen"></a>
         </div>
     </div>
 
     <p>🎧 Das <strong>Standard-Hörbuch</strong> ist auch auf <strong>Spotify</strong> verfügbar:</p>
     <div class="antolin-box" style="text-align: center;">
-        <a href="https://open.spotify.com/show/0ajyTKW8DcUErFpNSZzBZR" target="_blank"><img src="Spotify.png" alt="Ayanas Abenteuer: Der Schatz der Freundschaft auf Spotify hören"></a>
+        <a href="https://open.spotify.com/show/0ajyTKW8DcUErFpNSZzBZR" target="_blank" rel="noopener noreferrer"><img width="160" height="80" loading="lazy" src="Spotify.png" alt="Ayanas Abenteuer: Der Schatz der Freundschaft auf Spotify hören"></a>
     </div>
 
 </div>
@@ -456,12 +453,12 @@ function sendPersonalizedMail() {
 <!-- ===== BILDER-KARUSSELL ===== -->
 <div class="product-carousel">
     <div class="carousel-slides">
-        <img src="Cover_Ayana2.jpg" class="slide active" alt="Ayanas Abenteuer: Der Schatz der Freundschaft: Cover des Kinderbuchs und Hörbuchs ab 6 Jahren über Mut, Freundschaft und Zusammenhalt. Prinzessin Ayana erlebt ein spannendes Piratenabenteuer im Meer mit einer weisen Meerjungfrau, dem goldenen Seelöwen, der Krabbe Klick-Klack, einem Kraken und einem Wal. Nebenbei vermittelt die Geschichte auch eine wichtige Botschaft zum Umwelt- und Meeresschutz.">
-        <img src="Schiff.jpg" class="slide" alt="Illustration aus dem Kinderbuch: Ayana segelt auf dem königlichen Freundschaftsschiff ins Abenteuer">
-        <img src="Krabbe.jpg" class="slide" alt="Die lustige rote Krabbe Klick-Klack. Ein tierischer Freund aus Ayanas Welt">
-        <img src="Meerjungfrau.jpg" class="slide" alt="Magische Begegnung im Kinderbuch: Die weise Meerjungfrau schenkt Ayana eine Zauber-Perlenkette">
-        <img src="Seeloewe.png" class="slide" alt="Der goldene Seelöwe mit der Muschel: Fabelwesen aus dem Fantasy-Hörbuch Ayanas Abenteuer">
-        <img src="Schildkroete.png" class="slide" alt="Kinderbuch über Meeresschutz: Ayana rettet eine Schildkröte vor Plastikmüll im Ozean">
+        <img width="2480" height="3508" loading="lazy" src="Cover_Ayana2.jpg" class="slide active" alt="Ayanas Abenteuer: Der Schatz der Freundschaft: Cover des Kinderbuchs und Hörbuchs ab 6 Jahren über Mut, Freundschaft und Zusammenhalt. Prinzessin Ayana erlebt ein spannendes Piratenabenteuer im Meer mit einer weisen Meerjungfrau, dem goldenen Seelöwen, der Krabbe Klick-Klack, einem Kraken und einem Wal. Nebenbei vermittelt die Geschichte auch eine wichtige Botschaft zum Umwelt- und Meeresschutz.">
+        <img width="2400" height="2400" loading="lazy" src="Schiff.jpg" class="slide" alt="Illustration aus dem Kinderbuch: Ayana segelt auf dem königlichen Freundschaftsschiff ins Abenteuer">
+        <img width="2400" height="2400" loading="lazy" src="Krabbe.jpg" class="slide" alt="Die lustige rote Krabbe Klick-Klack. Ein tierischer Freund aus Ayanas Welt">
+        <img width="2400" height="2400" loading="lazy" src="Meerjungfrau.jpg" class="slide" alt="Magische Begegnung im Kinderbuch: Die weise Meerjungfrau schenkt Ayana eine Zauber-Perlenkette">
+        <img width="1024" height="1024" loading="lazy" src="Seeloewe.jpg" class="slide" alt="Der goldene Seelöwe mit der Muschel: Fabelwesen aus dem Fantasy-Hörbuch Ayanas Abenteuer">
+        <img width="1024" height="1024" loading="lazy" src="Schildkroete.jpg" class="slide" alt="Kinderbuch über Meeresschutz: Ayana rettet eine Schildkröte vor Plastikmüll im Ozean">
     </div>
 
     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -485,8 +482,8 @@ function sendPersonalizedMail() {
 <!-- ===== YOUTUBE ===== -->
 <div style="text-align: center; margin-top: 0px;">
     <p class="quiz-text">🎞️ <strong>Besuche auch unseren<br>YouTube-Kanal</strong></p>
-    <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link">
-        <img src="YouTube.png" alt="J. D. Silberschweif YouTube Kanal" class="youtube-img">
+    <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link" rel="noopener noreferrer">
+        <img width="1705" height="573" loading="lazy" src="YouTube.png" alt="J. D. Silberschweif YouTube Kanal" class="youtube-img">
     </a>
 </div>
 </div>
@@ -506,7 +503,7 @@ function sendPersonalizedMail() {
 
 	<div class="bewertung-hinweis">
         <strong>Gesamtbewertung:</strong> ⭐ 5 von 5 Sternen
-        <span style="color: #555; margin-left: 10px;">(basierend auf 5 Rezensionen auf <a href="https://www.amazon.de/dp/B0GNZFHKQH" target="_blank" style="color: #0066c0; text-decoration: underline;">Amazon</a>)</span>
+        <span style="color: #555; margin-left: 10px;">(basierend auf 5 Rezensionen auf <a href="https://www.amazon.de/dp/B0GNZFHKQH" target="_blank" style="color: #0066c0; text-decoration: underline;" rel="noopener noreferrer">Amazon</a>)</span>
     </div>
 
     <!-- ===== AMAZON-REZENSIONEN SLIDER ===== -->
@@ -722,7 +719,7 @@ function cusdisUebersetzen() {
         if (nickname) nickname.placeholder = 'Name';
 
         const reply = doc.querySelector('textarea[placeholder*="Reply"]');
-        if (reply) reply.placeholder = 'Dein Kommentar...';
+        if (reply) reply.placeholder = 'Dein Kommentar…';
 
         // Button Text ändern
         const button = doc.querySelector('button[type="submit"]');

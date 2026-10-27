@@ -7,9 +7,6 @@
 <title>Fantasy Kinderbuch &amp; Märchenbuch Abenteuer | Zelda Manga Stil | J. D. Silberschweif Schweiz</title>
 <meta name="description" content="Magische Fantasy Kinderbücher und Märchenbücher wie Zelda von J. D. Silberschweif aus der Schweiz. Spannende Abenteuer, cineastische Hörspiele und Gute-Nacht-Geschichten für Kinder.">
 <link rel="preload" href="BannerSilberschweif.jpg" as="image" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <!-- Cookie Consent (DSGVO-konform, 2-Layer) -->
@@ -128,11 +125,10 @@ window.addEventListener('load', function() {
 <!-- BANNER IN DER MAIN-CONTAINER -->
 <div class="main-container banner-wrapper">
   <div class="banner-container">
-    <img src="BannerSilberschweif.jpg"
+    <img fetchpriority="high" width="2048" height="1152" src="BannerSilberschweif.jpg"
          alt="Fantasy Kinderbuch Abenteuer und Märchenbuch von J. D. Silberschweif"
          class="banner-img"
-         fetchpriority="high"
-         decoding="sync">
+         decoding="async">
   </div>
 </div>
 
@@ -275,7 +271,7 @@ window.addEventListener('load', function() {
 
       <!-- AUTOR -->
       <section class="author-intro clearfix reveal flow-section">
-        <img src="Bild Gesicht nah.jpg"
+        <img width="1062" height="1427" loading="lazy" src="Bild Gesicht nah.jpg"
              alt="J. D. Silberschweif – Autor für Fantasy Kinderbuch und Hörspiel-Abenteuer"
              class="author-img">
 
@@ -324,7 +320,7 @@ window.addEventListener('load', function() {
       <!-- ALEXAN -->
       <div class="book-card reveal">
         <div class="book-left">
-          <img src="CoverAlexanneu.jpg" alt="ALEXAN - Fantasy Kinderbuch wie Zelda" class="book-cover-static">
+          <img width="2480" height="3508" loading="lazy" src="Coveralexanneu.jpg" alt="ALEXAN - Fantasy Kinderbuch wie Zelda" class="book-cover-static">
         </div>
         <div class="book-right">
           <p class="book-badge">Fantasy · Ab 10 Jahren · Zelda-Stil</p>
@@ -347,7 +343,7 @@ window.addEventListener('load', function() {
       <!-- AYANA Band 1 -->
       <div class="book-card reveal">
         <div class="book-left">
-          <img src="Cover_Ayana_NEU.jpg" alt="Ayana Märchenbuch Abenteuer im Zauberwald" class="book-cover-static">
+          <img width="2480" height="3508" loading="lazy" src="Cover_Ayana_NEU.jpg" alt="Ayana Märchenbuch Abenteuer im Zauberwald" class="book-cover-static">
         </div>
         <div class="book-right">
           <p class="book-badge">Märchenbuch · Ab 6 Jahren · Gute-Nacht-Geschichte</p>
@@ -369,7 +365,7 @@ window.addEventListener('load', function() {
       <!-- AYANA Band 2 -->
       <div class="book-card reveal">
         <div class="book-left">
-          <img src="Cover_Ayana2.jpg" alt="Ayanas Abenteuer: Der Schatz der Freundschaft – Meeresabenteuer ab 6 Jahren" class="book-cover-static">
+          <img width="2480" height="3508" loading="lazy" src="Cover_Ayana2.jpg" alt="Ayanas Abenteuer: Der Schatz der Freundschaft – Meeresabenteuer ab 6 Jahren" class="book-cover-static">
         </div>
         <div class="book-right">
           <p class="book-badge">Meeresabenteuer · Ab 6 Jahren · Freundschaft &amp; Familie</p>
@@ -398,8 +394,8 @@ window.addEventListener('load', function() {
         </p>
         <div style="text-align:center;margin-top:30px;">
           <p><strong>Besuche auch unseren YouTube-Kanal:</strong></p>
-          <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link">
-            <img src="YouTube.png" alt="YouTube Kanal – Hörspiel und Kinderbuch wie Zelda" class="youtube-img">
+          <a href="https://www.youtube.com/@J.D.Silberschweif" target="_blank" class="youtube-link" rel="noopener noreferrer">
+            <img width="1705" height="573" loading="lazy" src="YouTube.png" alt="YouTube Kanal – Hörspiel und Kinderbuch wie Zelda" class="youtube-img">
           </a>
         </div>
       </div>
